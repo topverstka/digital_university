@@ -1,5 +1,5 @@
-@mixin font($fname, $fstyle, $fweight, $furl_woff2){
-    @font-face{
+@mixin font($fname, $fstyle, $fweight, $furl_woff2) {
+    @font-face {
         font-family: $fname;
         font-style: $fstyle;
         font-weight: $fweight;
@@ -9,4 +9,6 @@
     }
 }
 
-// @include font('Noto Sans', normal, 400, '../fonts/noto-sans.woff2');
+@include font('Raleway', normal, 400, '../fonts/Raleway/Raleway-Regular.ttf');
+@include font('Raleway', normal, 600, '../fonts/Raleway/Raleway-SemiBold.ttf');
+@include font('Raleway', normal, 700, '../fonts/Raleway/Raleway-Bold.ttf');

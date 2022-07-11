@@ -1,0 +1,26 @@
+.social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+}
+
+.social__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+
+    svg {
+        fill: $gray;
+        transition: $tr;
+    }
+
+    &:hover svg {
+        fill: $accent-hover;
+    }
+
+    &:active svg {
+        fill: $accent-active;
+    }
+}

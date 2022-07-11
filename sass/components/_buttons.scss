@@ -5,22 +5,10 @@
 * <button class="btn btn_primary btn_icon btn_icon-arrow btn_icon-left">Кнопка с иконкой с левой стороны акцентного цвета</button>
 */
 
-// Переменные цветов кнопок
-:root {
-    // Акцентная кнопка
-    --btn-primary-default: #467EF3;
-    --btn-primary-pressed: #3865C2;
-    --btn-primary-disabled: #B5CBFA;
-
-    // -Вторичная кнопка
-    --btn-second-default: #D1DFFC;
-    --btn-second-pressed: #BDC9E3;
-    --btn-second-disabled: #99B8F8;
-}
- 
-$btn-primary-default: var(--btn-primary-default);
-$btn-primary-pressed: var(--btn-primary-pressed);
-$btn-primary-disabled: var(--btn-primary-disabled);
+$btn-primary-default: var(--accent);
+$btn-primary-hover: var(--accent-hover);
+$btn-primary-active: var(--accent-active);
+$btn-primary-disabled: var(--accent-disabled);
 
 $btn-second-default: var(--btn-second-default);
 $btn-second-pressed: var(--btn-second-pressed);
@@ -28,14 +16,13 @@ $btn-second-disabled: var(--btn-second-disabled);
 
 // Основной шаблон кнопки
 .btn {
-    width: 100%;
-    height: 48px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 42px;
     font-size: 14px;
-    font-weight: 600;
-    text-transform: uppercase;
-    padding: 9px;
+    font-weight: 700;
     border-radius: $radius;
-    transition: $tr;
 }
 
 // Акцентная кнопка
@@ -44,165 +31,203 @@ $btn-second-disabled: var(--btn-second-disabled);
     background: $btn-primary-default;
 
     &:hover {
-        
-        @media (min-width: $minHover) {
-            box-shadow: 0px 5px 20px rgba(70, 126, 243, 0.5);
-        }
+        background: $btn-primary-hover;
     }
 
     &:active {
-        background: $btn-primary-pressed;
+        background: $btn-primary-active;
+    }
+
+    &:disabled {
+        background: $btn-primary-disabled;
     }
 }
 
-// Второстепенная кнопка
-.btn_second {
-    color: #467EF3;
-    background: $btn-second-default;
+.btn_primary-invert {
+    color: $btn-primary-default;
+    background: #fff;
 
     &:hover {
-        
-        @media (min-width: $minHover) {
-            box-shadow: 0px 5px 20px rgba(70, 126, 243, 0.5);
-        }
+        color: #fff;
+        background: $btn-primary-hover;
     }
 
     &:active {
-        background: $btn-second-pressed;
+        color: #fff;
+        background: $btn-primary-active;
+        opacity: 0.7;
+    }
+
+    &:disabled {
+        color: #fff;
+        background: $btn-primary-disabled;
     }
 }
 
-// Кнопка без заполнения и обводки
-.btn_linear {
-    padding: 5px;
-
-    &:hover {
-        
-        @media (min-width: $minHover) {
-            color: $btn-primary-pressed;
-        }
-    }
-
-    &:active {
-        color: $btn-primary-pressed;
-    }
-}
-
-// Кнопка с иконкой. Иконка размещается в html после или перед текстом кнопки
-$margin-icon: 12px; // Отступ иконки от текста
-
-.btn_icon {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    text-align: left;
-
-    & svg {
-        width: 24px;
-        height: 24px;
-        margin-left: $margin-icon;
-    }
-}
-
-
-// Иконка будет слева. Использовать совместно с btn_icon
-.btn_icon-left {
-
-    & svg {
-        margin-left: 0;
-        margin-right: $margin-icon;
-    }
-}
-
-// Содержимое иконки будет размещаться по центру. Использовать только c btn_icon
-.btn_center {
-    justify-content: center;
-}
-
-// Hover-эффект у ссылки
-.link {
-    
-    &:hover {
-        
-        @media (min-width: $minHover) {
-            color: $accent-hover;
-        }
-    }
-
-    &:active {
-        color: $accent-active;
-    }
-}
-
-// Кнопки выбора 
-.choice-chips {
-    width: fit-content;
+.btn_size_sm {
+    padding: 8px 25px;
     font-size: 14px;
-    font-weight: 600;
-    color: $main;
-    padding: 12px 24px;
-    background: #F8F8F8;
-    border-radius: 100px;
-
-    &:hover {
-        
-        @media (min-width: $minHover) {
-            color: $accent;
-            background: #EFF7F5;
-        }
-    }
-
-    &:active {
-        color: #fff;
-        background: $accent;
-    }
-
-    &._active {
-        color: #fff;
-        background: $accent;
-    }
+    line-height: 17px;
 }
 
-.choice-chips_disabled {
-    color: $second;
-    background: #F8F8F8;
-    pointer-events: none;
-}
-
-
-
-// Стрелка в слайдерах
-.slider-arrow {
-    width: 56px;
-    height: 56px;
+.btn-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: $accent;
+    width: 39px;
+    height: 39px;
+    background: $btn-primary-default;
     border-radius: 50%;
 
     &:hover {
-        
-        @media (min-width: $minHover) {
-            background: $accent-hover;
-        }
+        background: $btn-primary-hover;
     }
 
     &:active {
-        background: $accent-active;
-    }
-
-    &.swiper-button-disabled {
-        background: #F8F8F8; 
-        // pointer-events: none;
-
-        & svg path {
-            fill: $second;
-        }
-    }
-
-    & svg {
-        width: 24px;
-        height: 24px;
+        background: $btn-primary-active;
     }
 }
+
+.btn-icon_size_sm {
+    width: 33px;
+    height: 33px;
+}
+
+.btn-burger {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    background: $accent;
+    border-radius: 50%;
+
+    &::before,
+    &::after {
+        content: '';
+        transition: $tr;
+    }
+
+    &__line {
+        opacity: 1;
+        transition: $tr;
+    }
+
+    &::before,
+    &::after,
+    &__line {
+        position: absolute;
+        display: block;
+        width: 11px;
+        height: 2px;
+        background: #fff;
+        border-radius: 3px;
+    }
+
+    &::before {
+        transform: translateY(-4px);
+    }
+
+    &::after {
+        transform: translateY(4px);
+    }
+
+    &:hover {
+        background: $btn-primary-hover;
+    }
+
+    &:active {
+        background: $btn-primary-active;
+    }
+}
+
+.btn-burger_active {
+    .btn-burger__line {
+        opacity: 0;
+    }
+
+    &::before {
+        transform: translateY(0) rotate(45deg);
+    }
+
+    &::after {
+        transform: translateY(0) rotate(-45deg);
+    }
+}
+
+// // Hover-эффект у ссылки
+// .link {
+
+// }
+
+// // Кнопки выбора
+// .choice-chips {
+//     width: fit-content;
+//     font-size: 14px;
+//     font-weight: 600;
+//     color: $main;
+//     padding: 12px 24px;
+//     background: #F8F8F8;
+//     border-radius: 100px;
+
+//     &:hover {
+
+//         @media (min-width: $minHover) {
+//             color: $accent;
+//             background: #EFF7F5;
+//         }
+//     }
+
+//     &:active {
+//         color: #fff;
+//         background: $accent;
+//     }
+
+//     &._active {
+//         color: #fff;
+//         background: $accent;
+//     }
+// }
+
+// .choice-chips_disabled {
+//     color: $second;
+//     background: #F8F8F8;
+//     pointer-events: none;
+// }
+
+// // Стрелка в слайдерах
+// .slider-arrow {
+//     width: 56px;
+//     height: 56px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     background: $accent;
+//     border-radius: 50%;
+
+//     &:hover {
+
+//         @media (min-width: $minHover) {
+//             background: $accent-hover;
+//         }
+//     }
+
+//     &:active {
+//         background: $accent-active;
+//     }
+
+//     &.swiper-button-disabled {
+//         background: #F8F8F8;
+//         // pointer-events: none;
+
+//         & svg path {
+//             fill: $second;
+//         }
+//     }
+
+//     & svg {
+//         width: 24px;
+//         height: 24px;
+//     }
+// }

@@ -1,42 +1,49 @@
 // Пользовательские переменные
 :root {
-    --ffMain: 'Noto Sans', sans-serif;
+    --ffMain: 'Raleway', sans-serif;
     --ffHeader: sans-serif;
-    --tr: .3s;  // Плавность перехода
-    --radius: 16px; // border-radius
+    --tr: 0.3s; // Плавность перехода
+    --radius: 100px; // border-radius
 }
 
 $ffMain: var(--ffMain);
 $ffHeader: var(--ffHeader);
 $tr: var(--tr);
 $minHover: 769px; // Минимальное разрешения экрана для hover-эффекта
-$container: 1158px;
+$container: 1328px;
 $radius: var(--radius);
 
-$laptop-l: 1440px;
-$laptop: 1024px;
-$tablet: 768px;
-$mobile-l: 425px;
-$mobile-m: 375px;
-$mobile-s: 320px;
+$laptop-l: 1439px;
+$laptop-m: 1023px;
+$laptop-s: 991px;
+$tablet: 767px;
+$mobile-l: 424px;
+$mobile-m: 374px;
+$mobile-s: 319px;
 
 // Цвета
 :root {
-    --main: #242424;
-    --second: #747474;
-    --accent: #399478;
-    --accent-hover: #44BD99;
-    --accent-active: #37866E;
-    --accent2: #DC8B2D;
-    --accent2-active: #C27B29;
-    --outline: #C0C0C0;
-    --bg-page: #FFF;
-    --bg-block: #F8F8F8;
-    --error: #E83D3D;
+    --main: #0f0f0f;
+    --second: #000;
+    --gray: #3d3d3d;
+    --gray-lighter: #E7E9EA;
+    // --color-grey-light: #828282;
+    --accent: #183054;
+    --accent-hover: #0eafc5;
+    --accent-active: rgba(14, 175, 197, 0.7);
+    --accent-disabled: #c0bfbf;
+    --accent2: #dc8b2d;
+    --accent2-active: #c27b29;
+    --outline: #c0c0c0;
+    --bg-page: #f8f8f8;
+    --bg-block: #f8f8f8;
+    --error: #e83d3d;
 }
 
 $main: var(--main);
 $second: var(--second);
+$gray: var(--gray);
+$gray-lighter: var(--gray-lighter);
 $accent: var(--accent);
 $accent-hover: var(--accent-hover);
 $accent-active: var(--accent-active);

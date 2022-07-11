@@ -2,109 +2,256 @@
 <html lang="RU">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" href="./img/favicon.ico"> <!-- Генератор фавикон - https://realfavicongenerator.net/ -->
-	<title>Цифровой-университет</title>
-	<meta name="description" content="Описание сайта">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/favicon.ico"> <!-- Генератор фавикон - https://realfavicongenerator.net/ -->
+    <title>Цифровой-университет</title>
+    <meta name="description" content="Описание сайта">
 
-	<link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-	<div class="wrapper">
-		
-	</div>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header__top">
+                <div class="header__top-inner container">
+                    <div class="header__logo">
+                        <a class="logo" href="/">
+                            <img class="logo__img" src="img/logo.svg" alt="Паравеб" width="114" height="24">
+                        </a>
+                        <p class="header__logo-desc">Цифровой университет</p>
+                    </div>
 
-	<!-- Модальные окна -->
-	<div class="modal" id="consultation">
-		<div class="modal__body">
-			<div class="modal__content">
-				<h2 class="modal__title">Запись на консультацию</h2>
-				<form action="#" method="POST" class="form modal__form" id="modal__form">
-					<div class="form-elem">
-						<input class="form-elem__area _required" type="text" id="user_name" name="user_name" placeholder=" ">
-						<label class="form-elem__label" for="user_name">Имя</label>
-					</div>
-					<div class="form-elem">
-						<input class="form-elem__area _required" type="tel" id="user_phone" name="user_phone" placeholder=" ">
-						<label class="form-elem__label" for="user_phone">Номер телефона</label>
-					</div>
-					<div class="form-elem">
-						<input class="form-elem__area _required" type="email" id="user_email" name="user_email" placeholder=" ">
-						<label class="form-elem__label" for="user_email">E-mail</label>
-					</div>
-					<div class="form-elem">
-						<input class="form-elem__area" type="text" id="user_company" name="user_company" placeholder=" ">
-						<label class="form-elem__label" for="user_company">Название вашей компании</label>
-					</div>
-					<div class="form-elem">
-						<input class="form-elem__area" type="text" id="user_working_pos" name="user_working_pos" placeholder=" ">
-						<label class="form-elem__label" for="user_working_pos">Ваша должность</label>
-					</div>
-					<div class="form-elem">
-						<textarea class="form-elem__area" type="text" id="user_message" name="user_message" placeholder=" "></textarea>
-						<label class="form-elem__label" for="user_message">Комментарий</label>
-					</div>
-					<span class="modal__attention">Нажав на кнопку, вы соглашаетесь с обработкой персональных данных.</span>
-					<button class="btn modal__submit" type="submit">Проконсультироваться</button>
-				</form>
-				<button class="modal__close">
-					<span></span>
-					<span></span>
-				</button>
-			</div>
-		</div>
-	</div>
-	
-	<div class="modal" id="callback">
-		<div class="modal__body">
-			<div class="modal__content">
-				<h2 class="modal__title">Обратный звонок</h2>
-				<form action="#" method="POST" class="form modal__form" id="modal__form">
-					<div class="form-elem">
-						<input class="form-elem__area _required" type="text" id="user_name" name="name" placeholder=" ">
-						<label class="form-elem__label" for="name">Имя</label>
-					</div>
-					<div class="form-elem">
-						<input class="form-elem__area _required" type="tel" id="user_phone" name="phone"
-							placeholder=" ">
-						<label class="form-elem__label" for="phone">Номер телефона</label>
-					</div>
-					<div class="form-elem">
-						<input class="form-elem__area _required" type="email" id="user_email" name="email"
-							placeholder=" ">
-						<label class="form-elem__label" for="email">E-mail</label>
-					</div>
-					<div class="form-elem">
-						<input class="form-elem__area" type="text" id="user_company" name="company" placeholder=" ">
-						<label class="form-elem__label" for="company">Название вашей компании</label>
-					</div>
-					<div class="form-elem">
-						<input class="form-elem__area" type="text" id="user_working_pos" name="working_pos"
-							placeholder=" ">
-						<label class="form-elem__label" for="working_pos">Ваша должность</label>
-					</div>
-					<div class="form-elem">
-						<textarea class="form-elem__area" type="text" id="user_message" name="message"
-							placeholder=" "></textarea>
-						<label class="form-elem__label" for="message">Комментарий</label>
-					</div>
-					<span class="modal__attention">Нажав на кнопку, вы соглашаетесь с обработкой персональных
-						данных.</span>
-					<button class="btn modal__submit" type="submit">Проконсультироваться</button>
-				</form>
-				<button class="modal__close">
-					<span></span>
-					<span></span>
-				</button>
-			</div>
-		</div>
-	</div>
+                    <div class="header__controls">
+                        <button class="header__callback btn btn_primary btn_size_sm" type="button">Обратная связь</button>
 
-	<!-- Подключение скриптов -->
-	<script src="./js/libs/swiper-bundle.min.js"></script>
-	<script src="./js/main.js"></script>
+                        <a class="header__search btn-icon btn-icon_size_sm" href="search.html" aria-label="Поиск">
+                            <svg width="14" height="14">
+                                <use xlink:href="./img/icon-sprite.svg#loupe"></use>
+                            </svg>
+                        </a>
+
+                        <button class="header__burger btn-burger" type="button" aria-label="Меню">
+                            <span class="btn-burger__line"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header__bottom">
+                <div class="header__bottom-top">
+                    <div class="container">
+                        <form class="header__form-search" action="/">
+                            <input class="header__form-search-input" type="text" placeholder="Нет результатов">
+                            <button class="header__form-search-submit" type="submit" aria-label="Отправить">
+                                <svg width="14" height="14">
+                                    <use xlink:href="./img/icon-sprite.svg#loupe"></use>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="header__bottom-bottom container">
+                    <nav class="header__nav">
+                        <ul class="main-menu">
+                            <li class="main-menu__item">
+                                <a class="main-menu__link" href="#">Новости</a>
+                            </li>
+                            <li class="main-menu__item">
+                                <a class="main-menu__link" href="#">Статьи</a>
+                            </li>
+                            <li class="main-menu__item">
+                                <a class="main-menu__link" href="#">О проекте</a>
+                            </li>
+                            <li class="main-menu__item">
+                                <a class="main-menu__link" href="#">Кейсы</a>
+                            </li>
+                            <li class="main-menu__item">
+                                <a class="main-menu__link" href="#">Партнёрам</a>
+                            </li>
+                            <li class="main-menu__item">
+                                <a class="main-menu__link" href="#">Контакты</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <div class="header__social">
+                        <ul class="social">
+                            <li class="social__item">
+                                <a class="social__link" href="#" aria-label="telegram">
+                                    <svg width="14" height="14">
+                                        <use xlink:href="./img/icon-sprite.svg#tg"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="social__item">
+                                <a class="social__link" href="#" aria-label="vc.ru">
+                                    <svg width="17" height="16">
+                                        <use xlink:href="./img/icon-sprite.svg#vc"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <button class="header__social-callback btn btn_primary-invert" type="button">Обратная связь</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+
+        </main>
+
+        <footer class="footer">
+            <div class="footer__top">
+                <div class="footer__top-inner container">
+                    <div class="footer__cols">
+                        <div class="footer__col">
+                            <h2 class="footer__title">Наш адрес</h2>
+                            <p class="footer__paragraph">г. Томск, пр.Ленина, 94, оф.504 (подъезд 3)</p>
+                        </div>
+                        <div class="footer__col">
+                            <h2 class="footer__title">Телефон</h2>
+                            <a class="footer__link" href="tel:+73822700275">+7 (3822) 700 275</a>
+                        </div>
+                        <div class="footer__col">
+                            <h2 class="footer__title">E-mail</h2>
+                            <a class="footer__link" href="mailto:email@gmail.com">email@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <ul class="footer__social social">
+                        <li class="social__item">
+                            <a class="social__link" href="#" aria-label="telegram">
+                                <svg width="14" height="14">
+                                    <use xlink:href="./img/icon-sprite.svg#tg"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="social__item">
+                            <a class="social__link" href="#" aria-label="vkontakte">
+                                <svg width="18" height="11">
+                                    <use xlink:href="./img/icon-sprite.svg#vk"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="social__item">
+                            <a class="social__link" href="#" aria-label="vc.ru">
+                                <svg width="17" height="16">
+                                    <use xlink:href="./img/icon-sprite.svg#vc"></use>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <div class="footer__bottom-inner container">
+                    <div class="footer__bottom-links">
+                        <a class="footer__bottom-link" href="#">Версия для слабовидящих</a>
+                        <a class="footer__bottom-link" href="#">English version</a>
+                    </div>
+                    <a class="footer__logo logo" href="/">
+                        <img src="img/logo-white.svg" alt="Паравеб" width="78" height="18">
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Модальные окна -->
+    <div class="modal" id="consultation">
+        <div class="modal__body">
+            <div class="modal__content">
+                <h2 class="modal__title">Запись на консультацию</h2>
+                <form action="#" method="POST" class="form modal__form" id="modal__form">
+                    <div class="form-elem">
+                        <input class="form-elem__area _required" type="text" id="user_name" name="user_name" placeholder=" ">
+                        <label class="form-elem__label" for="user_name">Имя</label>
+                    </div>
+                    <div class="form-elem">
+                        <input class="form-elem__area _required" type="tel" id="user_phone" name="user_phone" placeholder=" ">
+                        <label class="form-elem__label" for="user_phone">Номер телефона</label>
+                    </div>
+                    <div class="form-elem">
+                        <input class="form-elem__area _required" type="email" id="user_email" name="user_email" placeholder=" ">
+                        <label class="form-elem__label" for="user_email">E-mail</label>
+                    </div>
+                    <div class="form-elem">
+                        <input class="form-elem__area" type="text" id="user_company" name="user_company" placeholder=" ">
+                        <label class="form-elem__label" for="user_company">Название вашей компании</label>
+                    </div>
+                    <div class="form-elem">
+                        <input class="form-elem__area" type="text" id="user_working_pos" name="user_working_pos" placeholder=" ">
+                        <label class="form-elem__label" for="user_working_pos">Ваша должность</label>
+                    </div>
+                    <div class="form-elem">
+                        <textarea class="form-elem__area" type="text" id="user_message" name="user_message" placeholder=" "></textarea>
+                        <label class="form-elem__label" for="user_message">Комментарий</label>
+                    </div>
+                    <span class="modal__attention">Нажав на кнопку, вы соглашаетесь с обработкой персональных данных.</span>
+                    <button class="btn modal__submit" type="submit">Проконсультироваться</button>
+                </form>
+                <button class="modal__close">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="callback">
+        <div class="modal__body">
+            <div class="modal__content">
+                <h2 class="modal__title">Обратный звонок</h2>
+                <form action="#" method="POST" class="form modal__form" id="modal__form">
+                    <div class="form-elem">
+                        <input class="form-elem__area _required" type="text" id="user_name" name="name" placeholder=" ">
+                        <label class="form-elem__label" for="name">Имя</label>
+                    </div>
+                    <div class="form-elem">
+                        <input class="form-elem__area _required" type="tel" id="user_phone" name="phone"
+                            placeholder=" ">
+                        <label class="form-elem__label" for="phone">Номер телефона</label>
+                    </div>
+                    <div class="form-elem">
+                        <input class="form-elem__area _required" type="email" id="user_email" name="email"
+                            placeholder=" ">
+                        <label class="form-elem__label" for="email">E-mail</label>
+                    </div>
+                    <div class="form-elem">
+                        <input class="form-elem__area" type="text" id="user_company" name="company" placeholder=" ">
+                        <label class="form-elem__label" for="company">Название вашей компании</label>
+                    </div>
+                    <div class="form-elem">
+                        <input class="form-elem__area" type="text" id="user_working_pos" name="working_pos"
+                            placeholder=" ">
+                        <label class="form-elem__label" for="working_pos">Ваша должность</label>
+                    </div>
+                    <div class="form-elem">
+                        <textarea class="form-elem__area" type="text" id="user_message" name="message"
+                            placeholder=" "></textarea>
+                        <label class="form-elem__label" for="message">Комментарий</label>
+                    </div>
+                    <span class="modal__attention">Нажав на кнопку, вы соглашаетесь с обработкой персональных
+                        данных.</span>
+                    <button class="btn modal__submit" type="submit">Проконсультироваться</button>
+                </form>
+                <button class="modal__close">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Подключение скриптов -->
+    <script src="./js/libs/swiper-bundle.min.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>

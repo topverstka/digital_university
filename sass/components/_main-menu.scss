@@ -1,0 +1,41 @@
+.main-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 40px;
+
+    @media (max-width: $laptop-s) {
+        flex-direction: column;
+        gap: 56px;
+    }
+
+    @media (max-width: $tablet) {
+        gap: 32px;
+    }
+}
+
+.main-menu__link {
+    color: $gray;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+
+    &:hover {
+        color: $accent-hover;
+    }
+
+    &:hover {
+        color: $accent-active;
+    }
+
+    @media (max-width: $laptop-s) {
+        color: #fff;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    @media (max-width: $tablet) {
+        font-size: 24px;
+        line-height: 32px;
+    }
+}

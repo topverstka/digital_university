@@ -1,0 +1,9 @@
+.logo {
+    display: inline-flex;
+}
+
+.logo__img {
+    @media (max-width: $tablet) {
+        width: 103px;
+    }
+}

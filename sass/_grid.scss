@@ -1,14 +1,13 @@
 .container {
+    margin: 0 auto;
+    padding: 0 24px;
     max-width: $container;
     width: 100%;
-    padding: 0 24px;
-    margin: 0 auto;
 
-    @media (max-width: $mobile-l) {
-        padding: 0 16px;
+    @media (max-width: $laptop-s) {
+        padding: 0 20px;
     }
 }
-
 
 .section {
     margin: 62px 0;

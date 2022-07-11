@@ -1,3 +1,130 @@
 .footer {
-    margin: auto 0 0 0;
+    margin-top: auto;
+}
+
+.footer__top {
+    padding-top: 40px;
+    padding-bottom: 64px;
+    border-top: 1px solid rgba(24, 48, 84, 0.2);
+
+    @media (max-width: $laptop-s) {
+        padding-bottom: 40px;
+    }
+
+    @media (max-width: $tablet) {
+        padding: 32px 0;
+    }
+}
+
+.footer__top-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 96px;
+
+    @media (max-width: $laptop-s) {
+        column-gap: 48px;
+    }
+}
+
+.footer__cols {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 96px;
+
+    @media (max-width: $laptop-s) {
+        column-gap: 48px;
+    }
+
+    @media (max-width: $tablet) {
+        flex-direction: column;
+        gap: 32px;
+    }
+}
+
+.footer__col {
+    max-width: 180px;
+
+    @media (max-width: $tablet) {
+        max-width: unset;
+    }
+}
+
+.footer__title {
+    margin-bottom: 8px;
+    color: $second;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+
+    @media (max-width: $tablet) {
+        margin-bottom: 6px;
+        font-size: 14px;
+    }
+}
+
+.footer__paragraph {
+    color: $accent;
+
+    @media (max-width: $tablet) {
+        font-size: 14px;
+    }
+}
+
+.footer__link {
+    color: $accent-hover;
+
+    @media (max-width: $tablet) {
+        font-size: 14px;
+    }
+}
+
+.footer__social {
+    flex-shrink: 0;
+    margin-top: 8px;
+
+    @media (max-width: $laptop-s) {
+        margin-top: 0;
+    }
+}
+
+.footer__bottom {
+    padding: 26px 0;
+    background: $accent;
+
+    @media (max-width: $laptop-s) {
+        padding: 24px 0;
+    }
+}
+
+.footer__bottom-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 40px;
+
+    @media (max-width: $tablet) {
+        row-gap: 24px;
+    }
+}
+
+.footer__bottom-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 40px;
+
+    @media (max-width: $tablet) {
+        gap: 24px;
+    }
+}
+
+.footer__bottom-link {
+    color: #fff;
+    line-height: 19px;
+    text-decoration-line: underline;
+
+    @media (max-width: $tablet) {
+        font-size: 14px;
+    }
 }

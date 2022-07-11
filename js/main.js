@@ -14,7 +14,7 @@ function findAll(selectors) {
 }
 
 // Удаляет у всех элементов items класс itemClass
-function removeAll(items,itemClass) {   
+function removeAll(items,itemClass) {
     if (typeof items == 'string') {
       items = document.querySelectorAll(items)
     }
@@ -76,24 +76,24 @@ function sumbitForm() {
         btnSend.classList.add('send-preloader')
 
         e.preventDefault()
-        
+
         let con = validationForm()
 
         if (con === true) {
             const formData = new FormData()
             const action = form.getAttribute('action')
-    
+
             let response = await fetch(action, {
                 method: 'POST',
                 body: formData
             })
-            
+
             // settimeout здесь для того, чтобы показать работу отправки формы. В дальнейшем это нужно убрать
             setTimeout(() => {
                 if (response.ok) {
                     console.log('Successful')
                     form.reset()
-    
+
                     modal.classList.remove('_show')
                     find('#send-done').classList.add('_show')
                     btnSend.classList.remove('send-preloader')
@@ -101,7 +101,7 @@ function sumbitForm() {
                 else {
                     console.log('Error')
                     form.reset()
-    
+
                     modal.classList.remove('_show')
                     find('#send-error').classList.add('_show')
                     btnSend.classList.remove('send-preloader')
@@ -113,32 +113,34 @@ function sumbitForm() {
 }
 
 // Мобильное меню
-// menu()
+menu();
 function menu() {
-	const burger = find('.burger')
-	const menu = find('.menu');
-	
-	// Высота меню
-	window.addEventListener('resize', () => {
-		const headerHeight = find('.header').clientHeight
+	const burger = find('.header__burger');
+	const menu = find('.header__bottom');
 
-		if (window.innerWidth <= 768) {
-			menu.style.paddingTop = headerHeight + 'px'
-		}
-		else {
-			menu.style.paddingTop = 0
-		}
-	})
+	// Высота меню
+    // let mql = window.matchMedia('(max-width: 991px)');
+
+	// mql.addEventListener('change', (evt) => {
+	// 	const headerHeight = find('.header').clientHeight;
+
+	// 	if (evt.matches) {
+	// 		menu.style.paddingTop = headerHeight + 'px';
+	// 	}
+	// 	else {
+	// 		menu.style.paddingTop = null;
+	// 	}
+	// })
 
 	burger.addEventListener('click', (e) => {
-		burger.classList.toggle('burger_close')
-		menu.classList.toggle('_show')
-		bodyLock()
+		burger.classList.toggle('btn-burger_active');
+		menu.classList.toggle('header__bottom_active');
+		bodyLock();
 	})
 }
 
 const swiper = new Swiper('.swiper-container', {
-  
+
   slidesPerView: 1, // Кол-во показываемых слайдов
   spaceBetween: 0, // Расстояние между слайдами
   loop: true, // Бесконечный слайдер
@@ -178,15 +180,15 @@ const swiper = new Swiper('.swiper-container', {
 // Функции для модальных окон
 modal()
 function modal() {
-    
+
     // Открытие модальных окон при клике по кнопке
     openModalWhenClickingOnBtn()
     function openModalWhenClickingOnBtn() {
         const btnsOpenModal = document.querySelectorAll('[data-modal-open]');
-    
+
         for (let i = 0; i < btnsOpenModal.length; i++) {
             const btn = btnsOpenModal[i];
-    
+
             btn.addEventListener('click', (e) => {
                 const dataBtn = btn.dataset.modalOpen;
                 const modal = document.querySelector(`#${dataBtn}`)
@@ -203,7 +205,7 @@ function modal() {
         if (window.location.hash) {
             const hash = window.location.hash.substring(1)
             const modal = document.querySelector(`.modal#${hash}`)
-    
+
             if (modal) openModal(modal)
         }
     }
@@ -238,7 +240,7 @@ function modal() {
         for (let i = 0; i < modalElems.length; i++) {
             const modal = modalElems[i];
             const closeThisModal = modal.querySelector('.modal__close')
-    
+
             closeThisModal.addEventListener('click', () => {
                 closeModal(modal)
             })
@@ -251,7 +253,7 @@ function modal() {
         const modalElems = document.querySelectorAll('.modal')
         for (let i = 0; i < modalElems.length; i++) {
             const modal = modalElems[i];
-    
+
             document.addEventListener('keydown', e => {
                 if (e.key === 'Escape') closeModal(modal)
             })

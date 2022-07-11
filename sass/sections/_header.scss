@@ -1,3 +1,225 @@
-.header {
-    
+.header__top {
+    position: relative;
+    z-index: 1;
+    background: $bg-block;
+}
+
+.header__top-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(218, 222, 227, 0.6);
+
+    @media (max-width: $laptop-s) {
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+
+    @media (max-width: $tablet) {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+}
+
+.header__logo {
+    display: flex;
+    align-items: center;
+
+    @media (max-width: $laptop-s) {
+        padding-left: 8px;
+    }
+
+    @media (max-width: $tablet) {
+        padding-left: 0;
+    }
+}
+
+.header__logo-desc {
+    display: flex;
+    align-items: center;
+    color: $accent;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+
+    &::before {
+        content: '';
+        display: block;
+        margin: 0 16px;
+        width: 1px;
+        height: 20px;
+        background: $accent;
+    }
+
+    @media (max-width: $tablet) {
+        font-size: 11px;
+    }
+
+    &::before {
+        margin-left: 13px;
+    }
+}
+
+.header__controls {
+    display: flex;
+    gap: 16px;
+}
+
+.header__callback {
+    @media (max-width: $tablet) {
+        display: none;
+    }
+}
+
+.header__search {
+    svg {
+        stroke: #fff;
+    }
+
+    @media (max-width: $laptop-s) {
+        display: none;
+    }
+}
+
+.header__burger {
+    display: none;
+
+    @media (max-width: $laptop-s) {
+        display: flex;
+    }
+}
+
+.header__bottom {
+    @media (max-width: $laptop-s) {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        padding-top: 100px;
+        background: $accent;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateX(100%);
+        overflow-y: auto;
+        transition: $tr;
+    }
+
+    @media (max-width: $tablet) {
+        padding-top: 84px;
+    }
+}
+
+.header__bottom_active {
+    @media (max-width: $laptop-s) {
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.header__bottom-top {
+    display: none;
+
+    @media (max-width: $laptop-s) {
+        display: block;
+        padding-bottom: 32px;
+        border-bottom: 1px solid #fff;
+    }
+
+    @media (max-width: $tablet) {
+        padding-bottom: 24px;
+    }
+}
+
+.header__form-search {
+    position: relative;
+}
+
+.header__form-search-input {
+    @media (max-width: $laptop-s) {
+        padding: 12px 24px;
+        padding-right: 48px;
+        width: 100%;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        background: $gray-lighter;
+        border-radius: 50px;
+    }
+
+    @media (max-width: $tablet) {
+        font-size: 14px;
+    }
+}
+
+.header__form-search-submit {
+    @media (max-width: $laptop-s) {
+        position: absolute;
+        right: 0;
+        padding-right: 24px;
+        height: 100%;
+
+        svg {
+            stroke: $accent;
+        }
+    }
+}
+
+.header__bottom-bottom {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    gap: 0 40px;
+
+    @media (max-width: $laptop-s) {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+
+    @media (max-width: $tablet) {
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+}
+
+.header__nav {
+    @media (max-width: $laptop-s) {
+        margin-bottom: 56px;
+    }
+
+    @media (max-width: $tablet) {
+        margin-bottom: 32px;
+    }
+}
+
+.header__social {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+
+    @media (max-width: $laptop-s) {
+        margin-top: auto;
+
+        svg {
+            fill: $bg-block;
+        }
+    }
+}
+
+.header__social-callback {
+    display: none;
+
+    @media (max-width: $tablet) {
+        display: inline-flex;
+        padding: 10px 34px;
+    }
 }
