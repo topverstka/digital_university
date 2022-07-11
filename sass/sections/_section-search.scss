@@ -1,0 +1,32 @@
+.section-search {
+    position: relative;
+    padding-top: 40px;
+    padding-bottom: 48px;
+}
+
+.section-search__title {
+    margin-bottom: 48px;
+    color: $second;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 52px;
+}
+
+.section-search__form {
+    display: grid;
+    grid-template-columns: 1fr 158px;
+    gap: 24px;
+}
+
+.section-search__input {
+    padding: 10px 14px;
+    font-size: 16px;
+    line-height: 24px;
+    border: 1px solid #E7E9EA;
+    border-radius: 50px;
+}
+
+.section-search__close {
+    top: 40px;
+    right: 0;
+}

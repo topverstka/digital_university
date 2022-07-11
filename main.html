@@ -24,13 +24,13 @@
                     </div>
 
                     <div class="header__controls">
-                        <button class="header__callback btn btn_primary btn_size_sm" type="button">Обратная связь</button>
+                        <button class="header__callback btn btn_primary btn_size_sm" type="button" data-modal-open="callback">Обратная связь</button>
 
-                        <a class="header__search btn-icon btn-icon_size_sm" href="search.html" aria-label="Поиск">
+                        <button class="header__search btn-icon btn-icon_size_sm" type="button" aria-label="Поиск" data-modal-open="search">
                             <svg width="14" height="14">
                                 <use xlink:href="./img/icon-sprite.svg#loupe"></use>
                             </svg>
-                        </a>
+                        </button>
 
                         <button class="header__burger btn-burger" type="button" aria-label="Меню">
                             <span class="btn-burger__line"></span>
@@ -42,7 +42,7 @@
             <div class="header__bottom">
                 <div class="header__bottom-top">
                     <div class="container">
-                        <form class="header__form-search" action="/">
+                        <form class="header__form-search" action="search.html">
                             <input class="header__form-search-input" type="text" placeholder="Нет результатов">
                             <button class="header__form-search-submit" type="submit" aria-label="Отправить">
                                 <svg width="14" height="14">
@@ -95,7 +95,7 @@
                             </li>
                         </ul>
 
-                        <button class="header__social-callback btn btn_primary-invert" type="button">Обратная связь</button>
+                        <button class="header__social-callback btn btn_primary-invert" type="button" data-modal-open="callback">Обратная связь</button>
                     </div>
                 </div>
             </div>
@@ -164,6 +164,28 @@
     </div>
 
     <!-- Модальные окна -->
+    <section class="modal" id="search">
+        <div class="modal__body modal__body_top">
+            <div class="modal__content modal__content_bg_gray">
+                <div class="container">
+                    <div class="section-search">
+                        <h2 class="section-search__title">Поиск</h2>
+
+                        <form class="section-search__form" action="search.html">
+                            <input class="section-search__input" type="text" placeholder="Введите ваш запрос">
+                            <button class="section-search__submit btn btn_primary" type="submit">Найти</button>
+                        </form>
+
+                        <button class="section-search__close modal__close">
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <div class="modal" id="callback">
         <div class="modal__body">
             <div class="modal__content">

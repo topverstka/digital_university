@@ -217,7 +217,7 @@ function modal() {
             const hash = window.location.hash
             const modal = document.querySelector(`.modal${hash}`)
 
-            if (find('.modal._show')) find('.modal._show').classList.remove('_show')
+            if (find('.modal.modal_show')) find('.modal.modal_show').classList.remove('modal_show')
             if (modal && hash != '') openModal(modal)
         })
     }
@@ -227,7 +227,7 @@ function modal() {
     function closeModalWhenClickingOnBg() {
         document.addEventListener('click', (e) => {
             const target = e.target
-            const modal = document.querySelector('.modal._show')
+            const modal = document.querySelector('.modal.modal_show')
 
             if (modal && target.classList.contains('modal__body')) closeModal(modal)
         })
@@ -269,13 +269,13 @@ function modal() {
 
     // Открытие модального окна
     function openModal(modal) {
-        modal.classList.add('_show')
+        modal.classList.add('modal_show')
         bodyLock(true)
     }
 
     // Закрытие модального окна
     function closeModal(modal) {
-        modal.classList.remove('_show')
+        modal.classList.remove('modal_show')
         bodyLock(false)
         resetHash()
     }

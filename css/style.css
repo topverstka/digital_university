@@ -605,40 +605,46 @@ body._lock {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(2px);
   overflow: hidden;
   visibility: hidden;
   opacity: 0;
   transition: var(--tr);
 }
-.modal._show {
+
+.modal_show {
   visibility: visible;
   opacity: 1;
   overflow-y: auto;
 }
-.modal._show .modal__body {
+.modal_show .modal__body {
   transform: translate(0, 0);
 }
 
 .modal__body {
-  min-height: 100%;
-  transform: translate(0, 100vh);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px 16px;
+  align-items: center;
+  min-height: 100%;
+  transform: translate(0, 100vh);
   transition: var(--tr);
 }
-.modal__body h2 {
-  margin: 0 0 8px 0;
+
+.modal__body_top {
+  align-items: flex-start;
+  transform: translate(0, -100vh);
 }
 
 .modal__content {
   position: relative;
-  max-width: 540px;
+  width: 100%;
   background: #fff;
-  border-radius: var(--radius);
-  padding: 40px 40px 32px 40px;
+}
+
+.modal__content_bg_gray {
+  background: var(--bg-block);
 }
 
 .modal__big-icon {
@@ -670,18 +676,26 @@ body._lock {
 
 .modal__close {
   position: absolute;
-  top: 16px;
-  right: 16px;
-  width: 24px;
-  height: 24px;
+  top: 0;
+  right: 0;
+  width: 33px;
+  height: 33px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+.modal__close:hover {
+  background: var(--accent-hover);
+}
+.modal__close:active {
+  background: var(--accent-active);
 }
 .modal__close span {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 20px;
+  width: 12px;
   height: 2px;
-  background: var(--main);
+  background: #fff;
   border-radius: 100px;
 }
 .modal__close span:nth-child(1) {
@@ -1070,4 +1084,37 @@ body._lock {
   .footer__bottom-link {
     font-size: 14px;
   }
+}
+
+.section-search {
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 48px;
+}
+
+.section-search__title {
+  margin-bottom: 48px;
+  color: var(--second);
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 52px;
+}
+
+.section-search__form {
+  display: grid;
+  grid-template-columns: 1fr 158px;
+  gap: 24px;
+}
+
+.section-search__input {
+  padding: 10px 14px;
+  font-size: 16px;
+  line-height: 24px;
+  border: 1px solid #E7E9EA;
+  border-radius: 50px;
+}
+
+.section-search__close {
+  top: 40px;
+  right: 0;
 }/*# sourceMappingURL=style.css.map */
