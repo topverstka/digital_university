@@ -16,6 +16,10 @@
     }
 }
 
+.main-articles__title {
+    @include visually-hidden;
+}
+
 .main-articles__slider {
     overflow: hidden;
     overflow-x: auto;

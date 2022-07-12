@@ -1,15 +1,20 @@
 .callback {
     position: relative;
     padding-top: 40px;
-    padding-bottom: 65px;
-
-    @media (max-width: $laptop-s) {
-        padding-top: 65px;
-    }
+    padding-bottom: 40px;
+    background: #fff;
 
     @media (max-width: $tablet) {
         padding-top: 48px;
         padding-bottom: 48px;
+    }
+}
+
+.callback_padding_bottom {
+    padding-bottom: 64px;
+
+    @media (max-width: $laptop-s) {
+        padding-top: 64px;
     }
 }
 
@@ -116,7 +121,7 @@
     top: 40px;
 
     @media (max-width: $laptop-s) {
-        top: 65px;
+        top: 64px;
     }
 
     @media (max-width: $tablet) {

@@ -104,6 +104,8 @@
         <main>
             <section class="main-articles">
                 <div class="container">
+                    <h2 class="main-articles__title">main-articles</h2>
+
                     <div class="main-articles__slider">
                         <div class="main-articles__list">
                             <article class="main-articles__item main-article">
@@ -198,6 +200,63 @@
                     </div>
                 </div>
             </section>
+
+            <section class="callback">
+                <div class="container">
+                    <header class="callback__header">
+                        <h2 class="callback__title">Свяжитесь с нами</h2>
+
+                        <p class="callback__desc">
+                            Задайте ваш вопрос или пришлите материал на публикацию. Вы можете воспользоваться формой ниже или написать нам на
+                            <a class="link" href="mailto:unidigital@paraweb.me">unidigital@paraweb.me</a>
+                        </p>
+                    </header>
+
+                    <form class="callback__form form" action="#" method="POST" name="callback-footer">
+                        <div class="form-elem form__elem">
+                            <input class="form-elem__area form__input" type="text" id="callback-name" placeholder=" " name="name" required minlength="2">
+                            <label class="form-elem__label" for="callback-name">Как вас зовут?</label>
+                            <span class="form__error"></span>
+                        </div>
+                        <div class="form-elem">
+                            <input class="form-elem__area" type="text" id="callback-company" name="company" placeholder=" ">
+                            <label class="form-elem__label" for="callback-company">Название организации</label>
+                        </div>
+                        <div class="form-elem form__elem">
+                            <input class="form-elem__area form__input" type="email" id="callback-email" name="email" placeholder=" " required>
+                            <label class="form-elem__label" for="callback-email">E-mail</label>
+                            <span class="form__error"></span>
+                        </div>
+                        <div class="callback__message form-elem">
+                            <textarea class="form-elem__area" id="callback-message" name="message"
+                                placeholder=" "></textarea>
+                            <label class="form-elem__label" for="callback-message">Ваше сообщение</label>
+                        </div>
+                        <div class="form-file">
+                            <input class="form-file__area" type="file" id="callback-file" name="file">
+                            <label class="form-file__label" for="callback-file">
+                                <span class="form-file__icon"></span>
+                                Добавить файл
+                            </label>
+                            <div class="form-file__file">
+                                <span class="form-file__name">Приказ об изменениях в положение обработку персональных данных</span>
+                                <button class="form-file__remove" type="button" aria-label="Удалить файл">
+                                    <span class="form-file__icon"></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="callback__attention">
+                            <button class="btn btn_primary form__submit" type="submit">Отправить</button>
+                            <span class="callback__attention-desc">
+                                Нажимая на кнопку «Отправить», вы подтвержаете, что даете согласие на
+                                <a class="link" href="#">обработку персональных данных</a>
+                                и ознакомлены с
+                                <a class="link" href="#">политикой конфиденциальности</a>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </section>
         </main>
 
         <footer class="footer">
@@ -285,7 +344,7 @@
         <div class="modal__body">
             <div class="modal__content">
                 <div class="container">
-                    <div class="callback">
+                    <div class="callback callback_padding_bottom">
                         <header class="callback__header">
                             <h2 class="callback__title">Свяжитесь с нами</h2>
 
@@ -295,11 +354,11 @@
                             </p>
                         </header>
 
-                        <form class="callback__form form" action="#" method="POST">
+                        <form class="callback__form form" action="#" method="POST" name="callback">
                             <div class="form-elem form__elem">
                                 <input class="form-elem__area form__input" type="text" id="name" placeholder=" " name="name" required minlength="2">
                                 <label class="form-elem__label" for="name">Как вас зовут?</label>
-                                <span class="form-elem__error form__error"></span>
+                                <span class="form__error"></span>
                             </div>
                             <div class="form-elem">
                                 <input class="form-elem__area" type="text" id="company" name="company" placeholder=" ">
@@ -308,7 +367,7 @@
                             <div class="form-elem form__elem">
                                 <input class="form-elem__area form__input" type="email" id="email" name="email" placeholder=" " required>
                                 <label class="form-elem__label" for="email">E-mail</label>
-                                <span class="form-elem__error form__error"></span>
+                                <span class="form__error"></span>
                             </div>
                             <div class="callback__message form-elem">
                                 <textarea class="form-elem__area" id="message" name="message"
