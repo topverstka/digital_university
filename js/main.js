@@ -94,26 +94,26 @@ function validationForm(selector) {
         setEvents(inputNodes, submitNode);
 
         formNode.addEventListener('submit', (evt) => {
-            if (hasInvalidInput(inputNodes)) evt.preventDefault();
+            if (hasInvalidInput(inputNodes)) {
+                evt.preventDefault();
+
+                inputNodes.forEach((inputNode) => {
+                    checkInput(inputNode);
+                    toggleSubmitState(inputNodes, submitNode);
+                });
+            }
         });
     });
 
     function setEvents(inputNodes, submitNode) {
         inputNodes.forEach((inputNode) => {
             inputNode.addEventListener('input', () => {
-                const parentNode = inputNode.closest('.form__elem');
-                const errorNode = parentNode.querySelector('.form__error');
-                if (inputNode.validity.valid) {
-                    parentNode.classList.remove('form__elem_invalid');
-                } else {
-                    errorNode.textContent = inputNode.validationMessage;
-                    parentNode.classList.add('form__elem_invalid');
-                }
+                checkInput(inputNode);
                 toggleSubmitState(inputNodes, submitNode);
             });
         });
 
-        toggleSubmitState(inputNodes, submitNode);
+        // toggleSubmitState(inputNodes, submitNode);
     }
 
     function toggleSubmitState(inputNodes, submitNode) {
@@ -128,6 +128,17 @@ function validationForm(selector) {
 
     function hasInvalidInput(inputNodes) {
         return Array.from(inputNodes).some((inputNode) => !inputNode.validity.valid);
+    }
+
+    function checkInput(inputNode) {
+        const parentNode = inputNode.closest('.form__elem');
+        const errorNode = parentNode.querySelector('.form__error');
+        if (inputNode.validity.valid) {
+            parentNode.classList.remove('form__elem_invalid');
+        } else {
+            errorNode.textContent = inputNode.validationMessage;
+            parentNode.classList.add('form__elem_invalid');
+        }
     }
 }
 
