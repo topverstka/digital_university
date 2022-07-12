@@ -1,0 +1,14 @@
+.news-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(330px, max-content);
+    gap: 16px;
+
+    @media (max-width: $laptop-s) {
+        grid-template-columns: 1fr;
+    }
+
+    @media (max-width: $tablet) {
+        grid-auto-rows: minmax(335px, max-content);
+    }
+}

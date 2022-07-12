@@ -25,6 +25,7 @@ $mobile-s: 319px;
 :root {
     --main: #0f0f0f;
     --second: #000;
+    --white: #fff;
     --gray: #3d3d3d;
     --gray-lighter: #E7E9EA;
     --grey-light: #999999;
@@ -42,6 +43,7 @@ $mobile-s: 319px;
 
 $main: var(--main);
 $second: var(--second);
+$white: var(--white);
 $gray: var(--gray);
 $gray-lighter: var(--gray-lighter);
 $gray-light: var(--gray-light);

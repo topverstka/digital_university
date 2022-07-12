@@ -1,0 +1,117 @@
+.news-card {
+    background: $white;
+}
+
+.news-card__link {
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    height: 100%;
+
+    &:hover {
+        .news-card__title {
+            color: $accent-hover;
+        }
+
+        .news-card__look {
+            svg {
+                transform: rotate(0);
+            }
+        }
+    }
+
+    @media (max-width: $laptop-s) {
+        padding: 24px;
+    }
+}
+
+.news-card__mark {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    color: $accent-hover;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+
+    &::before {
+        content: '';
+        display: block;
+        margin-right: 12px;
+        width: 8px;
+        height: 8px;
+        background: $accent-hover;
+        border-radius: 50%;
+    }
+
+    @media (max-width: $tablet) {
+        font-size: 11px;
+    }
+}
+
+.news-card__title {
+    margin-bottom: 20px;
+    color: $accent;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    transition: $tr;
+
+    @media (max-width: $tablet) {
+        font-size: 20px;
+        line-height: 28px;
+    }
+}
+
+.news-card__desc {
+    margin-bottom: 32px;
+    font-size: 16px;
+    line-height: 24px;
+
+    @media (max-width: $tablet) {
+        margin-bottom: 24px;
+        font-size: 14px;
+    }
+}
+
+.news-card__footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    margin-top: auto;
+
+    @media (max-width: $tablet) {
+        gap: 16px 8px;
+    }
+}
+
+.news-card__date {
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.news-card__views {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    line-height: 14px;
+
+    &::before {
+        content: '';
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='12' viewBox='0 0 11 12' fill='none'%3E%3Cpath d='M0.458496 6.00004C0.458496 6.00004 2.29183 2.33337 5.50016 2.33337C8.7085 2.33337 10.5418 6.00004 10.5418 6.00004C10.5418 6.00004 8.7085 9.66671 5.50016 9.66671C2.29183 9.66671 0.458496 6.00004 0.458496 6.00004Z' stroke='%230F0F0F' stroke-width='0.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M5.5 7.375C6.25939 7.375 6.875 6.75939 6.875 6C6.875 5.24061 6.25939 4.625 5.5 4.625C4.74061 4.625 4.125 5.24061 4.125 6C4.125 6.75939 4.74061 7.375 5.5 7.375Z' stroke='%230F0F0F' stroke-width='0.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        width: 11px;
+        height: 12px;
+        margin-right: 9px;
+    }
+}
+
+.news-card__look {
+    margin-left: auto;
+
+    @media (max-width: $tablet) {
+        width: 100%;
+    }
+}

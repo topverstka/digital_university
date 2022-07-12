@@ -9,3 +9,29 @@
         color: $accent-active;
     }
 }
+
+.link-icon {
+    display: inline-flex;
+    align-items: center;
+    color: $accent;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+
+    svg {
+        stroke: $accent;
+        margin-left: 10px;
+        transform: rotate(-45deg);
+        transition: $tr;
+    }
+
+    &:hover {
+        svg {
+            transform: rotate(0);
+        }
+    }
+
+    &:active {
+        opacity: 0.7;
+    }
+}

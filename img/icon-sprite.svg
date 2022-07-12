@@ -3,6 +3,10 @@
         <path d="M5.5 10C7.98528 10 10 7.98528 10 5.5C10 3.01472 7.98528 1 5.5 1C3.01472 1 1 3.01472 1 5.5C1 7.98528 3.01472 10 5.5 10Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
         <path d="M12.6759 12.3204L9 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </symbol>
+    <symbol id="arrow-left" viewBox="0 0 12 13">
+        <path d="M1.05025 6.49998H10.9497" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M6 1.55023L10.9497 6.49998L6 11.4497" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
     <symbol id="tg" viewBox="0 0 14 12">
         <path d="M5.29716 7.53929L5.07385 10.6803C5.39335 10.6803 5.53173 10.543 5.69766 10.3782L7.1956 8.94667L10.2995 11.2197C10.8687 11.537 11.2698 11.3699 11.4234 10.696L13.4607 1.1493L13.4613 1.14873C13.6419 0.307234 13.157 -0.0218285 12.6024 0.184609L0.626725 4.76954C-0.190587 5.08679 -0.178213 5.54242 0.487788 5.74886L3.54948 6.70117L10.6612 2.25123C10.9959 2.02961 11.3002 2.15223 11.0499 2.37386L5.29716 7.53929Z"/>
     </symbol>
