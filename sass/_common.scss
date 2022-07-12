@@ -54,3 +54,12 @@ body {
     flex-direction: column;
     overflow: hidden;
 }
+
+@mixin visually-hidden {
+    position: fixed;
+    transform: scale(0);
+}
+
+.visually-hidden {
+    @include visually-hidden;
+}

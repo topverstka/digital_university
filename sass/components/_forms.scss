@@ -1,96 +1,177 @@
-.form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.form__elem_invalid {
+    .form-elem__area {
+        border-color: $error;
+    }
+
+    .form-elem__label {
+        color: $error;
+    }
+
+    .form__error {
+        position: static;
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.form__error {
+    position: absolute;
+    display: block;
+    margin-top: 4px;
+    visibility: hidden;
+    opacity: 0;
+    color: $error;
+    font-size: 12px;
+    line-height: 14px;
 }
 
 .form-elem {
     position: relative;
     width: 100%;
-
-    &:not(:first-child) {
-        margin: 8px 0 0 0;
-    }
-}
-
-.form-elem input {
-    height: 60px;
 }
 
 .form-elem textarea {
-    max-width: 100%;
-    min-width: 100%;
+    width: 100%;
+    height: 100%;
     min-height: 164px;
     transition: 0s;
+    resize: vertical;
 }
 
 .form-elem__area {
     width: 100%;
-    background: #f9f9f9;
-    border-radius: 8px;
-    padding: 30px 12px 12px 12px;
+    padding: 14px 16px;
+    color: $main;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    border: 1px solid $gray-lighter;
+    border-radius: 5px;
     transition: $tr;
 
+    &:focus,
     &:hover {
-        background: #f4f4f4;
+        border-color: $accent-hover;
     }
 
+    &:not(:placeholder-shown),
     &:focus {
         & + .form-elem__label {
-            font-size: 10px;
-            color: $second;
-            transform: translate(0, calc(-50% - 9px));
+            font-size: 12px;
+            line-height: 14px;
+            background: #fff;
+            transform: translate(0, -23px);
         }
     }
 
-    &:not(:placeholder-shown).form-elem__area:not(:focus) {
-        // border: 1px solid $accent;
-
-        & + .form-elem__label {
-            font-size: 10px;
-            color: $second;
-            transform: translate(0, calc(-50% - 9px));
-        }
-    }
-
-    &._error {
-        border: 1px solid $error !important;
-
-        & + .form-elem__label {
-            &::after {
-                opacity: 1;
-            }
-        }
+    @media (max-width: $tablet) {
+        font-size: 14px;
     }
 }
 
 .form-elem__label {
     position: absolute;
-    top: 30px;
-    left: 12px;
-    width: 100%;
-    transform: translate(0, -50%);
-    font-size: 14px;
+    top: 16px;
+    left: 8px;
+    padding: 0 8px;
+    color: $gray-light;
+    font-size: 16px;
     font-weight: 400;
     pointer-events: none;
     transition: $tr;
 
-    &::after {
-        content: 'Error';
-        font-size: inherit;
-        color: $error;
-        margin: 0 0 0 6px;
-        opacity: 0;
+    @media (max-width: $tablet) {
+        font-size: 14px;
     }
 }
 
-.form-elem__required {
+.form-file {
+    position: relative;
+    width: 100%;
+}
+
+.form-file__area {
+    @include visually-hidden;
+}
+
+.form-file__label {
+    display: grid;
+    grid-template-columns: 19px 1fr;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 16px;
+    color: $gray-light;
+    border: 1px dashed $accent-disabled;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+        .form-file__icon {
+            background: $accent;
+        }
+    }
+
+    @media (max-width: $tablet) {
+        font-size: 14px;
+    }
+}
+
+.form-file__icon {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 19px;
+    height: 19px;
+    background: $accent-hover;
+    border-radius: 50%;
+    transition: $tr;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        width: 9px;
+        height: 1px;
+        background: #fff;
+    }
+
+    &::after {
+        transform: rotate(90deg);
+    }
+}
+
+.form-file__file {
     position: absolute;
-    top: 50%;
-    right: 12px;
-    display: block;
-    transform: translate(0, -50%);
+    display: grid;
+    grid-template-columns: 1fr 19px;
+    gap: 16px;
+    margin-top: 32px;
+    padding: 17px 16px;
+    visibility: hidden;
+    opacity: 0;
+    color: #1E1E1E;
     font-size: 14px;
-    color: $main;
-    pointer-events: none;
+    line-height: 18px;
+    background: $bg-block;
+    border-radius: 5px;
+    transition: $tr;
+}
+
+.form-file__file_visible {
+    position: static;
+    visibility: visible;
+    opacity: 1;
+}
+
+.form-file__remove {
+    .form-file__icon {
+        transform: rotate(45deg);
+    }
+
+    &:hover {
+        .form-file__icon {
+            background: $accent;
+        }
+    }
 }

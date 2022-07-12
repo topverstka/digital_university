@@ -186,50 +186,73 @@
         </div>
     </section>
 
-    <div class="modal" id="callback">
+    <section class="modal modal_show" id="callback">
         <div class="modal__body">
             <div class="modal__content">
-                <h2 class="modal__title">Обратный звонок</h2>
-                <form action="#" method="POST" class="form modal__form" id="modal__form">
-                    <div class="form-elem">
-                        <input class="form-elem__area _required" type="text" id="user_name" name="name" placeholder=" ">
-                        <label class="form-elem__label" for="name">Имя</label>
+                <div class="container">
+                    <div class="callback">
+                        <header class="callback__header">
+                            <h2 class="callback__title">Свяжитесь с нами</h2>
+
+                            <p class="callback__desc">
+                                Задайте ваш вопрос или пришлите материал на публикацию. Вы можете воспользоваться формой ниже или написать нам на
+                                <a class="link" href="mailto:unidigital@paraweb.me">unidigital@paraweb.me</a>
+                            </p>
+                        </header>
+
+                        <form class="callback__form form" action="#" method="POST">
+                            <div class="form-elem form__elem">
+                                <input class="form-elem__area form__input" type="text" id="name" placeholder=" " name="name" required minlength="2">
+                                <label class="form-elem__label" for="name">Как вас зовут?</label>
+                                <span class="form-elem__error form__error"></span>
+                            </div>
+                            <div class="form-elem">
+                                <input class="form-elem__area" type="text" id="company" name="company" placeholder=" ">
+                                <label class="form-elem__label" for="company">Название организации</label>
+                            </div>
+                            <div class="form-elem form__elem">
+                                <input class="form-elem__area form__input" type="email" id="email" name="email" placeholder=" " required>
+                                <label class="form-elem__label" for="email">E-mail</label>
+                                <span class="form-elem__error form__error"></span>
+                            </div>
+                            <div class="callback__message form-elem">
+                                <textarea class="form-elem__area" id="message" name="message"
+                                    placeholder=" "></textarea>
+                                <label class="form-elem__label" for="message">Ваше сообщение</label>
+                            </div>
+                            <div class="form-file">
+                                <input class="form-file__area" type="file" id="file" name="file">
+                                <label class="form-file__label" for="file">
+                                    <span class="form-file__icon"></span>
+                                    Добавить файл
+                                </label>
+                                <div class="form-file__file">
+                                    <span class="form-file__name">Приказ об изменениях в положение обработку персональных данных</span>
+                                    <button class="form-file__remove" type="button" aria-label="Удалить файл">
+                                        <span class="form-file__icon"></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="callback__attention">
+                                <button class="btn btn_primary form__submit" type="submit">Отправить</button>
+                                <span class="callback__attention-desc">
+                                    Нажимая на кнопку «Отправить», вы подтвержаете, что даете согласие на
+                                    <a class="link" href="#">обработку персональных данных</a>
+                                    и ознакомлены с
+                                    <a class="link" href="#">политикой конфиденциальности</a>
+                                </span>
+                            </div>
+                        </form>
+
+                        <button class="callback__close modal__close">
+                            <span></span>
+                            <span></span>
+                        </button>
                     </div>
-                    <div class="form-elem">
-                        <input class="form-elem__area _required" type="tel" id="user_phone" name="phone"
-                            placeholder=" ">
-                        <label class="form-elem__label" for="phone">Номер телефона</label>
-                    </div>
-                    <div class="form-elem">
-                        <input class="form-elem__area _required" type="email" id="user_email" name="email"
-                            placeholder=" ">
-                        <label class="form-elem__label" for="email">E-mail</label>
-                    </div>
-                    <div class="form-elem">
-                        <input class="form-elem__area" type="text" id="user_company" name="company" placeholder=" ">
-                        <label class="form-elem__label" for="company">Название вашей компании</label>
-                    </div>
-                    <div class="form-elem">
-                        <input class="form-elem__area" type="text" id="user_working_pos" name="working_pos"
-                            placeholder=" ">
-                        <label class="form-elem__label" for="working_pos">Ваша должность</label>
-                    </div>
-                    <div class="form-elem">
-                        <textarea class="form-elem__area" type="text" id="user_message" name="message"
-                            placeholder=" "></textarea>
-                        <label class="form-elem__label" for="message">Комментарий</label>
-                    </div>
-                    <span class="modal__attention">Нажав на кнопку, вы соглашаетесь с обработкой персональных
-                        данных.</span>
-                    <button class="btn modal__submit" type="submit">Проконсультироваться</button>
-                </form>
-                <button class="modal__close">
-                    <span></span>
-                    <span></span>
-                </button>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Подключение скриптов -->
     <script src="./js/libs/swiper-bundle.min.js"></script>

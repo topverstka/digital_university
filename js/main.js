@@ -41,75 +41,94 @@ function bodyLock(con) {
 	}
 }
 
+function setAttributes(element, attributes) {
+    for (let i = 0; i < attributes.length; i++)
+    element.setAttribute(attributes[i].name, attributes[i].value);
+  }
+
+// Инициализация кастомного input type=file
+initCustomFile();
+function initCustomFile() {
+    const wrapperNodes = document.querySelectorAll('.form-file');
+
+    wrapperNodes.forEach((wrapperNode) => {
+        const inputNode = wrapperNode.querySelector('.form-file__area');
+        const fileNode = wrapperNode.querySelector('.form-file__file');
+        const nameNode = fileNode.querySelector('.form-file__name');
+        const removeNode = fileNode.querySelector('.form-file__remove');
+
+        inputNode.addEventListener('change', handleChange);
+        removeNode.addEventListener('click', handleRemove);
+
+        function handleRemove() {
+            const inputNode = wrapperNode.querySelector('.form-file__area');
+            const input = document.createElement('input');
+
+            setAttributes(input, inputNode.attributes);
+            input.addEventListener('change', handleChange);
+            wrapperNode.prepend(input);
+            inputNode.remove();
+            fileNode.classList.remove('form-file__file_visible');
+        }
+
+        function handleChange() {
+            const inputNode = wrapperNode.querySelector('.form-file__area');
+
+            nameNode.textContent = inputNode.files[0].name;
+            if (!fileNode.classList.contains('form-file__file_visible'))
+                fileNode.classList.add('form-file__file_visible');
+        }
+    });
+}
+
 // Валидация формы
-function validationForm() {
-    const name = find('#user_name')
-    const phone = find('#user_phone')
-    const email = find('#user_email')
+validationForm('.form');
+function validationForm(selector) {
+    const formNodes = document.querySelectorAll(selector);
 
-    let con = true
+    formNodes.forEach((formNode) => {
+        const submitNode = formNode.querySelector('.form__submit');
+        const inputNodes = formNode.querySelectorAll('.form__input');
 
-    for (let i = 0; i < [name, phone, email].length; i++) {
-        const elem = [name, phone, email][i];
-        const elemValue = elem.value.trim()
+        formNode.setAttribute('novalidate', '');
+        setEvents(inputNodes, submitNode);
 
-        if (elemValue === '') {
-            elem.classList.add('_error')
-            con = false
+        formNode.addEventListener('submit', (evt) => {
+            if (hasInvalidInput(inputNodes)) evt.preventDefault();
+        });
+    });
+
+    function setEvents(inputNodes, submitNode) {
+        inputNodes.forEach((inputNode) => {
+            inputNode.addEventListener('input', () => {
+                const parentNode = inputNode.closest('.form__elem');
+                const errorNode = parentNode.querySelector('.form__error');
+                if (inputNode.validity.valid) {
+                    parentNode.classList.remove('form__elem_invalid');
+                } else {
+                    errorNode.textContent = inputNode.validationMessage;
+                    parentNode.classList.add('form__elem_invalid');
+                }
+                toggleSubmitState(inputNodes, submitNode);
+            });
+        });
+
+        toggleSubmitState(inputNodes, submitNode);
+    }
+
+    function toggleSubmitState(inputNodes, submitNode) {
+        if (!submitNode) return;
+
+        if (hasInvalidInput(inputNodes)) {
+            submitNode.disabled = true;
         } else {
-            elem.classList.remove('_error')
-            con = true
+            submitNode.disabled = false;
         }
     }
 
-    return con
-}
-
-// Отправка формы
-sumbitForm()
-function sumbitForm() {
-    const form = find('.modal__form')
-
-    form.addEventListener('submit', async e => {
-        const modal = find('.modal._show')
-        const btnSend = form.querySelector('[type=submit]')
-        btnSend.classList.add('send-preloader')
-
-        e.preventDefault()
-
-        let con = validationForm()
-
-        if (con === true) {
-            const formData = new FormData()
-            const action = form.getAttribute('action')
-
-            let response = await fetch(action, {
-                method: 'POST',
-                body: formData
-            })
-
-            // settimeout здесь для того, чтобы показать работу отправки формы. В дальнейшем это нужно убрать
-            setTimeout(() => {
-                if (response.ok) {
-                    console.log('Successful')
-                    form.reset()
-
-                    modal.classList.remove('_show')
-                    find('#send-done').classList.add('_show')
-                    btnSend.classList.remove('send-preloader')
-                }
-                else {
-                    console.log('Error')
-                    form.reset()
-
-                    modal.classList.remove('_show')
-                    find('#send-error').classList.add('_show')
-                    btnSend.classList.remove('send-preloader')
-                }
-            }, 2000)
-
-        }
-    })
+    function hasInvalidInput(inputNodes) {
+        return Array.from(inputNodes).some((inputNode) => !inputNode.validity.valid);
+    }
 }
 
 // Мобильное меню
