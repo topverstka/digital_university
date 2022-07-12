@@ -1,3 +1,16 @@
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: $bg-block;
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.header_sticky {
+    background-color: #fff;
+    box-shadow: 0px 4px 12px rgba(152, 139, 139, 0.1);
+}
+
 .header__top {
     position: relative;
     z-index: 1;
