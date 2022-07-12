@@ -13,6 +13,10 @@
     &:hover {
         background: $accent;
     }
+
+    @media (max-width: $laptop-s) {
+        padding: 24px;
+    }
 }
 
 

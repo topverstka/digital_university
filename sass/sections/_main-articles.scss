@@ -19,6 +19,21 @@
 .main-articles__slider {
     overflow: hidden;
     overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: $accent #fff;
+
+    &::-webkit-scrollbar {
+        height: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $accent;
+        outline: 2px solid $accent;
+      }
+
+    &::-webkit-scrollbar-track {
+        background: #fff;
+    }
 
     @media (max-width: $laptop-m) {
         padding-bottom: 24px;
@@ -32,11 +47,15 @@
     gap: 24px;
 
     @media (max-width: $laptop-m) {
-        width: calc(150vw - 40px);
+        width: calc(150vw - 50px);
+    }
+
+    @media (max-width: $laptop-s) {
+        gap: 20px;
     }
 
     @media (max-width: $tablet) {
-        width: calc(300vw - 40px);
+        width: calc(300vw - 80px);
         grid-template-rows: 329px 268px;
     }
 }
