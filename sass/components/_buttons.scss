@@ -183,6 +183,33 @@ $btn-second-disabled: var(--btn-second-disabled);
     }
 }
 
+.btn-navigation {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 39px;
+    height: 39px;
+    background: $btn-primary-hover;
+    border-radius: 50%;
+    transition: $tr;
+
+    &:hover {
+        background: $btn-primary-default;
+    }
+
+    &:active {
+        background: $btn-primary-active;
+    }
+
+    &:disabled {
+        background: $btn-primary-disabled;
+    }
+
+    svg {
+        stroke: $white;
+    }
+}
+
 // // Hover-эффект у ссылки
 // .link {
 

@@ -1,0 +1,15 @@
+.main-cases {
+    display: grid;
+    grid-template-columns: 7fr 4fr;
+    align-items: start;
+    gap: 40px 124px;
+
+    @media (max-width: $laptop-l) {
+        column-gap: 40px;
+    }
+
+    @media (max-width: $laptop-s) {
+        grid-template-columns: 100%;
+        // display: block;
+    }
+}

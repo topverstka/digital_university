@@ -1,0 +1,39 @@
+.other-cases {
+    display: block;
+    padding: 32px;
+    padding-bottom: 28px;
+    background: $white;
+}
+
+.other-cases__title {
+    margin-bottom: 24px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.other-cases__slider {
+    overflow: hidden;
+
+    .swiper-wrapper {
+        display: grid;
+        gap: 32px;
+        margin: 0;
+
+    }
+
+    @media (max-width: $laptop-s) {
+        .swiper-wrapper {
+            display: flex;
+            gap: unset;
+        }
+    }
+}
+
+.other-cases__scrollbar {
+    display: none;
+
+    @media (max-width: $laptop-s) {
+        display: block;
+    }
+}

@@ -182,6 +182,37 @@ new Swiper('.articles-slider', {
   },
 });
 
+const tabletMq = window.matchMedia('(max-width: 991px)');
+let otherCasesSlider = null;
+
+initPtherCasesSlider();
+
+tabletMq.addEventListener('change', () => {
+    initPtherCasesSlider();
+});
+
+function initPtherCasesSlider() {
+    if (tabletMq.matches) {
+        otherCasesSlider = new Swiper('.other-cases__slider', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            init: true,
+
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                }
+            },
+
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+        });
+    } else {
+        if (otherCasesSlider) otherCasesSlider.destroy();
+    }
+}
+
 const swiper = new Swiper('.swiper-container', {
 
   slidesPerView: 1, // Кол-во показываемых слайдов

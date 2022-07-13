@@ -1,8 +1,15 @@
 .article-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
     background: $white;
 }
 
 .article-card__link {
+    display: flex;
+    flex-direction: column;
+
     &:hover {
         .article-card__title {
             color: $accent-hover;
@@ -20,7 +27,7 @@
     display: flex;
     flex-direction: column;
     padding: 32px;
-    height: 100%;
+    flex-grow: 1;
 
     @media (max-width: $laptop-s) {
         padding: 24px;
@@ -35,6 +42,10 @@
     @media (max-width: $laptop-s) {
         height: 300px;
     }
+}
+
+.article-card__picture_size_lg {
+    height: 500px;
 }
 
 .article-card__picture-img {
@@ -81,6 +92,13 @@
         font-size: 20px;
         line-height: 28px;
     }
+}
+
+.article-card__title_size_lg {
+    margin-bottom: 32px;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
 }
 
 .article-card__desc {
@@ -132,4 +150,14 @@
     @media (max-width: $tablet) {
         width: 100%;
     }
+}
+
+.article-card__source {
+    color: $second;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.article-card__source-link {
+    color: $accent-hover;
 }

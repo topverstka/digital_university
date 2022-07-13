@@ -1,0 +1,64 @@
+.case-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background: $white;
+}
+
+.case-card__link {
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+        .case-card__more {
+            background: $accent;
+        }
+    }
+}
+
+.case-card__top {
+    position: relative;
+    margin-bottom: 16px;
+    margin-right: 18px;
+}
+
+.case-card__picture {
+    display: block;
+    height: 111px;
+}
+
+.case-card__picture-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.case-card__more {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+}
+
+.case-card__title {
+    margin-bottom: 12px;
+    color: $accent;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.case-card__footer {
+    margin-top: auto;
+    padding-bottom: 28px;
+    border-bottom: 1px solid rgb(192, 191, 191, 0.3);
+}
+
+.case-card__source {
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.case-card__source-link {
+    color: $accent-hover;
+}
