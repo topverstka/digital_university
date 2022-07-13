@@ -41,11 +41,6 @@ function bodyLock(con) {
 	}
 }
 
-function setAttributes(element, attributes) {
-    for (let i = 0; i < attributes.length; i++)
-    element.setAttribute(attributes[i].name, attributes[i].value);
-  }
-
 // Инициализация кастомного input type=file
 initCustomFile();
 function initCustomFile() {
@@ -62,12 +57,10 @@ function initCustomFile() {
 
         function handleRemove() {
             const inputNode = wrapperNode.querySelector('.form-file__area');
-            const input = document.createElement('input');
 
-            setAttributes(input, inputNode.attributes);
-            input.addEventListener('change', handleChange);
-            wrapperNode.prepend(input);
-            inputNode.remove();
+            inputNode.type = '';
+            inputNode.type = 'file';
+            inputNode.value = '';
             fileNode.classList.remove('form-file__file_visible');
         }
 
