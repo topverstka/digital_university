@@ -70,6 +70,33 @@ $btn-second-disabled: var(--btn-second-disabled);
     line-height: 17px;
 }
 
+.btn-outline {
+    display: inline-flex;
+    justify-content: center;
+    padding: 10px 24px;
+    color: $btn-primary-default;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+    border: 1px solid $btn-primary-default;
+    border-radius: 20px;
+
+    &:hover {
+        color: $white;
+        background: $btn-primary-default;
+    }
+
+    &:active {
+        opacity: 0.7;
+    }
+
+    &:disabled {
+        color: $btn-primary-disabled;
+        border-color: $btn-primary-disabled;
+    }
+}
+
 .btn-icon {
     display: flex;
     align-items: center;

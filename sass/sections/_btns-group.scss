@@ -1,0 +1,16 @@
+.btns-group {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -12px;
+    margin-right: -16px;
+    margin-bottom: 40px;
+
+    @media (max-width: $laptop-s) {
+        margin-bottom: 24px;
+    }
+}
+
+.btns-group__item {
+    margin-right: 16px;
+    margin-top: 12px;
+}
