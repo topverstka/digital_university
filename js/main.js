@@ -162,6 +162,26 @@ function menu() {
 	})
 }
 
+new Swiper('.articles-slider', {
+  slidesPerView: 1,
+  spaceBetween: 20,
+
+  breakpoints: {
+    768: {
+        slidesPerView: 1.33,
+        spaceBetween: 20,
+    },
+    992: {
+        slidesPerView: 2.3,
+        spaceBetween: 24,
+    },
+  },
+
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+
 const swiper = new Swiper('.swiper-container', {
 
   slidesPerView: 1, // Кол-во показываемых слайдов
