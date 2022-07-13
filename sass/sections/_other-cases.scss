@@ -13,8 +13,6 @@
 }
 
 .other-cases__slider {
-    overflow: hidden;
-
     .swiper-wrapper {
         display: grid;
         gap: 32px;
@@ -23,6 +21,8 @@
     }
 
     @media (max-width: $laptop-s) {
+        overflow: hidden;
+
         .swiper-wrapper {
             display: flex;
             gap: unset;
