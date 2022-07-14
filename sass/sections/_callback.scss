@@ -4,6 +4,11 @@
     padding-bottom: 40px;
     background: #fff;
 
+    @media (max-width: $laptop-s) {
+        padding-top: 64px;
+        padding-bottom: 64px;
+    }
+
     @media (max-width: $tablet) {
         padding-top: 48px;
         padding-bottom: 48px;

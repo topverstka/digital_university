@@ -10,10 +10,10 @@
 }
 
 .section {
-    margin: 62px 0;
+    margin: 124px 0;
 
     @media (max-width: $laptop-s) {
-        margin: 36px 0;
+        margin: 72px 0;
     }
 }
 
@@ -31,6 +31,7 @@
 
     @media (max-width: $tablet) {
         grid-template-columns: auto;
+        row-gap: 14px;
         margin-bottom: 24px;
     }
 }

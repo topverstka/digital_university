@@ -70,10 +70,14 @@ $btn-second-disabled: var(--btn-second-disabled);
     line-height: 17px;
 }
 
+.btn_size_md {
+    padding: 13px 25px;
+}
+
 .btn-outline {
     display: inline-flex;
     justify-content: center;
-    padding: 10px 24px;
+    padding: 10px 28px;
     color: $btn-primary-default;
     font-weight: 700;
     font-size: 12px;
@@ -94,6 +98,10 @@ $btn-second-disabled: var(--btn-second-disabled);
     &:disabled {
         color: $btn-primary-disabled;
         border-color: $btn-primary-disabled;
+    }
+
+    @media (max-width: $tablet) {
+        padding: 8px 22px;
     }
 }
 

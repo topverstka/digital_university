@@ -43,7 +43,9 @@
 }
 
 .footer__col {
-    max-width: 180px;
+    @media (max-width: $laptop-m) {
+        max-width: 180px;
+    }
 
     @media (max-width: $tablet) {
         max-width: unset;
