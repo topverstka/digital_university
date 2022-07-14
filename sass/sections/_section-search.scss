@@ -1,4 +1,8 @@
 .section-search {
+    padding: 0;
+}
+
+.section-search_modal {
     position: relative;
     padding-top: 40px;
     padding-bottom: 48px;
@@ -10,20 +14,58 @@
     font-weight: 700;
     font-size: 48px;
     line-height: 52px;
+
+    @media (max-width: $tablet) {
+        margin-bottom: 24px;
+        font-size: 30px;
+        line-height: 38px;
+    }
 }
 
 .section-search__form {
     display: grid;
     grid-template-columns: 1fr 158px;
     gap: 24px;
+
+    @media (max-width: $laptop-s) {
+        grid-template-columns: 1fr 167px;
+        gap: 20px;
+    }
+
+    @media (max-width: $tablet) {
+        position: relative;
+        display: block;
+    }
 }
 
 .section-search__input {
     padding: 10px 14px;
+    width: 100%;
     font-size: 16px;
     line-height: 24px;
     border: 1px solid #E7E9EA;
     border-radius: 50px;
+
+    @media (max-width: $tablet) {
+        padding-right: 54px;
+    }
+}
+
+.section-search__submit {
+    @media (max-width: $tablet) {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        padding-left: 10px;
+        padding-right: 29px;
+        font-size: 0;
+        background: none;
+
+        svg {
+            stroke: $accent;
+        }
+    }
 }
 
 .section-search__close {

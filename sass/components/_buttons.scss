@@ -74,6 +74,11 @@ $btn-second-disabled: var(--btn-second-disabled);
     padding: 13px 25px;
 }
 
+.btn_text_sm {
+    font-size: 12px;
+    line-height: 17px;
+}
+
 .btn-outline {
     display: inline-flex;
     justify-content: center;

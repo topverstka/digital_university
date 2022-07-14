@@ -1,0 +1,36 @@
+.search {
+    margin-top: 74px;
+    margin-bottom: 100px;
+
+    @media (max-width: $laptop-s) {
+        margin-top: 54px;
+    }
+
+    @media (max-width: $tablet) {
+        margin-top: 20px;
+    }
+}
+
+.search__form {
+    margin-bottom: 40px;
+
+    @media (max-width: $tablet) {
+        margin-bottom: 24px;
+    }
+}
+
+.search__pagination {
+    @media (max-width: $tablet) {
+        display: none;
+    }
+}
+
+.search__show-more {
+    display: none;
+
+    @media (max-width: $tablet) {
+        display: flex;
+        margin-top: 40px;
+        width: 100%;
+    }
+}

@@ -17,6 +17,7 @@
 @import './components/link';
 @import './components/_forms';
 @import './components/_modal';
+@import './components/pagination';
 
 // Текстовые компоненты
 @import './components/text/_text';
@@ -36,6 +37,11 @@
 @import './sections/other-cases';
 @import './sections/case-card';
 @import './sections/info-section';
+
+// search
+@import './sections/search';
+@import './sections/search-result';
+
 
 // Страницы
 
