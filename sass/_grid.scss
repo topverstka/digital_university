@@ -11,6 +11,7 @@
 
 .section {
     margin: 124px 0;
+    overflow: hidden;
 
     @media (max-width: $laptop-s) {
         margin: 72px 0;

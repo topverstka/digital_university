@@ -138,8 +138,17 @@ function validationForm(selector) {
 // Мобильное меню
 menu();
 function menu() {
+    const header = find('.header');
 	const burger = find('.header__burger');
 	const menu = find('.header__bottom');
+
+    document.addEventListener('scroll', (evt) => {
+        if (window.scrollY > 0) {
+            header.classList.add('header_sticky');
+        } else {
+            header.classList.remove('header_sticky');
+        }
+    });
 
 	// Высота меню
     // let mql = window.matchMedia('(max-width: 991px)');
