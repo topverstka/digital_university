@@ -7,6 +7,7 @@
 }
 
 .case-card__link {
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
 
@@ -21,6 +22,10 @@
     position: relative;
     margin-bottom: 16px;
     margin-right: 18px;
+
+    @media (max-width: $laptop-s) {
+        margin: 0;
+    }
 }
 
 .case-card__picture {
@@ -39,6 +44,20 @@
     top: 50%;
     left: 100%;
     transform: translate(-50%, -50%);
+
+    @media (max-width: $laptop-s) {
+        display: none;
+    }
+}
+
+.case-card__content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    @media (max-width: $laptop-s) {
+        padding: 24px;
+    }
 }
 
 .case-card__title {
@@ -46,17 +65,38 @@
     color: $accent;
     font-size: 18px;
     line-height: 22px;
+
+    @media (max-width: $laptop-s) {
+        margin-bottom: 8px;
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    @media (max-width: $tablet) {
+        font-size: 16px;
+        line-height: 22px;
+    }
 }
 
 .case-card__footer {
     margin-top: auto;
     padding-bottom: 28px;
     border-bottom: 1px solid rgb(192, 191, 191, 0.3);
+
+    @media (max-width: $laptop-s) {
+        padding-bottom: 0;
+        border-bottom: none;
+    }
 }
 
 .case-card__source {
     font-size: 14px;
     line-height: 18px;
+
+    @media (max-width: $tablet) {
+        font-size: 12px;
+        line-height: 16px;
+    }
 }
 
 .case-card__source-link {

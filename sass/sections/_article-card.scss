@@ -7,6 +7,7 @@
 }
 
 .article-card__link {
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
 
@@ -46,6 +47,10 @@
 
 .article-card__picture_size_lg {
     height: 500px;
+
+    @media (max-width: $tablet) {
+        height: 242px;
+    }
 }
 
 .article-card__picture-img {
@@ -99,6 +104,12 @@
     font-weight: 700;
     font-size: 32px;
     line-height: 40px;
+
+    @media (max-width: $tablet) {
+        margin-bottom: 20px;
+        font-size: 24px;
+        line-height: 32px;
+    }
 }
 
 .article-card__desc {
@@ -156,6 +167,11 @@
     color: $second;
     font-size: 14px;
     line-height: 18px;
+
+    @media (max-width: $tablet) {
+        font-size: 12px;
+        line-height: 16px;
+    }
 }
 
 .article-card__source-link {

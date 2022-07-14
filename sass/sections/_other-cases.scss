@@ -3,6 +3,11 @@
     padding: 32px;
     padding-bottom: 28px;
     background: $white;
+
+    @media (max-width: $laptop-s) {
+        padding: 0;
+        background: none;
+    }
 }
 
 .other-cases__title {
@@ -10,6 +15,15 @@
     font-weight: 600;
     font-size: 24px;
     line-height: 32px;
+
+    @media (max-width: $laptop-s) {
+        margin-bottom: 16px;
+    }
+
+    @media (max-width: $tablet) {
+        font-size: 20px;
+        line-height: 28px;
+    }
 }
 
 .other-cases__slider {
