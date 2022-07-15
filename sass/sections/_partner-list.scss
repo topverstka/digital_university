@@ -1,0 +1,38 @@
+.partner-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+
+    @media (max-width: $laptop-s) {
+        gap: 20px;
+    }
+
+    @media (max-width: $tablet) {
+        gap: 16px;
+    }
+
+    @media (max-width: $mobile-m) {
+        grid-template-columns: 1fr
+    }
+}
+
+.partner-list__card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+    min-height: 151px;
+    background: $white;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    @media (max-width: $tablet) {
+        padding: 16px;
+    }
+}

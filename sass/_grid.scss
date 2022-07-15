@@ -18,6 +18,10 @@
     }
 }
 
+.section_overflow {
+    overflow: unset;
+}
+
 .section__header {
     display: grid;
     grid-template-columns: repeat(2, auto);

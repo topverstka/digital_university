@@ -1,0 +1,147 @@
+.accordion-vertical {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    background: $white;
+
+    @media (max-width: $laptop-m) {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    @media (max-width: $tablet) {
+        display: block;
+        background: none;
+    }
+}
+
+.accordion-vertical__controls {
+    margin-right: 16px;
+    padding: 32px;
+    padding-right: 0;
+    border-right: 1px solid $accent-disabled;
+
+    @media (max-width: $laptop-m) {
+        margin-right: 0;
+    }
+
+    @media (max-width: $tablet) {
+        position: relative;
+        z-index: 1;
+        padding: 0;
+        padding-bottom: 24px;
+        border: none;
+    }
+}
+
+.accordion-vertical__toggle {
+    display: none;
+
+    @media (max-width: $tablet) {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 24px;
+        width: 100%;
+        color: $accent;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+        background: $white;
+        border-radius: 100px;
+
+        svg {
+            stroke: $accent;
+            transition: $tr;
+        }
+
+        &:hover {
+            svg {
+                transform: rotate(-180deg);
+            }
+
+            & + .accordion-vertical__controls-list {
+                visibility: visible;
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    }
+}
+
+.accordion-vertical__controls-list {
+    display: grid;
+    gap: 14px;
+
+    @media (max-width: $laptop-s) {
+        gap: 6px;
+    }
+
+    @media (max-width: $tablet) {
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        padding: 16px 0;
+        background: $accent;
+        border-radius: 20px;
+        overflow: hidden;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: $tr;
+    }
+}
+
+.accordion-vertical__control {
+    display: block;
+    padding: 14px 8px;
+    width: 100%;
+    color: $accent-disabled;
+    font-weight: 700;
+    font-size: 14px;
+    text-align: left;
+    line-height: 17px;
+    background-image: linear-gradient(to left, $accent, $accent 100%, transparent 100%, transparent 200%);
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: 0 100%;
+    transition: background-size .3s, color .2s;
+
+    &:hover {
+        color: $accent-hover;
+    }
+
+    @media (max-width: $tablet) {
+        padding: 14px 24px;
+        color: $white;
+    }
+}
+
+.accordion-vertical__control_active {
+    color: $white;
+    background-size: 100% 100%;
+    transition: background-size .3s, color .2s .2s;
+
+    &:hover {
+        color: $white;
+    }
+}
+
+.accordion-vertical__contents {
+    padding: 32px;
+    padding-left: 14px;
+
+    @media (max-width: $tablet) {
+        margin: 0 -20px;
+        padding: 32px 20px;
+        background: $white;
+    }
+}
+
+.accordion-vertical__content {
+    display: none;
+}
+
+.accordion-vertical__content_visible {
+    display: block;
+}

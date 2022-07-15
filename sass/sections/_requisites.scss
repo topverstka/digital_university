@@ -1,0 +1,22 @@
+.requisites {
+    display: grid;
+    grid-template-columns: repeat(2, 33%);
+    gap: 40px 56px;
+
+    @media (max-width: $laptop-m) {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+}
+
+.requisites__title {
+    margin-bottom: 12px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.requisites__text {
+    font-size: 16px;
+    line-height: 24px;
+}

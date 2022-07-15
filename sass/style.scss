@@ -18,6 +18,7 @@
 @import './components/_forms';
 @import './components/_modal';
 @import './components/pagination';
+@import './components/accordion-vertical';
 
 // Текстовые компоненты
 @import './components/text/_text';
@@ -28,19 +29,24 @@
 @import './sections/_footer';
 @import './sections/section-search';
 @import './sections/callback';
-@import './sections/main-articles';
 @import './sections/main-article';
+@import './sections/main-articles';
 @import './sections/article-cards';
 @import './sections/btns-group';
 @import './sections/article-card';
 @import './sections/main-cases';
-@import './sections/other-cases';
 @import './sections/case-card';
+@import './sections/other-cases';
 @import './sections/info-section';
 
 // search
-@import './sections/search';
 @import './sections/search-result';
+@import './sections/search';
+
+// partner
+@import './sections/requisites';
+@import './sections/partner-list';
+@import './sections/partners';
 
 
 // Страницы

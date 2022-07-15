@@ -171,6 +171,42 @@ function menu() {
 	})
 }
 
+initAccordionVertical();
+function initAccordionVertical() {
+    const accordionNodes = document.querySelectorAll('.accordion-vertical');
+
+    accordionNodes.forEach(accordionNode => {
+        const buttonNodes = accordionNode.querySelectorAll('.accordion-vertical__control');
+        const contentNodes = accordionNode.querySelectorAll('.accordion-vertical__content');
+        const activeNode = accordionNode.querySelector('.accordion-vertical__control_active');
+        const toggleNode = accordionNode.querySelector('.accordion-vertical__toggle span');
+
+        if (activeNode) {
+            buttonNodes.forEach((buttonNode, i) => {
+                if (buttonNode === activeNode) setActive(i);
+            });
+        } else if (buttonNodes.length) {
+            setActive(0);
+        }
+
+        buttonNodes.forEach((buttonNode, i) => {
+            buttonNode.addEventListener('click', () => {
+                if(buttonNode.classList.contains('accordion-vertical__control_active')) return;
+
+                setActive(i);
+            });
+        });
+
+        function setActive(i) {
+            buttonNodes.forEach(buttonNode => buttonNode.classList.remove('accordion-vertical__control_active'));
+            buttonNodes[i].classList.add('accordion-vertical__control_active');
+            contentNodes.forEach(contentNode => contentNode.classList.remove('accordion-vertical__content_visible'));
+            contentNodes[i].classList.add('accordion-vertical__content_visible');
+            if (toggleNode) toggleNode.textContent = buttonNodes[i].textContent;
+        }
+    });
+}
+
 new Swiper('.articles-slider', {
   slidesPerView: 1,
   spaceBetween: 20,
