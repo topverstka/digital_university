@@ -2789,6 +2789,62 @@ body._lock {
   }
 }
 
+.not-found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.not-found__container {
+  padding: 47px 75px 40px 49px;
+  max-width: 650px;
+  background: var(--white);
+}
+@media (max-width: 767px) {
+  .not-found__container {
+    padding: 24px;
+  }
+}
+
+.not-found__status {
+  margin-bottom: 8px;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.not-found__title {
+  margin-bottom: 33px;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 52px;
+}
+@media (max-width: 767px) {
+  .not-found__title {
+    margin-bottom: 16px;
+    font-size: 30px;
+    line-height: 38px;
+  }
+}
+
+.not-found__desc {
+  margin-bottom: 40px;
+  color: #858585;
+  font-size: 16px;
+  line-height: 24px;
+}
+@media (max-width: 767px) {
+  .not-found__desc {
+    margin-bottom: 32px;
+    font-size: 14px;
+  }
+}
+
+.not-found__back {
+  min-width: 163px;
+}
+
 .swiper {
   position: relative;
   width: 100%;
