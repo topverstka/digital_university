@@ -254,7 +254,7 @@ function initPtherCasesSlider() {
             },
         });
     } else {
-        if (otherCasesSlider) otherCasesSlider.destroy();
+        if (otherCasesSlider && otherCasesSlider.initialized) otherCasesSlider.destroy();
     }
 }
 
