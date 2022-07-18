@@ -1,0 +1,50 @@
+.articles {
+    margin-top: 74px;
+    margin-bottom: 124px;
+
+    @media (max-width: $laptop-s) {
+        margin-top: 54px;
+        margin-bottom: 72px;
+    }
+
+    @media (max-width: $tablet) {
+        margin-top: 20px;
+    }
+}
+
+.articles__btns-group {
+    margin-bottom: 48px;
+
+    @media (max-width: $laptop-s) {
+        margin-bottom: 24px;
+    }
+}
+
+.articles__list {
+    display: grid;
+    gap: 40px;
+
+    @media (max-width: $laptop-s) {
+        gap: 24px;
+    }
+}
+
+.articles__pagination {
+    @media (max-width: $laptop-s) {
+        display: none;
+    }
+}
+
+.articles__show-more {
+    display: none;
+
+    @media (max-width: $laptop-s) {
+        display: flex;
+        margin: 0 auto;
+        margin-top: 40px;
+    }
+
+    @media (max-width: $tablet) {
+        margin-top: 32px;
+    }
+}

@@ -6,6 +6,33 @@
     background: $white;
 }
 
+.article-card_view_line {
+    .article-card__link {
+        display: grid;
+        grid-template-columns: 5fr 7fr;
+
+        @media (max-width: $laptop-s) {
+            display: flex;
+        }
+    }
+
+    .article-card__title {
+        margin-bottom: 32px;
+        font-size: 32px;
+        line-height: 40px;
+
+        @media (max-width: $laptop-s) {
+            margin-bottom: 24px;
+        }
+
+        @media (max-width: $tablet) {
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 28px;
+        }
+    }
+}
+
 .article-card__link {
     flex-grow: 1;
     display: flex;
