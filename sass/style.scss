@@ -19,6 +19,7 @@
 @import './components/_modal';
 @import './components/pagination';
 @import './components/accordion-vertical';
+@import './components/content-navigate';
 
 // Текстовые компоненты
 @import './components/text/_text';
@@ -38,6 +39,11 @@
 @import './sections/case-card';
 @import './sections/other-cases';
 @import './sections/info-section';
+
+// news
+@import './sections/top-publication';
+@import './sections/top-publications';
+@import './sections/news';
 
 // articles
 @import './sections/articles';

@@ -1,0 +1,22 @@
+.content-navigate {
+    margin-top: 40px;
+
+    @media (max-width: $tablet) {
+        margin-top: 32px;
+    }
+}
+
+.content-navigate__pagination {
+    @media (max-width: $laptop-s) {
+        display: none;
+    }
+}
+
+.content-navigate__show-more {
+    display: none;
+
+    @media (max-width: $laptop-s) {
+        display: flex;
+        margin: 0 auto;
+    }
+}

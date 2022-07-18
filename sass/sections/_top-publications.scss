@@ -1,0 +1,41 @@
+.top-publications {
+    padding: 32px;
+    background: $white;
+    border-radius: 5px;
+
+    @media (max-width: $laptop-m) {
+        margin-left: -24px;
+        margin-right: -24px;
+        padding: 24px;
+    }
+}
+
+.top-publications__title {
+    margin-bottom: 24px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+
+    @media (max-width: $tablet) {
+        font-size: 20px;
+        line-height: 28px;
+    }
+}
+
+.top-publications__list {
+    display: grid;
+    gap: 40px 20px;
+
+    @media (max-width: $laptop-m) {
+        grid-template-columns: repeat(auto-fit, minmax(333px, 1fr));
+        row-gap: 38px;
+    }
+
+    @media (max-width: $tablet) {
+        row-gap: 24px;
+    }
+
+    @media (max-width: $mobile-m) {
+        grid-template-columns: 1fr;
+    }
+}
