@@ -24,6 +24,7 @@
 // Текстовые компоненты
 @import './components/text/_text';
 @import './components/text/_titles';
+@import './components/text/text-slider';
 
 // Секции
 @import './sections/_header';
@@ -45,8 +46,17 @@
 @import './sections/top-publications';
 @import './sections/news';
 
+// news-detail
+@import './sections/news-detail';
+
 // articles
 @import './sections/articles';
+
+// article-detail
+@import './sections/article-detail';
+
+// case-detail
+@import './sections/case-detail';
 
 // search
 @import './sections/search-result';

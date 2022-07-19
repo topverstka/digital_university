@@ -8,8 +8,43 @@
 .header_sticky {
     position: sticky;
     top: 0;
-    background-color: #fff;
+    background-color: $white;
     box-shadow: 0px 4px 12px rgba(152, 139, 139, 0.1);
+}
+
+.header_color_accent {
+    background-color: $accent;
+
+    .header__top {
+        @media (max-width: $laptop-s) {
+            background: $accent;
+        }
+    }
+
+    .header__logo svg {
+        fill: $white;
+    }
+
+    .header__callback  {
+        color: $accent;
+        background: $white;
+    }
+
+    .header__search  {
+        background: $white;
+
+        svg {
+            stroke: $accent;
+        }
+    }
+
+    .header__nav {
+        color: $white;
+    }
+
+    .header__social svg {
+        fill: $white;
+    }
 }
 
 .header__top {
@@ -43,6 +78,7 @@
 .header__logo {
     display: flex;
     align-items: center;
+    fill: $gray;
 
     @media (max-width: $laptop-s) {
         padding-left: 8px;
@@ -92,7 +128,7 @@
 
 .header__search {
     svg {
-        stroke: #fff;
+        stroke: $white;
     }
 
     @media (max-width: $laptop-s) {
@@ -142,7 +178,7 @@
     @media (max-width: $laptop-s) {
         display: block;
         padding-bottom: 32px;
-        border-bottom: 1px solid #fff;
+        border-bottom: 1px solid $white;
     }
 
     @media (max-width: $tablet) {
@@ -208,6 +244,8 @@
 }
 
 .header__nav {
+    color: $gray;
+
     @media (max-width: $laptop-s) {
         margin-bottom: 56px;
     }

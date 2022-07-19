@@ -76,6 +76,14 @@
     height: 163px;
 }
 
+.article-card__picture_size_md {
+    height: 228px;
+
+    @media (max-width: $laptop-s) {
+        height: 228px;
+    }
+}
+
 .article-card__picture_size_lg {
     height: 500px;
 

@@ -230,13 +230,13 @@ new Swiper('.articles-slider', {
 const tabletMq = window.matchMedia('(max-width: 991px)');
 let otherCasesSlider = null;
 
-initPtherCasesSlider();
+initOtherCasesSlider();
 
 tabletMq.addEventListener('change', () => {
-    initPtherCasesSlider();
+    initOtherCasesSlider();
 });
 
-function initPtherCasesSlider() {
+function initOtherCasesSlider() {
     if (tabletMq.matches) {
         otherCasesSlider = new Swiper('.other-cases__slider', {
             slidesPerView: 1,
@@ -256,6 +256,42 @@ function initPtherCasesSlider() {
     } else {
         if (otherCasesSlider && otherCasesSlider.initialized) otherCasesSlider.destroy();
     }
+}
+
+initTextSlider();
+function initTextSlider() {
+    const swiperThumbs = new Swiper(".text-slider__thumbs", {
+        spaceBetween: 8,
+        slidesPerView: 3,
+
+        breakpoints: {
+            768: {
+                spaceBetween: 16,
+                slidesPerView: 5,
+            },
+            992: {
+                spaceBetween: 16,
+                slidesPerView: 8,
+            },
+        }
+    });
+    new Swiper(".text-slider__slider", {
+        spaceBetween: 25,
+
+        breakpoints: {
+            992: {
+                spaceBetween: 16,
+            },
+        },
+
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        thumbs: {
+          swiper: swiperThumbs,
+        },
+    });
 }
 
 const swiper = new Swiper('.swiper-container', {

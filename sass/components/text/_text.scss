@@ -1,0 +1,237 @@
+.text {
+    margin-top: 56px;
+    margin-bottom: 124px;
+    font-size: 18px;
+    line-height: 30px;
+
+    div:not([class]) {
+        margin: 56px 0;
+
+        p {
+            margin: 24px 0;
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+
+    p:not([class]) {
+        margin: 56px 0;
+    }
+
+    ol:not([class]) {
+        counter-reset: ol;
+        margin: 56px 0;
+        max-width: 955px;
+        list-style-type: none;
+
+        & > li {
+            position: relative;
+            margin-bottom: 20px;
+            padding-left: 40px;
+            counter-increment: ol;
+
+            &::before {
+                content: counter(ol) '.';
+                position: absolute;
+                top: 0;
+                left: 2px;
+                font-weight: bold;
+                min-width: 40px;
+            }
+        }
+
+        ul,
+        ol {
+            margin: 24px 0;
+            max-width: 856px;
+
+            li {
+                margin-bottom: 13px;
+                padding-left: 24px;
+
+                &::before {
+                    left: -3px;
+                }
+            }
+        }
+    }
+
+    ul:not([class]) {
+        margin: 56px 0;
+        max-width: 955px;
+        list-style-type: none;
+
+        & > li {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 24px;
+
+            &::before {
+                content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='2' viewBox='0 0 8 2' fill='none'%3E%3Cline y1='1' x2='8' y2='1' stroke='%23183054'/%3E%3C/svg%3E");
+                position: absolute;
+                top: -5px;
+                left: -2px;
+                font-weight: bold;
+                min-width: 40px;
+            }
+        }
+    }
+
+    blockquote:not([class]) {
+        margin: 56px 0;
+        padding: 32px;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 32px;
+        background: $white;
+        border-left: 9px solid $accent-hover;
+
+        p {
+            margin: 0;
+        }
+
+        figure {
+            display: flex;
+            margin: 0;
+            margin-top: 32px;
+
+            img {
+                margin-right: 16px;
+                width: 56px;
+                height: 58px;
+                object-fit: cover;
+            }
+        }
+
+        figcaption {
+            margin: 0;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        cite {
+            display: block;
+            margin-top: 9px;
+            font-weight: 400;
+            font-style: normal;
+        }
+    }
+
+    img:not([class]) {
+        margin: 56px 0;
+    }
+
+    figure:not([class]) {
+        margin: 56px 0;
+
+        img {
+            margin: 0;
+        }
+    }
+
+    figcaption:not([class]) {
+        display: block;
+        margin-top: 6px;
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    @media (max-width: $laptop-s) {
+        margin-top: 48px;
+        margin-bottom: 72px;
+
+        div:not([class]) {
+            margin: 48px 0;
+
+            p {
+                margin: 26px 0;
+            }
+        }
+
+        p:not([class]) {
+            margin: 48px 0;
+        }
+
+        ol:not([class]),
+        ul:not([class]) {
+            margin: 48px 0;
+        }
+
+        blockquote:not([class]) {
+            margin: 48px 0;
+        }
+
+        img:not([class]) {
+            margin: 48px 0;
+        }
+
+        figure:not([class]) {
+            margin: 48px 0;
+
+            img {
+                margin: 0;
+            }
+        }
+    }
+
+    @media (max-width: $tablet) {
+        margin-top: 40px;
+        font-size: 16px;
+        line-height: 24px;
+
+        div:not([class]) {
+            margin: 40px 0;
+
+            p {
+                margin: 24px 0;
+                font-size: 14px;
+                line-height: 24px;
+            }
+        }
+
+        p:not([class]) {
+            margin: 40px 0;
+        }
+
+        ol:not([class]),
+        ul:not([class]) {
+            margin: 40px 0;
+            font-size: 14px;
+            line-height: 24px;
+
+            ol, ul {
+                li {
+                    margin-bottom: 8px;
+                }
+            }
+            li {
+                font-size: 14px;
+                line-height: 24px;
+            }
+        }
+
+        blockquote:not([class]) {
+            margin: 40px 0;
+            margin-right: -20px;
+            padding: 24px 20px 32px 24px;
+            font-size: 18px;
+            line-height: 28px;
+
+            figcaption {
+                font-size: 14px;
+                line-height: 24px;
+            }
+        }
+
+        img:not([class]) {
+            margin: 40px 0;
+        }
+
+        figure:not([class]) {
+            margin: 40px 0;
+        }
+    }
+}

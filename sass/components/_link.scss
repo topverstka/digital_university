@@ -35,3 +35,11 @@
         opacity: 0.7;
     }
 }
+
+.link-icon_left {
+    svg {
+        margin: 0;
+        margin-right: 10px;
+        transform: rotate(45deg);
+    }
+}

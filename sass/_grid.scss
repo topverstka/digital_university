@@ -9,6 +9,17 @@
     }
 }
 
+.container-thin {
+    margin: 0 auto;
+    padding: 0 52px;
+    max-width: 1168px;
+    width: 100%;
+
+    @media (max-width: $tablet) {
+        padding: 0 20px;
+    }
+}
+
 .section {
     margin: 124px 0;
     overflow: hidden;
