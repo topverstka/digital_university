@@ -110,6 +110,14 @@
     font-size: 14px;
     line-height: 18px;
 
+    a {
+        color: $accent-hover;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
     @media (max-width: $laptop-m) {
         font-size: 14px;
         line-height: 22px;
