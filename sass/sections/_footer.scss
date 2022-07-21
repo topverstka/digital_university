@@ -125,7 +125,11 @@
 .footer__bottom-link {
     color: #fff;
     line-height: 19px;
-    text-decoration-line: underline;
+
+    &:hover {
+        text-decoration-line: underline;
+        opacity: 0.7;
+    }
 
     @media (max-width: $tablet) {
         font-size: 14px;
