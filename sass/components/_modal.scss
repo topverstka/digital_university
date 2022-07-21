@@ -16,11 +16,14 @@
 .modal_show {
     visibility: visible;
     opacity: 1;
-    overflow-y: auto;
 
     & .modal__body {
         transform: translate(0, 0);
     }
+}
+
+.modal_shown {
+    overflow-y: auto;
 }
 
 .modal__body {

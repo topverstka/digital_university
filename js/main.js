@@ -24,17 +24,36 @@ function removeAll(items,itemClass) {
     }
 }
 
+function getScrollWidth() {
+    let div = document.createElement('div');
+
+    div.style.overflowY = 'scroll';
+    div.style.width = '40px';
+    div.style.height = '40px';
+
+    document.body.append(div);
+    let scrollWidth = div.offsetWidth - div.clientWidth;
+
+    div.remove();
+
+    return scrollWidth;
+}
+
 function bodyLock(con) {
     if (con === true) {
         body.classList.add('_lock');
+        body.style.paddingRight = `${getScrollWidth()}px`
     } else if (con === false) {
         body.classList.remove('_lock');
+        body.style.paddingRight = null
     } else if (con === undefined) {
 		if (!body.classList.contains('_lock')) {
 			body.classList.add('_lock');
+            body.style.paddingRight = `${getScrollWidth()}px`
 		}
 		else {
 			body.classList.remove('_lock')
+            body.style.paddingRight = null
 		}
 	} else {
 		console.error('Неопределенный аргумент у функции bodyLock()')
@@ -149,20 +168,6 @@ function menu() {
             header.classList.remove('header_sticky');
         }
     });
-
-	// Высота меню
-    // let mql = window.matchMedia('(max-width: 991px)');
-
-	// mql.addEventListener('change', (evt) => {
-	// 	const headerHeight = find('.header').clientHeight;
-
-	// 	if (evt.matches) {
-	// 		menu.style.paddingTop = headerHeight + 'px';
-	// 	}
-	// 	else {
-	// 		menu.style.paddingTop = null;
-	// 	}
-	// })
 
 	burger.addEventListener('click', (e) => {
 		burger.classList.toggle('btn-burger_active');
@@ -294,44 +299,6 @@ function initTextSlider() {
     });
 }
 
-const swiper = new Swiper('.swiper-container', {
-
-  slidesPerView: 1, // Кол-во показываемых слайдов
-  spaceBetween: 0, // Расстояние между слайдами
-  loop: true, // Бесконечный слайдер
-  freeMode: true, // Слайдеры не зафиксированны
-  centeredSlides: false, // Размещать слайдеры по центру
-
-  autoplay: { // автопрокрутка
-      delay: 5000, // задержка
-  },
-
-  breakpoints: {
-    1200: {
-
-    },
-    700: {
-
-    },
-    400: {
-
-    }
-  },
-
-  pagination: {
-    el: '.swiper-pagination',
-  },
-
-  navigation: {
-    nextEl: '.swiper__arrow-next',
-    prevEl: '.swiper__arrow-prev',
-  },
-
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
-});
-
 // Функции для модальных окон
 modal()
 function modal() {
@@ -426,6 +393,7 @@ function modal() {
     function openModal(modal) {
         modal.classList.add('modal_show')
         bodyLock(true)
+        setTimeout(() => { modal.classList.add('modal_shown') }, 300)
     }
 
     // Закрытие модального окна
@@ -433,5 +401,6 @@ function modal() {
         modal.classList.remove('modal_show')
         bodyLock(false)
         resetHash()
+        modal.classList.remove('modal_shown')
     }
 }
