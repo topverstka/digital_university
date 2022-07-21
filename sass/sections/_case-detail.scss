@@ -1,16 +1,14 @@
 .case-detail {
     padding-top: 64px;
-    background: $accent;
-    box-shadow: inset 0 -190px 0 0 $bg-block;
+    background-image: linear-gradient(to bottom, $accent, $accent 78%, $bg-block 78%, $bg-block);
 
     @media (max-width: $laptop-s) {
         padding-top: 52px;
-        box-shadow: inset 0 -326px 0 0 $bg-block;
+        background-image: linear-gradient(to bottom, $accent, $accent 62%, $bg-block 62%, $bg-block);
     }
 
     @media (max-width: $tablet) {
         padding-top: 20px;
-        box-shadow: inset 0 -240px 0 0 $bg-block;
     }
 }
 
