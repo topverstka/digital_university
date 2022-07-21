@@ -5,6 +5,7 @@
 .footer__top {
     padding-top: 40px;
     padding-bottom: 64px;
+    background: $white;
     border-top: 1px solid rgba(24, 48, 84, 0.2);
 
     @media (max-width: $laptop-s) {
