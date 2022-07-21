@@ -75,6 +75,11 @@
         font-size: 30px;
         line-height: 38px;
     }
+
+    @media (max-width: $mobile-m) {
+        font-size: 20px;
+        line-height: 28px;
+    }
 }
 
 .main-article__desc {
