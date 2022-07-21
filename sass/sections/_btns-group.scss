@@ -9,13 +9,26 @@
         margin-right: -8px;
         margin-bottom: 24px;
     }
+
+    @media (max-width: $tablet) {
+        margin-right: -12px;
+    }
 }
 
 .btns-group__item {
     margin-right: 16px;
     margin-top: 12px;
+    padding-left: 23px;
+    padding-right: 22px;
+    letter-spacing: 0.12em;
 
     @media (max-width: $laptop-s) {
         margin-right: 8px;
+    }
+
+    @media (max-width: $tablet) {
+        margin-right: 12px;
+        padding-left: 15px;
+        padding-right: 15px;
     }
 }
