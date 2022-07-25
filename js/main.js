@@ -176,6 +176,7 @@ function menu() {
 	})
 }
 
+// Вертикальный аккордеон
 initAccordionVertical();
 function initAccordionVertical() {
     const accordionNodes = document.querySelectorAll('.accordion-vertical');
@@ -184,7 +185,8 @@ function initAccordionVertical() {
         const buttonNodes = accordionNode.querySelectorAll('.accordion-vertical__control');
         const contentNodes = accordionNode.querySelectorAll('.accordion-vertical__content');
         const activeNode = accordionNode.querySelector('.accordion-vertical__control_active');
-        const toggleNode = accordionNode.querySelector('.accordion-vertical__toggle span');
+        const toggleNode = accordionNode.querySelector('.accordion-vertical__toggle');
+        const toggleTextNode = accordionNode.querySelector('.accordion-vertical__toggle span');
 
         if (activeNode) {
             buttonNodes.forEach((buttonNode, i) => {
@@ -202,12 +204,31 @@ function initAccordionVertical() {
             });
         });
 
+        toggleNode.addEventListener('click', handleToggle);
+
         function setActive(i) {
             buttonNodes.forEach(buttonNode => buttonNode.classList.remove('accordion-vertical__control_active'));
             buttonNodes[i].classList.add('accordion-vertical__control_active');
             contentNodes.forEach(contentNode => contentNode.classList.remove('accordion-vertical__content_visible'));
             contentNodes[i].classList.add('accordion-vertical__content_visible');
-            if (toggleNode) toggleNode.textContent = buttonNodes[i].textContent;
+            if (toggleTextNode) toggleTextNode.textContent = buttonNodes[i].textContent;
+        }
+
+        function handleDocument() {
+            toggleNode.classList.remove('accordion-vertical__toggle_active');
+
+            document.removeEventListener('click', handleDocument);
+            toggleNode.addEventListener('click', handleToggle);
+        }
+
+        function handleToggle(evt) {
+            evt.stopPropagation();
+            toggleNode.classList.add('accordion-vertical__toggle_active');
+
+            if (toggleNode.classList.contains('accordion-vertical__toggle_active')) {
+                toggleNode.removeEventListener('click', handleToggle);
+                document.addEventListener('click', handleDocument);
+            }
         }
     });
 }

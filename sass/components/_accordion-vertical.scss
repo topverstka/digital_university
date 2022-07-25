@@ -55,17 +55,29 @@
             transition: $tr;
         }
 
-        &:hover {
-            svg {
-                transform: rotate(-180deg);
-            }
+        // &:hover {
+        //     svg {
+        //         transform: rotate(-180deg);
+        //     }
 
-            & + .accordion-vertical__controls-list {
-                visibility: visible;
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+        //     & + .accordion-vertical__controls-list {
+        //         visibility: visible;
+        //         opacity: 1;
+        //         transform: translateY(0);
+        //     }
+        // }
+    }
+}
+
+.accordion-vertical__toggle_active {
+    svg {
+        transform: rotate(-180deg);
+    }
+
+    & + .accordion-vertical__controls-list {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
