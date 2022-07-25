@@ -79,14 +79,14 @@ function initCustomFile() {
         let maxCount = inputNode.getAttribute('data-max-count');
         let files = [];
 
-        inputNode.addEventListener('change', () => {
+        inputNode.addEventListener('input', () => {
             maxCount = maxCount ? Number(maxCount) : inputNode.files.length;
             files = [];
             filesNode.innerHTML = '';
 
             if (maxCount) filesNode.classList.add('form-file__files_visible');
 
-            [...inputNode.files].slice(0, maxCount).forEach(file => {
+            [...inputNode.files].forEach(file => {
                 files.push(file);
                 filesNode.append(createFileNode(file.name, () => {
                     files = files.filter(f => f.name !== file.name);
@@ -94,6 +94,8 @@ function initCustomFile() {
                     inputNode.dispatchEvent(new CustomEvent('change-file', { detail: files }));
                 }));
             });
+
+            checkFile(inputNode, files, maxCount);
 
             inputNode.dispatchEvent(new CustomEvent('change-file', { detail: files }));
         });
@@ -108,6 +110,15 @@ function initCustomFile() {
             });
 
             return fileNode;
+        }
+
+        function checkFile(inputNode, files, maxCount) {
+            if (files.length > maxCount) {
+                inputNode.setCustomValidity(`Максимум ${maxCount} файлов`);
+            } else {
+                inputNode.setCustomValidity('');
+            }
+            inputNode.reportValidity();
         }
     });
 }
