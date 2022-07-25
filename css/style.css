@@ -161,6 +161,7 @@ body {
   font-style: normal;
   line-height: 1.5;
   background: var(--bg-page);
+  font-feature-settings: "pnum" on, "lnum" on;
 }
 body._lock {
   overflow: hidden;

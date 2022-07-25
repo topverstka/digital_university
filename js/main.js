@@ -1,4 +1,3 @@
-
 // Служебные переменные
 const d = document;
 const body = document.querySelector('body');
@@ -6,21 +5,21 @@ const body = document.querySelector('body');
 // Служебные функции
 
 function find(selector) {
-	return document.querySelector(selector)
+    return document.querySelector(selector)
 }
 
 function findAll(selectors) {
-	return document.querySelectorAll(selectors)
+    return document.querySelectorAll(selectors)
 }
 
 // Удаляет у всех элементов items класс itemClass
-function removeAll(items,itemClass) {
+function removeAll(items, itemClass) {
     if (typeof items == 'string') {
-      items = document.querySelectorAll(items)
+        items = document.querySelectorAll(items)
     }
     for (let i = 0; i < items.length; i++) {
-      const item = items[i]
-      item.classList.remove(itemClass)
+        const item = items[i]
+        item.classList.remove(itemClass)
     }
 }
 
@@ -47,21 +46,21 @@ function bodyLock(con) {
         body.classList.remove('_lock');
         body.style.paddingRight = null
     } else if (con === undefined) {
-		if (!body.classList.contains('_lock')) {
-			body.classList.add('_lock');
+        if (!body.classList.contains('_lock')) {
+            body.classList.add('_lock');
             body.style.paddingRight = `${getScrollWidth()}px`
-		}
-		else {
-			body.classList.remove('_lock')
+        } else {
+            body.classList.remove('_lock')
             body.style.paddingRight = null
-		}
-	} else {
-		console.error('Неопределенный аргумент у функции bodyLock()')
-	}
+        }
+    } else {
+        console.error('Неопределенный аргумент у функции bodyLock()')
+    }
 }
 
 // Инициализация кастомного input type=file
 initCustomFile();
+
 function initCustomFile() {
     const wrapperNodes = document.querySelectorAll('.form-file');
     const fileTemplate = document.createElement('template')
@@ -125,6 +124,7 @@ function initCustomFile() {
 
 // Валидация формы
 validationForm('.form');
+
 function validationForm(selector) {
     const formNodes = document.querySelectorAll(selector);
 
@@ -188,6 +188,7 @@ function validationForm(selector) {
 
 // Отправка формы
 submitForm('.form');
+
 function submitForm(selector) {
     const formNodes = document.querySelectorAll(selector);
 
@@ -219,10 +220,11 @@ function submitForm(selector) {
 
 // Мобильное меню
 menu();
+
 function menu() {
     const header = find('.header');
-	const burger = find('.header__burger');
-	const menu = find('.header__bottom');
+    const burger = find('.header__burger');
+    const menu = find('.header__bottom');
 
     document.addEventListener('scroll', (evt) => {
         if (window.scrollY > 0) {
@@ -232,15 +234,16 @@ function menu() {
         }
     });
 
-	burger.addEventListener('click', (e) => {
-		burger.classList.toggle('btn-burger_active');
-		menu.classList.toggle('header__bottom_active');
-		bodyLock();
-	})
+    burger.addEventListener('click', (e) => {
+        burger.classList.toggle('btn-burger_active');
+        menu.classList.toggle('header__bottom_active');
+        bodyLock();
+    })
 }
 
 // Вертикальный аккордеон
 initAccordionVertical();
+
 function initAccordionVertical() {
     const accordionNodes = document.querySelectorAll('.accordion-vertical');
 
@@ -261,7 +264,7 @@ function initAccordionVertical() {
 
         buttonNodes.forEach((buttonNode, i) => {
             buttonNode.addEventListener('click', () => {
-                if(buttonNode.classList.contains('accordion-vertical__control_active')) return;
+                if (buttonNode.classList.contains('accordion-vertical__control_active')) return;
 
                 setActive(i);
             });
@@ -297,23 +300,23 @@ function initAccordionVertical() {
 }
 
 new Swiper('.articles-slider', {
-  slidesPerView: 1,
-  spaceBetween: 20,
+    slidesPerView: 1,
+    spaceBetween: 20,
 
-  breakpoints: {
-    768: {
-        slidesPerView: 1.33,
-        spaceBetween: 20,
+    breakpoints: {
+        768: {
+            slidesPerView: 1.33,
+            spaceBetween: 20,
+        },
+        992: {
+            slidesPerView: 2.3,
+            spaceBetween: 24,
+        },
     },
-    992: {
-        slidesPerView: 2.3,
-        spaceBetween: 24,
-    },
-  },
 
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
+    scrollbar: {
+        el: '.swiper-scrollbar',
+    },
 });
 
 const tabletMq = window.matchMedia('(max-width: 991px)');
@@ -348,6 +351,7 @@ function initOtherCasesSlider() {
 }
 
 initTextSlider();
+
 function initTextSlider() {
     const swiperThumbs = new Swiper(".text-slider__thumbs", {
         spaceBetween: 8,
@@ -378,17 +382,19 @@ function initTextSlider() {
             prevEl: ".swiper-button-prev",
         },
         thumbs: {
-          swiper: swiperThumbs,
+            swiper: swiperThumbs,
         },
     });
 }
 
 // Функции для модальных окон
 modal()
+
 function modal() {
 
     // Открытие модальных окон при клике по кнопке
     openModalWhenClickingOnBtn()
+
     function openModalWhenClickingOnBtn() {
         const btnsOpenModal = document.querySelectorAll('[data-modal-open]');
 
@@ -407,6 +413,7 @@ function modal() {
 
     // Открытие модального окна, если в url указан его id
     openModalHash()
+
     function openModalHash() {
         if (window.location.hash) {
             const hash = window.location.hash.substring(1)
@@ -418,6 +425,7 @@ function modal() {
 
     // Показываем/убираем модальное окно при изменения хеша в адресной строке
     checkHash()
+
     function checkHash() {
         window.addEventListener('hashchange', e => {
             const hash = window.location.hash
@@ -430,6 +438,7 @@ function modal() {
 
     // Закрытие модального окна при клике по заднему фону
     closeModalWhenClickingOnBg()
+
     function closeModalWhenClickingOnBg() {
         document.addEventListener('click', (e) => {
             const target = e.target
@@ -441,6 +450,7 @@ function modal() {
 
     // Закрытие модальных окон при клике по крестику
     closeModalWhenClickingOnCross()
+
     function closeModalWhenClickingOnCross() {
         const modalElems = document.querySelectorAll('.modal')
         for (let i = 0; i < modalElems.length; i++) {
@@ -455,6 +465,7 @@ function modal() {
 
     // Закрытие модальных окон при нажатии по клавише ESC
     closeModalWhenClickingOnESC()
+
     function closeModalWhenClickingOnESC() {
         const modalElems = document.querySelectorAll('.modal')
         for (let i = 0; i < modalElems.length; i++) {
