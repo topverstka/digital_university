@@ -64,31 +64,50 @@ function bodyLock(con) {
 initCustomFile();
 function initCustomFile() {
     const wrapperNodes = document.querySelectorAll('.form-file');
+    const fileTemplate = document.createElement('template')
+    fileTemplate.innerHTML =
+        `<div class="form-file__file">
+            <span class="form-file__name"></span>
+            <button class="form-file__remove" type="button" aria-label="Удалить файл">
+                <span class="form-file__icon"></span>
+            </button>
+        </div>`;
 
     wrapperNodes.forEach((wrapperNode) => {
         const inputNode = wrapperNode.querySelector('.form-file__area');
-        const fileNode = wrapperNode.querySelector('.form-file__file');
-        const nameNode = fileNode.querySelector('.form-file__name');
-        const removeNode = fileNode.querySelector('.form-file__remove');
+        const filesNode = wrapperNode.querySelector('.form-file__files');
+        let maxCount = inputNode.getAttribute('data-max-count');
+        let files = [];
 
-        inputNode.addEventListener('change', handleChange);
-        removeNode.addEventListener('click', handleRemove);
+        inputNode.addEventListener('change', () => {
+            maxCount = maxCount ? Number(maxCount) : inputNode.files.length;
+            files = [];
+            filesNode.innerHTML = '';
 
-        function handleRemove() {
-            const inputNode = wrapperNode.querySelector('.form-file__area');
+            if (maxCount) filesNode.classList.add('form-file__files_visible');
 
-            inputNode.type = '';
-            inputNode.type = 'file';
-            inputNode.value = '';
-            fileNode.classList.remove('form-file__file_visible');
-        }
+            [...inputNode.files].slice(0, maxCount).forEach(file => {
+                files.push(file);
+                filesNode.append(createFileNode(file.name, () => {
+                    files = files.filter(f => f.name !== file.name);
+                    if (files.length === 0) filesNode.classList.remove('form-file__files_visible');
+                    inputNode.dispatchEvent(new CustomEvent('change-file', { detail: files }));
+                }));
+            });
 
-        function handleChange() {
-            const inputNode = wrapperNode.querySelector('.form-file__area');
+            inputNode.dispatchEvent(new CustomEvent('change-file', { detail: files }));
+        });
 
-            nameNode.textContent = inputNode.files[0].name;
-            if (!fileNode.classList.contains('form-file__file_visible'))
-                fileNode.classList.add('form-file__file_visible');
+        function createFileNode(name, handleRemove) {
+            const fileNode = fileTemplate.content.querySelector('.form-file__file').cloneNode('true');
+
+            fileNode.querySelector('.form-file__name').textContent = name;
+            fileNode.querySelector('.form-file__remove').addEventListener('click', () => {
+                fileNode.remove();
+                handleRemove();
+            });
+
+            return fileNode;
         }
     });
 }
@@ -103,7 +122,7 @@ function validationForm(selector) {
         const inputNodes = formNode.querySelectorAll('.form__input');
 
         formNode.setAttribute('novalidate', '');
-        setEvents(inputNodes, submitNode);
+        setEvents(inputNodes, submitNode, formNode);
 
         formNode.addEventListener('submit', (evt) => {
             if (hasInvalidInput(inputNodes)) {
@@ -111,30 +130,32 @@ function validationForm(selector) {
 
                 inputNodes.forEach((inputNode) => {
                     checkInput(inputNode);
-                    toggleSubmitState(inputNodes, submitNode);
+                    toggleSubmitState(inputNodes, submitNode, formNode);
                 });
             }
         });
     });
 
-    function setEvents(inputNodes, submitNode) {
+    function setEvents(inputNodes, submitNode, formNode) {
         inputNodes.forEach((inputNode) => {
             inputNode.addEventListener('input', () => {
                 checkInput(inputNode);
-                toggleSubmitState(inputNodes, submitNode);
+                toggleSubmitState(inputNodes, submitNode, formNode);
             });
         });
 
         // toggleSubmitState(inputNodes, submitNode);
     }
 
-    function toggleSubmitState(inputNodes, submitNode) {
+    function toggleSubmitState(inputNodes, submitNode, formNode) {
         if (!submitNode) return;
 
         if (hasInvalidInput(inputNodes)) {
             submitNode.disabled = true;
+            formNode.classList.remove('form_valid');
         } else {
             submitNode.disabled = false;
+            formNode.classList.add('form_valid');
         }
     }
 
@@ -152,6 +173,37 @@ function validationForm(selector) {
             parentNode.classList.add('form__elem_invalid');
         }
     }
+}
+
+// Отправка формы
+submitForm('.form');
+function submitForm(selector) {
+    const formNodes = document.querySelectorAll(selector);
+
+    formNodes.forEach((formNode) => {
+        const fileNode = formNode.querySelector('.form-file [type=file]');
+        let files = [];
+
+        if (fileNode) {
+            fileNode.addEventListener('change-file', (evt) => files = evt.detail);
+        }
+
+        formNode.addEventListener('submit', (evt) => {
+            evt.preventDefault();
+
+            const formData = new FormData(formNode);
+            if (formData.has('file')) formData.set('file', files);
+
+            if (formNode.classList.contains('form_valid')) {
+                const action = formNode.action || '';
+
+                fetch(action, {
+                    method: 'post',
+                    body: formData
+                });
+            }
+        });
+    });
 }
 
 // Мобильное меню

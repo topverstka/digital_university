@@ -141,27 +141,30 @@
     }
 }
 
+.form-file__files {
+    display: none;
+    gap: 8px;
+    margin-top: 32px;
+}
+
+.form-file__files_visible {
+    display: grid;
+}
+
 .form-file__file {
-    position: absolute;
+    // position: absolute;
     display: grid;
     grid-template-columns: 1fr 19px;
     gap: 16px;
-    margin-top: 32px;
     padding: 17px 16px;
-    visibility: hidden;
-    opacity: 0;
+    // visibility: hidden;
+    // opacity: 0;
     color: #1E1E1E;
     font-size: 14px;
     line-height: 18px;
     background: $bg-block;
     border-radius: 5px;
     transition: $tr;
-}
-
-.form-file__file_visible {
-    position: static;
-    visibility: visible;
-    opacity: 1;
 }
 
 .form-file__remove {
