@@ -78,14 +78,14 @@ function initCustomFile() {
         let maxCount = inputNode.getAttribute('data-max-count');
         let files = [];
 
-        inputNode.addEventListener('input', () => {
+        inputNode.addEventListener('change', () => {
             maxCount = maxCount ? Number(maxCount) : inputNode.files.length;
             files = [];
             filesNode.innerHTML = '';
 
             if (maxCount) filesNode.classList.add('form-file__files_visible');
 
-            [...inputNode.files].forEach(file => {
+            [...inputNode.files].slice(0, maxCount).forEach(file => {
                 files.push(file);
                 filesNode.append(createFileNode(file.name, () => {
                     files = files.filter(f => f.name !== file.name);
@@ -94,7 +94,7 @@ function initCustomFile() {
                 }));
             });
 
-            checkFile(inputNode, files, maxCount);
+            checkFile(inputNode, inputNode.files, maxCount);
 
             inputNode.dispatchEvent(new CustomEvent('change-file', { detail: files }));
         });
@@ -113,14 +113,29 @@ function initCustomFile() {
 
         function checkFile(inputNode, files, maxCount) {
             if (files.length > maxCount) {
+                find('.form-file__box').insertAdjacentHTML('beforeend', `<p class="error">Максимум ${maxCount} файлов</p>`)
                 inputNode.setCustomValidity(`Максимум ${maxCount} файлов`);
             } else {
                 inputNode.setCustomValidity('');
+                find('.form-file__box').querySelector('.error').remove()
             }
             inputNode.reportValidity();
         }
     });
 }
+
+let observer = new MutationObserver(mutationRecords => {
+    let childElementFile = mutationRecords[0].target.childElementCount;
+    let maxCountFiles = mutationRecords[0].target.closest('.form-file').querySelector('.form-file__area').dataset.maxCount;
+    if (childElementFile < maxCountFiles) {
+        if (find('.form-file__box').querySelector('.error')) find('.form-file__box').querySelector('.error').remove()
+    }
+});
+
+observer.observe(find('.form-file__files'), {
+    childList: true,
+});
+
 
 // Валидация формы
 validationForm('.form');
