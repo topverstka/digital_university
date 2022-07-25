@@ -180,6 +180,12 @@ $btn-second-disabled: var(--btn-second-disabled);
     &:active {
         background: $btn-primary-active;
     }
+
+    @media (max-width: $laptop-s) {
+        &:hover {
+            background: $accent;
+        }
+    }
 }
 
 .btn-burger_active {
