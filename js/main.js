@@ -82,7 +82,7 @@ function initCustomFile() {
         inputNode.addEventListener('change', () => {
             maxCount = maxCount ? Number(maxCount) : inputNode.files.length;
             files = [...files, ...[...inputNode.files].filter(f => !files.find(file => file.name === f.name))];
-
+            inputNode.value = '';
             filesNode.innerHTML = '';
 
             if (maxCount) filesNode.classList.add('form-file__files_visible');
