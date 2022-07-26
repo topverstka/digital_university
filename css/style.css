@@ -747,6 +747,9 @@ body._lock {
   position: fixed;
   transform: scale(0);
 }
+.form-file__area:disabled + .form-file__label:hover .form-file__icon {
+  background: var(--accent-hover);
+}
 
 .form-file__label {
   display: grid;
