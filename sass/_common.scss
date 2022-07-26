@@ -14,7 +14,6 @@
 //     background: $accent-hover;
 //     color: #fff;
 // }
-
 // Стиль скроллбара
 // body::-webkit-scrollbar {
 //     position: fixed;
@@ -23,15 +22,12 @@
 //     width: .6em;
 //     height: 100%;
 // }
-
 // body::-webkit-scrollbar-track {
 //     background: #FEF1EB;
 // }
-
 // body::-webkit-scrollbar-thumb {
 //     background-color: #CAC1BC;
 // }
-
 body {
     font-family: $ffMain;
     color: $main;
@@ -40,9 +36,9 @@ body {
     font-style: normal;
     line-height: 1.5;
     background: $bg-page;
-
     &._lock {
         overflow: hidden;
+        padding: 0 calc(16px - (100vw - 100%)) 0 0;
     }
 }
 

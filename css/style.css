@@ -164,6 +164,7 @@ body {
 }
 body._lock {
   overflow: hidden;
+  padding: 0 calc(16px - (100vw - 100%)) 0 0;
 }
 
 .wrapper {
