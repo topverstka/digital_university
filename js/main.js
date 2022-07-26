@@ -81,15 +81,17 @@ function initCustomFile() {
 
         inputNode.addEventListener('change', () => {
             maxCount = maxCount ? Number(maxCount) : inputNode.files.length;
-            files = [];
+            files = [...inputNode.files];
             filesNode.innerHTML = '';
 
             if (maxCount) filesNode.classList.add('form-file__files_visible');
 
-            [...inputNode.files].slice(0, maxCount).forEach(file => {
-                files.push(file);
+            checkFile(wrapperNode, files, maxCount);
+
+            files.forEach(file => {
                 filesNode.append(createFileNode(file.name, () => {
                     files = files.filter(f => f.name !== file.name);
+                    checkFile(wrapperNode, files, maxCount);
                     if (files.length === 0) filesNode.classList.remove('form-file__files_visible');
                     inputNode.dispatchEvent(new CustomEvent('change-file', { detail: files }));
                 }));
@@ -108,6 +110,21 @@ function initCustomFile() {
             });
 
             return fileNode;
+        }
+
+        function checkFile(wrapperNode, files, maxCount) {
+            const errorNode = wrapperNode.querySelector('.form__error');
+            const formNode = wrapperNode.closest('.form');
+            let submitNode = formNode ? formNode.querySelector('.form__submit') : null;
+            if (errorNode) errorNode.textContent = `Максимум ${maxCount} файлов`;
+
+            if (files.length > maxCount) {
+                wrapperNode.classList.add('form__elem_invalid');
+                if (submitNode) submitNode.disabled = true;
+            } else {
+                wrapperNode.classList.remove('form__elem_invalid');
+                if (submitNode) submitNode.disabled = false;
+            }
         }
     });
 }
@@ -201,8 +218,21 @@ function submitForm(selector) {
                     method: 'post',
                     body: formData
                 });
+
+                formNode.reset();
+                resetFile(fileNode);
             }
         });
+
+        function resetFile(fileNode) {
+            if (!fileNode) return;
+
+            const parentNode = fileNode.parentElement;
+            const filesNode = parentNode.querySelector('.form-file__files');
+
+            parentNode.classList.remove('form__elem_invalid');
+            if (filesNode) filesNode.classList.remove('form-file__files_visible')
+        }
     });
 }
 
