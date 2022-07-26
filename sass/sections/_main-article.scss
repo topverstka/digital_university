@@ -1,13 +1,14 @@
 .main-article {
     position: relative;
+    display: flex;
     color: #fff;
 }
 
 .main-article__link {
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     padding: 32px;
-    height: 100%;
     background: rgba(0, 0, 0, 0.5);
 
     &:hover {
