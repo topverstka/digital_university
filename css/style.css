@@ -2227,6 +2227,7 @@ body._lock {
   position: relative;
   display: flex;
   color: #fff;
+  overflow: hidden;
 }
 
 .main-article__link {
