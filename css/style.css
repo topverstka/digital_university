@@ -2374,6 +2374,7 @@ body._lock {
   scrollbar-width: thin;
   scrollbar-color: var(--accent) #fff;
   scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
 }
 .main-articles__list::-webkit-scrollbar {
   height: 3px;
@@ -3208,6 +3209,7 @@ body._lock {
   scrollbar-width: thin;
   scrollbar-color: var(--accent) #fff;
   scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
 }
 .news__list::-webkit-scrollbar {
   height: 3px;
