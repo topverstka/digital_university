@@ -482,18 +482,14 @@
                                     placeholder=" "></textarea>
                                 <label class="form-elem__label" for="message">Ваше сообщение</label>
                             </div>
-                            <div class="form-file">
-                                <input class="form-file__area" type="file" id="file" name="file">
+                            <div class="form-file form__elem">
+                                <input class="form-file__area form__input" type="file" id="file" name="file" multiple data-max-count="3">
                                 <label class="form-file__label" for="file">
                                     <span class="form-file__icon"></span>
                                     Добавить файл
                                 </label>
-                                <div class="form-file__file">
-                                    <span class="form-file__name">Приказ об изменениях в положение обработку персональных данных</span>
-                                    <button class="form-file__remove" type="button" aria-label="Удалить файл">
-                                        <span class="form-file__icon"></span>
-                                    </button>
-                                </div>
+                                <div class="form-file__files"></div>
+                                <span class="form__error"></span>
                             </div>
                             <div class="callback__attention">
                                 <button class="btn btn_primary form__submit" type="submit">Отправить</button>
