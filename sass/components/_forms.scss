@@ -92,6 +92,12 @@
 
 .form-file__area {
     @include visually-hidden;
+
+    &:disabled + .form-file__label:hover {
+        .form-file__icon {
+            background: $accent-hover;
+        }
+    }
 }
 
 .form-file__label {

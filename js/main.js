@@ -81,17 +81,18 @@ function initCustomFile() {
 
         inputNode.addEventListener('change', () => {
             maxCount = maxCount ? Number(maxCount) : inputNode.files.length;
-            files = [...inputNode.files];
+            files = [...files, ...[...inputNode.files].filter(f => !files.find(file => file.name === f.name))];
+
             filesNode.innerHTML = '';
 
             if (maxCount) filesNode.classList.add('form-file__files_visible');
 
-            checkFile(wrapperNode, files, maxCount);
+            checkFile(wrapperNode, inputNode, files, maxCount);
 
             files.forEach(file => {
                 filesNode.append(createFileNode(file.name, () => {
                     files = files.filter(f => f.name !== file.name);
-                    checkFile(wrapperNode, files, maxCount);
+                    checkFile(wrapperNode, inputNode, files, maxCount);
                     if (files.length === 0) filesNode.classList.remove('form-file__files_visible');
                     inputNode.dispatchEvent(new CustomEvent('change-file', { detail: files }));
                 }));
@@ -112,7 +113,7 @@ function initCustomFile() {
             return fileNode;
         }
 
-        function checkFile(wrapperNode, files, maxCount) {
+        function checkFile(wrapperNode, inputNode, files, maxCount) {
             const errorNode = wrapperNode.querySelector('.form__error');
             const formNode = wrapperNode.closest('.form');
             let submitNode = formNode ? formNode.querySelector('.form__submit') : null;
@@ -121,9 +122,11 @@ function initCustomFile() {
             if (files.length > maxCount) {
                 wrapperNode.classList.add('form__elem_invalid');
                 if (submitNode) submitNode.disabled = true;
+                inputNode.disabled = true;
             } else {
                 wrapperNode.classList.remove('form__elem_invalid');
                 if (submitNode) submitNode.disabled = false;
+                inputNode.disabled = false;
             }
         }
     });
