@@ -122,10 +122,14 @@ function initCustomFile() {
             if (files.length > maxCount) {
                 wrapperNode.classList.add('form__elem_invalid');
                 if (submitNode) submitNode.disabled = true;
-                inputNode.disabled = true;
             } else {
                 wrapperNode.classList.remove('form__elem_invalid');
                 if (submitNode) submitNode.disabled = false;
+            }
+
+            if (files.length >= maxCount) {
+                inputNode.disabled = true;
+            } else {
                 inputNode.disabled = false;
             }
         }
