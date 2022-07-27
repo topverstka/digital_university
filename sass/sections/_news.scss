@@ -16,11 +16,14 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 42px 24px;
-    overflow: hidden;
 
     @media (max-width: $laptop-m) {
         grid-template-columns: 1fr;
     }
+}
+
+.news__list-slider {
+    overflow: hidden;
 }
 
 .news__list {
