@@ -22,9 +22,7 @@
     background-color: $accent;
 
     .header__top {
-        @media (max-width: $laptop-s) {
-            background: $accent;
-        }
+        background: $accent;
     }
 
     .header__logo svg {
