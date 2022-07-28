@@ -29,6 +29,14 @@
         fill: $white;
     }
 
+    .header__logo-desc {
+        color: $white;
+
+        &::before {
+            background: $white;
+        }
+    }
+
     .header__callback  {
         color: $accent;
         background: $white;
@@ -39,6 +47,16 @@
 
         svg {
             stroke: $accent;
+        }
+    }
+
+    .header__burger {
+        background: $white;
+
+        .btn-burger__line,
+        &::before,
+        &::after {
+            background: $accent;
         }
     }
 
