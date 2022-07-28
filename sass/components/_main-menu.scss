@@ -22,7 +22,7 @@
         color: $accent-hover;
     }
 
-    &:hover {
+    &:active {
         color: $accent-active;
     }
 
@@ -37,4 +37,8 @@
         font-size: 24px;
         line-height: 32px;
     }
+}
+
+.main-menu__link_active {
+    color: $accent-hover;
 }
