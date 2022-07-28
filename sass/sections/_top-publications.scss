@@ -24,7 +24,7 @@
 
 .top-publications__list {
     display: grid;
-    gap: 40px 20px;
+    gap: 20px;
 
     @media (max-width: $laptop-m) {
         grid-template-columns: repeat(auto-fit, minmax(333px, 1fr));
@@ -37,5 +37,20 @@
 
     @media (max-width: $mobile-m) {
         grid-template-columns: 1fr;
+    }
+}
+
+.top-publications__item {
+    padding-bottom: 19px;
+    border-bottom: 1px solid rgb(192, 191, 191, 0.3);
+
+    &:last-child {
+        padding-bottom: 0;
+        border: none;
+    }
+
+    @media (max-width: $laptop-m) {
+        padding-bottom: 0;
+        border: none;
     }
 }
