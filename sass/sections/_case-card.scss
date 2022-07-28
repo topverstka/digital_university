@@ -92,13 +92,10 @@
 .case-card__source {
     font-size: 14px;
     line-height: 18px;
+    opacity: .8;
 
     @media (max-width: $tablet) {
         font-size: 12px;
         line-height: 16px;
     }
-}
-
-.case-card__source-link {
-    color: $accent-hover;
 }
