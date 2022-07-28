@@ -28,7 +28,7 @@
 
         & > li {
             position: relative;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             padding-left: 40px;
             counter-increment: ol;
 
@@ -49,7 +49,7 @@
             max-width: 856px;
 
             li {
-                margin-bottom: 13px;
+                margin-bottom: 16px;
                 padding-left: 24px;
 
                 &::before {
@@ -69,7 +69,7 @@
         & > li {
             position: relative;
             padding-left: 40px;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             font-size: 16px;
             line-height: 24px;
 
@@ -79,6 +79,21 @@
                 top: -5px;
                 left: -2px;
                 min-width: 40px;
+            }
+        }
+
+        ul,
+        ol {
+            margin: 24px 0;
+            max-width: 856px;
+
+            li {
+                margin-bottom: 16px;
+                padding-left: 24px;
+
+                &::before {
+                    left: -3px;
+                }
             }
         }
     }
@@ -120,7 +135,7 @@
 
         cite {
             display: block;
-            margin-top: 9px;
+            margin-top: 8px;
             font-weight: 400;
             font-style: normal;
         }
