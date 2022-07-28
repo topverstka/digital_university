@@ -77,6 +77,14 @@
 .footer__link {
     color: $accent-hover;
 
+    &:hover {
+        text-decoration: underline;
+    }
+
+    &:active {
+        color: $accent-active;
+    }
+
     @media (max-width: $tablet) {
         font-size: 14px;
     }
