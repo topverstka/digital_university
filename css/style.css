@@ -390,7 +390,7 @@ body._lock {
 .main-menu__link:hover {
   color: var(--accent-hover);
 }
-.main-menu__link:hover {
+.main-menu__link:active {
   color: var(--accent-active);
 }
 @media (max-width: 991px) {
@@ -406,6 +406,10 @@ body._lock {
     font-size: 24px;
     line-height: 32px;
   }
+}
+
+.main-menu__link_active {
+  color: var(--accent-hover);
 }
 
 .social {
@@ -623,10 +627,10 @@ body._lock {
 }
 
 .link {
-  color: var(--accent);
+  color: var(--accent-hover);
 }
 .link:hover {
-  color: var(--accent-hover);
+  text-decoration: underline;
 }
 .link:active {
   color: var(--accent-active);
@@ -1083,7 +1087,7 @@ body._lock {
 
 .accordion-vertical__control {
   display: block;
-  padding: 14px 8px;
+  padding: 14px 16px;
   width: 100%;
   color: var(--accent-disabled);
   font-weight: 700;
@@ -1205,6 +1209,7 @@ body._lock {
   position: absolute;
   top: 0;
   left: 2px;
+  color: var(--accent);
   font-weight: bold;
   min-width: 40px;
 }
@@ -1241,7 +1246,6 @@ body._lock {
   position: absolute;
   top: -5px;
   left: -2px;
-  font-weight: bold;
   min-width: 40px;
 }
 .text blockquote:not([class]) {
@@ -1269,9 +1273,11 @@ body._lock {
 }
 .text blockquote:not([class]) figcaption {
   margin: 0;
+  color: #1D1D1D;
   font-weight: 700;
   font-size: 16px;
   line-height: 24px;
+  opacity: 1;
 }
 .text blockquote:not([class]) cite {
   display: block;
@@ -1293,6 +1299,7 @@ body._lock {
   margin-top: 6px;
   font-size: 14px;
   line-height: 18px;
+  opacity: 0.8;
 }
 @media (max-width: 991px) {
   .text {
@@ -1567,6 +1574,12 @@ body._lock {
 .header_color_accent .header__logo svg {
   fill: var(--white);
 }
+.header_color_accent .header__logo-desc {
+  color: var(--white);
+}
+.header_color_accent .header__logo-desc::before {
+  background: var(--white);
+}
 .header_color_accent .header__callback {
   color: var(--accent);
   background: var(--white);
@@ -1576,6 +1589,12 @@ body._lock {
 }
 .header_color_accent .header__search svg {
   stroke: var(--accent);
+}
+.header_color_accent .header__burger {
+  background: var(--white);
+}
+.header_color_accent .header__burger .btn-burger__line, .header_color_accent .header__burger::before, .header_color_accent .header__burger::after {
+  background: var(--accent);
 }
 .header_color_accent .header__nav {
   color: var(--white);
@@ -1918,6 +1937,12 @@ body._lock {
 .footer__link {
   color: var(--accent-hover);
 }
+.footer__link:hover {
+  text-decoration: underline;
+}
+.footer__link:active {
+  color: var(--accent-active);
+}
 @media (max-width: 767px) {
   .footer__link {
     font-size: 14px;
@@ -2189,12 +2214,6 @@ body._lock {
   color: #1E1E1E;
   font-size: 14px;
   line-height: 18px;
-}
-.callback__attention-desc a {
-  color: var(--accent-hover);
-}
-.callback__attention-desc a:hover {
-  text-decoration: underline;
 }
 @media (max-width: 1023px) {
   .callback__attention-desc {
@@ -3414,6 +3433,12 @@ body._lock {
 
 .news-detail__source-link {
   color: var(--accent-hover);
+}
+.news-detail__source-link:hover {
+  text-decoration: underline;
+}
+.news-detail__source-link:active {
+  color: var(--accent-active);
 }
 
 .articles {
