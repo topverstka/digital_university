@@ -54,18 +54,6 @@
             stroke: $accent;
             transition: $tr;
         }
-
-        // &:hover {
-        //     svg {
-        //         transform: rotate(-180deg);
-        //     }
-
-        //     & + .accordion-vertical__controls-list {
-        //         visibility: visible;
-        //         opacity: 1;
-        //         transform: translateY(0);
-        //     }
-        // }
     }
 }
 
@@ -106,7 +94,7 @@
 
 .accordion-vertical__control {
     display: block;
-    padding: 14px 8px;
+    padding: 14px 16px;
     width: 100%;
     color: $accent-disabled;
     font-weight: 700;
