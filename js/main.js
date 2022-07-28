@@ -249,12 +249,15 @@ function menu() {
     const header = find('.header');
 	const burger = find('.header__burger');
 	const menu = find('.header__bottom');
+    const isColorAccent = header.classList.contains('header_color_accent');
 
     document.addEventListener('scroll', (evt) => {
         if (window.scrollY > 0) {
             header.classList.add('header_sticky');
+            if (isColorAccent) header.classList.remove('header_color_accent');
         } else {
             header.classList.remove('header_sticky');
+            if (isColorAccent) header.classList.add('header_color_accent');
         }
     });
 

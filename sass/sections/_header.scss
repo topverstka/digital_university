@@ -21,7 +21,8 @@
 .header_color_accent {
     background-color: $accent;
 
-    .header__top {
+    .header__top,
+    .header__bottom {
         background: $accent;
     }
 
