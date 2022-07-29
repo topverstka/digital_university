@@ -129,15 +129,18 @@
 .footer__bottom-link {
     color: #fff;
     line-height: 19px;
+    text-decoration: underline transparent;
+    text-decoration-skip-ink: none;
+    text-underline-offset: 1px;
 
     &:active {
-        text-decoration-line: underline;
+        text-decoration-color: currentcolor;
         opacity: 0.7;
     }
 
     @media (min-width: $minHover) {
         &:hover {
-            text-decoration-line: underline;
+            text-decoration-color: currentcolor;
             opacity: 0.7;
         }
     }

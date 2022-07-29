@@ -1,13 +1,17 @@
 .link {
     color: $accent-hover;
+    text-decoration: underline transparent;
+    text-decoration-skip-ink: none;
+    text-underline-offset: 1px;
 
     &:active {
         color: $accent-active;
+        text-decoration-color: currentcolor;
     }
 
     @media (min-width: $minHover) {
         &:hover {
-            text-decoration: underline;
+            text-decoration-color: currentcolor;
         }
     }
 }
