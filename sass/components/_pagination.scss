@@ -39,6 +39,10 @@
     & + & {
         margin-left: 8px;
     }
+
+    &:not([href]) {
+        cursor: default;
+    }
 }
 
 .pagination__link {
