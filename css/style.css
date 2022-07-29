@@ -1624,7 +1624,7 @@ body._lock {
   position: relative;
   z-index: 2;
   background-color: var(--bg-block);
-  transition: background-color 0.2s, box-shadow 0.2s;
+  transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .header_sticky {
@@ -1637,6 +1637,11 @@ body._lock {
 }
 .header_sticky.header_color_accent {
   box-shadow: none;
+}
+@media (max-width: 991px) {
+  .header_sticky .header__top {
+    background: var(--white);
+  }
 }
 
 .header_color_accent {
@@ -1682,9 +1687,9 @@ body._lock {
   position: relative;
   z-index: 1;
 }
-@media (max-width: 1023px) {
+@media (max-width: 991px) {
   .header__top {
-    background: var(--bg-block);
+    background: var(--bg-page);
   }
 }
 
