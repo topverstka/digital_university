@@ -4118,15 +4118,15 @@ body._lock {
   background: var(--accent-hover);
   border-radius: 50%;
 }
+.swiper-button-prev:active,
+.swiper-button-next:active {
+  background: var(--accent);
+}
 @media (min-width: 1024px) {
   .swiper-button-prev:hover,
 .swiper-button-next:hover {
     background: var(--accent);
   }
-}
-.swiper-button-prev:active,
-.swiper-button-next:active {
-  background: var(--accent-active);
 }
 .swiper-button-prev svg,
 .swiper-button-next svg {
