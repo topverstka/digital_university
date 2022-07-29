@@ -5,7 +5,7 @@
   font-weight: 400;
   font-stretch: 100%;
   font-display: swap;
-  src: url("../fonts/Raleway/Raleway-Regular.ttf") format("woff2");
+  src: url(../fonts/Raleway/Raleway-Regular.woff2) format("woff2"), url(../fonts/Raleway/Raleway-Regular.woff) format("woff"), url(../fonts/Raleway/Raleway-Regular.ttf) format("truetype");
 }
 @font-face {
   font-family: "Raleway";
@@ -13,7 +13,7 @@
   font-weight: 600;
   font-stretch: 100%;
   font-display: swap;
-  src: url("../fonts/Raleway/Raleway-SemiBold.ttf") format("woff2");
+  src: url(../fonts/Raleway/Raleway-SemiBold.woff2) format("woff2"), url(../fonts/Raleway/Raleway-SemiBold.woff) format("woff"), url(../fonts/Raleway/Raleway-SemiBold.ttf) format("truetype");
 }
 @font-face {
   font-family: "Raleway";
@@ -21,7 +21,7 @@
   font-weight: 700;
   font-stretch: 100%;
   font-display: swap;
-  src: url("../fonts/Raleway/Raleway-Bold.ttf") format("woff2");
+  src: url(../fonts/Raleway/Raleway-Bold.woff2) format("woff2"), url(../fonts/Raleway/Raleway-Bold.woff) format("woff"), url(../fonts/Raleway/Raleway-Bold.ttf) format("truetype");
 }
 :root {
   --ffMain: "Raleway", sans-serif;
@@ -134,6 +134,10 @@ ul li {
 
 ol li {
   list-style-position: inside;
+}
+
+img {
+  display: block;
 }
 
 img,
@@ -470,6 +474,7 @@ body._lock {
 }
 .btn_primary:disabled {
   background: var(--accent-disabled);
+  cursor: auto;
 }
 
 .btn_primary-invert {
@@ -490,6 +495,7 @@ body._lock {
 .btn_primary-invert:disabled {
   color: #fff;
   background: var(--accent-disabled);
+  cursor: auto;
 }
 
 .btn_size_sm {
@@ -535,6 +541,7 @@ body._lock {
 .btn-outline:disabled {
   color: var(--accent-disabled);
   border-color: var(--accent-disabled);
+  cursor: auto;
 }
 @media (max-width: 767px) {
   .btn-outline {
@@ -636,6 +643,7 @@ body._lock {
 }
 .btn-navigation:disabled {
   background: var(--accent-disabled);
+  cursor: auto;
 }
 .btn-navigation svg {
   stroke: var(--white);
@@ -786,6 +794,9 @@ body._lock {
 .form-file__area {
   position: fixed;
   transform: scale(0);
+}
+.form-file__area:disabled + .form-file__label {
+  cursor: auto;
 }
 .form-file__area:disabled + .form-file__label .form-file__icon {
   background: var(--accent-disabled);
@@ -1018,6 +1029,9 @@ body._lock {
 
 .pagination__item + .pagination__item {
   margin-left: 8px;
+}
+.pagination__item:not([href]) {
+  cursor: default;
 }
 
 .pagination__link {
@@ -4142,6 +4156,7 @@ body._lock {
 
 .swiper-button-disabled {
   background: var(--accent-disabled);
+  cursor: auto;
 }
 .swiper-button-disabled:hover {
   background: var(--accent-disabled);
