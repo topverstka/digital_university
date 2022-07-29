@@ -692,10 +692,16 @@ body._lock {
 }
 
 .form-elem textarea {
+  display: block;
   width: 100%;
   height: 100%;
   min-height: 220px;
   resize: none;
+}
+@media (max-width: 991px) {
+  .form-elem textarea {
+    max-height: 220px;
+  }
 }
 
 .form-elem__area {
@@ -2175,7 +2181,7 @@ body._lock {
 }
 @media (max-width: 767px) {
   .callback__desc {
-    margin-bottom: 32px;
+    margin-bottom: 24px;
     font-size: 14px;
   }
 }
@@ -2193,6 +2199,20 @@ body._lock {
 @media (max-width: 991px) {
   .callback__form {
     grid-template-columns: 1fr;
+  }
+  .callback__form .form-elem:nth-child(2), .callback__form .form-elem:nth-child(3) {
+    margin-top: 14px;
+  }
+}
+@media (max-width: 767px) {
+  .callback__form {
+    gap: 24px;
+  }
+  .callback__form .form-elem:nth-child(2), .callback__form .form-elem:nth-child(3) {
+    margin-top: 18px;
+  }
+  .callback__form .form-elem:nth-child(4) {
+    margin-top: 10px;
   }
 }
 
@@ -2229,6 +2249,7 @@ body._lock {
   .callback__attention {
     justify-items: start;
     grid-template-columns: 1fr;
+    margin-top: 10px;
   }
 }
 
