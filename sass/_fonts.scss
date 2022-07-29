@@ -5,10 +5,13 @@
         font-weight: $fweight;
         font-stretch: 100%;
         font-display: swap;
-        src: url($furl_woff2) format('woff2');
+        src:
+            url(#{$furl_woff2}.woff2) format('woff2'),
+            url(#{$furl_woff2}.woff) format('woff'),
+            url(#{$furl_woff2}.ttf) format('truetype');
     }
 }
 
-@include font('Raleway', normal, 400, '../fonts/Raleway/Raleway-Regular.ttf');
-@include font('Raleway', normal, 600, '../fonts/Raleway/Raleway-SemiBold.ttf');
-@include font('Raleway', normal, 700, '../fonts/Raleway/Raleway-Bold.ttf');
+@include font('Raleway', normal, 400, '../fonts/Raleway/Raleway-Regular');
+@include font('Raleway', normal, 600, '../fonts/Raleway/Raleway-SemiBold');
+@include font('Raleway', normal, 700, '../fonts/Raleway/Raleway-Bold');
