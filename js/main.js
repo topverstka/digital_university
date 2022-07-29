@@ -76,6 +76,7 @@ function initCustomFile() {
     wrapperNodes.forEach((wrapperNode) => {
         const inputNode = wrapperNode.querySelector('.form-file__area');
         const filesNode = wrapperNode.querySelector('.form-file__files');
+        const errorNode = wrapperNode.querySelector('.form__error');
         let maxCount = inputNode.getAttribute('data-max-count');
         let files = [];
 
@@ -87,12 +88,12 @@ function initCustomFile() {
 
             if (maxCount) filesNode.classList.add('form-file__files_visible');
 
-            checkFile(wrapperNode, inputNode, files, maxCount);
+            checkFiles(files, maxCount, inputNode, wrapperNode);
 
             files.forEach(file => {
                 filesNode.append(createFileNode(file.name, () => {
                     files = files.filter(f => f.name !== file.name);
-                    checkFile(wrapperNode, inputNode, files, maxCount);
+                    checkFiles(files, maxCount, inputNode, wrapperNode);
                     if (files.length === 0) filesNode.classList.remove('form-file__files_visible');
                     inputNode.dispatchEvent(new CustomEvent('change-file', { detail: files }));
                 }));
@@ -113,25 +114,44 @@ function initCustomFile() {
             return fileNode;
         }
 
-        function checkFile(wrapperNode, inputNode, files, maxCount) {
-            const errorNode = wrapperNode.querySelector('.form__error');
+        function checkFiles(files, maxCount, inputNode, wrapperNode) {
             const formNode = wrapperNode.closest('.form');
-            let submitNode = formNode ? formNode.querySelector('.form__submit') : null;
-            if (errorNode) errorNode.textContent = `Максимум ${maxCount} файлов`;
+            const submitNode = formNode ? formNode.querySelector('.form__submit') : null;
+            const isValidMaxCount = files.length <= maxCount;
+            const maxSize = inputNode.getAttribute('data-max-size') || file.size;
+            const isValidSize = !files.some(file => file.size > Number(maxSize * 1024));
+            const isValid = isValidMaxCount && isValidSize ? true : false;
 
-            if (files.length > maxCount) {
-                wrapperNode.classList.add('form__elem_invalid');
-                if (submitNode) submitNode.disabled = true;
-            } else {
-                wrapperNode.classList.remove('form__elem_invalid');
-                if (submitNode) submitNode.disabled = false;
-            }
+            console.log(isValid, isValidSize, isValidMaxCount);
 
-            if (files.length >= maxCount) {
-                inputNode.disabled = true;
-            } else {
-                inputNode.disabled = false;
-            }
+            setErrorText(`Максимум ${maxCount} файлов`, errorNode);
+            if (!isValidSize) checkSizeFiles(files, maxSize, errorNode);
+
+            toggleError(!isValid, wrapperNode);
+            toggleSubmit(!isValid, submitNode);
+
+            inputNode.disabled = files.length >= maxCount;
+        }
+
+        function checkSizeFiles(files, maxSize, errorNode) {
+            files.forEach(file => {
+                if (file.size > Number(maxSize * 1024)) {
+                    setErrorText(`Размер файла ${file.name} не должен превышать ${maxSize} КБ`, errorNode);
+                }
+            });
+        }
+
+        function toggleSubmit(value, submitNode) {
+            if (!submitNode) return;
+            submitNode.disabled = value;
+        }
+
+        function toggleError(value, wrapperNode) {
+            value ? wrapperNode.classList.add('form__elem_invalid') : wrapperNode.classList.remove('form__elem_invalid')
+        }
+
+        function setErrorText(text, errorNode) {
+            if (errorNode) errorNode.textContent = text;
         }
     });
 }
