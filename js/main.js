@@ -264,8 +264,13 @@ function menu() {
 	burger.addEventListener('click', (e) => {
 		burger.classList.toggle('btn-burger_active');
 		menu.classList.toggle('header__bottom_active');
-		bodyLock();
-	})
+
+        if (menu.classList.contains('header__bottom_active')) {
+            bodyLock(true);
+        } else {
+            bodyLock(false);
+        }
+	});
 }
 
 // Вертикальный аккордеон
