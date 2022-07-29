@@ -643,13 +643,17 @@ body._lock {
 
 .link {
   color: var(--accent-hover);
+  text-decoration: underline transparent;
+  text-decoration-skip-ink: none;
+  text-underline-offset: 1px;
 }
 .link:active {
   color: var(--accent-active);
+  text-decoration-color: currentcolor;
 }
 @media (min-width: 1024px) {
   .link:hover {
-    text-decoration: underline;
+    text-decoration-color: currentcolor;
   }
 }
 
@@ -2077,14 +2081,17 @@ body._lock {
 .footer__bottom-link {
   color: #fff;
   line-height: 19px;
+  text-decoration: underline transparent;
+  text-decoration-skip-ink: none;
+  text-underline-offset: 1px;
 }
 .footer__bottom-link:active {
-  text-decoration-line: underline;
+  text-decoration-color: currentcolor;
   opacity: 0.7;
 }
 @media (min-width: 1024px) {
   .footer__bottom-link:hover {
-    text-decoration-line: underline;
+    text-decoration-color: currentcolor;
     opacity: 0.7;
   }
 }
