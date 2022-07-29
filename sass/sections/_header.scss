@@ -2,7 +2,7 @@
     position: relative;
     z-index: 2;
     background-color: $bg-block;
-    transition: background-color 0.2s, box-shadow 0.2s;
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .header_sticky {
@@ -15,6 +15,12 @@
 
     &.header_color_accent {
         box-shadow: none;
+    }
+
+    @media (max-width: $laptop-s) {
+        .header__top {
+            background: $white;
+        }
     }
 }
 
@@ -74,8 +80,8 @@
     position: relative;
     z-index: 1;
 
-    @media (max-width: $laptop-m) {
-        background: $bg-block;
+    @media (max-width: $laptop-s) {
+        background: $bg-page;
     }
 }
 
