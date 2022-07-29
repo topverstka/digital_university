@@ -87,8 +87,10 @@
     background: $accent;
     border-radius: 50%;
 
-    &:hover {
-        background: $btn-primary-hover;
+    @media (min-width: $minHover) {
+        &:hover {
+            background: $btn-primary-hover;
+        }
     }
 
     &:active {

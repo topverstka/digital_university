@@ -38,7 +38,21 @@
     display: flex;
     flex-direction: column;
 
-    &:hover {
+    @media (min-width: $minHover) {
+        &:hover {
+            .article-card__title {
+                color: $accent-hover;
+            }
+
+            .article-card__look {
+                svg {
+                    transform: rotate(0);
+                }
+            }
+        }
+    }
+
+    &:active {
         .article-card__title {
             color: $accent-hover;
         }

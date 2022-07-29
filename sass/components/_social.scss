@@ -16,8 +16,10 @@
         transition: $tr;
     }
 
-    &:hover svg {
-        fill: $accent-hover;
+    @media (min-width: $minHover) {
+        &:hover svg {
+            fill: $accent-hover;
+        }
     }
 
     &:active svg {

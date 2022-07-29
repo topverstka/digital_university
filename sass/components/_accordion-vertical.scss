@@ -107,8 +107,14 @@
     background-size: 0 100%;
     transition: background-size .3s, color .2s;
 
-    &:hover {
+    &:active {
         color: $accent-hover;
+    }
+
+    @media (min-width: $minHover) {
+        &:hover {
+            color: $accent-hover;
+        }
     }
 
     @media (max-width: $tablet) {
@@ -122,8 +128,14 @@
     background-size: 100% 100%;
     transition: background-size .3s, color .2s .2s;
 
-    &:hover {
+    &:active {
         color: $white;
+    }
+
+    @media (min-width: $minHover) {
+        &:hover {
+            color: $white;
+        }
     }
 }
 

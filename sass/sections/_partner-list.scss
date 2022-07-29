@@ -24,8 +24,14 @@
     min-height: 151px;
     background: $white;
 
-    &:hover {
+    &:active {
         transform: scale(1.1);
+    }
+
+    @media (min-width: $minHover) {
+        &:hover {
+            transform: scale(1.1);
+        }
     }
 
     img {

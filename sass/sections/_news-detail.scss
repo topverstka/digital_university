@@ -154,12 +154,4 @@
 
 .news-detail__source-link {
     color: $accent-hover;
-
-    &:hover {
-        text-decoration: underline;
-    }
-
-    &:active {
-        color: $accent-active;
-    }
 }

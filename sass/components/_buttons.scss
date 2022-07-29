@@ -30,8 +30,10 @@ $btn-second-disabled: var(--btn-second-disabled);
     color: #fff;
     background: $btn-primary-default;
 
-    &:hover {
-        background: $btn-primary-hover;
+    @media (min-width: $minHover) {
+        &:hover {
+            background: $btn-primary-hover;
+        }
     }
 
     &:active {
@@ -47,9 +49,11 @@ $btn-second-disabled: var(--btn-second-disabled);
     color: $btn-primary-default;
     background: #fff;
 
-    &:hover {
-        color: #fff;
-        background: $btn-primary-hover;
+    @media (min-width: $minHover) {
+        &:hover {
+            color: #fff;
+            background: $btn-primary-hover;
+        }
     }
 
     &:active {
@@ -91,13 +95,20 @@ $btn-second-disabled: var(--btn-second-disabled);
     border: 1px solid $btn-primary-default;
     border-radius: 20px;
 
-    &:hover {
-        color: $white;
-        background: $btn-primary-default;
+    @media (min-width: $minHover) {
+        &:hover {
+            color: $white;
+            background: $btn-primary-default;
+        }
+
+        &:active {
+            opacity: 0.7;
+        }
     }
 
     &:active {
-        opacity: 0.7;
+        color: $white;
+        background: $btn-primary-default;
     }
 
     &:disabled {
@@ -119,8 +130,10 @@ $btn-second-disabled: var(--btn-second-disabled);
     background: $btn-primary-default;
     border-radius: 50%;
 
-    &:hover {
-        background: $btn-primary-hover;
+    @media (min-width: $minHover) {
+        &:hover {
+            background: $btn-primary-hover;
+        }
     }
 
     &:active {
@@ -173,18 +186,14 @@ $btn-second-disabled: var(--btn-second-disabled);
         transform: translateY(4px);
     }
 
-    &:hover {
-        background: $btn-primary-hover;
+    @media (min-width: $minHover) {
+        &:hover {
+            background: $btn-primary-hover;
+        }
     }
 
     &:active {
         background: $btn-primary-active;
-    }
-
-    @media (max-width: $laptop-s) {
-        &:hover {
-            background: $accent;
-        }
     }
 }
 
@@ -212,8 +221,10 @@ $btn-second-disabled: var(--btn-second-disabled);
     border-radius: 50%;
     transition: $tr;
 
-    &:hover {
-        background: $btn-primary-default;
+    @media (min-width: $minHover) {
+        &:hover {
+            background: $btn-primary-default;
+        }
     }
 
     &:active {
@@ -228,79 +239,3 @@ $btn-second-disabled: var(--btn-second-disabled);
         stroke: $white;
     }
 }
-
-// // Hover-эффект у ссылки
-// .link {
-
-// }
-
-// // Кнопки выбора
-// .choice-chips {
-//     width: fit-content;
-//     font-size: 14px;
-//     font-weight: 600;
-//     color: $main;
-//     padding: 12px 24px;
-//     background: #F8F8F8;
-//     border-radius: 100px;
-
-//     &:hover {
-
-//         @media (min-width: $minHover) {
-//             color: $accent;
-//             background: #EFF7F5;
-//         }
-//     }
-
-//     &:active {
-//         color: #fff;
-//         background: $accent;
-//     }
-
-//     &._active {
-//         color: #fff;
-//         background: $accent;
-//     }
-// }
-
-// .choice-chips_disabled {
-//     color: $second;
-//     background: #F8F8F8;
-//     pointer-events: none;
-// }
-
-// // Стрелка в слайдерах
-// .slider-arrow {
-//     width: 56px;
-//     height: 56px;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     background: $accent;
-//     border-radius: 50%;
-
-//     &:hover {
-
-//         @media (min-width: $minHover) {
-//             background: $accent-hover;
-//         }
-//     }
-
-//     &:active {
-//         background: $accent-active;
-//     }
-
-//     &.swiper-button-disabled {
-//         background: #F8F8F8;
-//         // pointer-events: none;
-
-//         & svg path {
-//             fill: $second;
-//         }
-//     }
-
-//     & svg {
-//         width: 24px;
-//         height: 24px;
-//     }
-// }

@@ -44,8 +44,14 @@
     background: $accent-hover;
     border-radius: 50%;
 
-    &:hover {
-        background: $accent;
+    @media (min-width: $minHover) {
+        &:hover {
+            background: $accent;
+        }
+    }
+
+    &:active {
+        background: $accent-active;
     }
 
     svg {

@@ -1,12 +1,14 @@
 .link {
     color: $accent-hover;
 
-    &:hover {
-        text-decoration: underline;
-    }
-
     &:active {
         color: $accent-active;
+    }
+
+    @media (min-width: $minHover) {
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }
 
@@ -25,14 +27,20 @@
         transition: $tr;
     }
 
-    &:hover {
+    &:active {
+        opacity: 0.7;
+
         svg {
             transform: rotate(0);
         }
     }
 
-    &:active {
-        opacity: 0.7;
+    @media (min-width: $minHover) {
+        &:hover {
+            svg {
+                transform: rotate(0);
+            }
+        }
     }
 }
 
