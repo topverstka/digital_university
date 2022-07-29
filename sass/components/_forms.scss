@@ -103,6 +103,8 @@
     @include visually-hidden;
 
     &:disabled + .form-file__label {
+        cursor: auto;
+
         .form-file__icon {
             background: $accent-disabled;
         }
