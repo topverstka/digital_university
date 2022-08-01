@@ -118,27 +118,17 @@ function initCustomFile() {
             const formNode = wrapperNode.closest('.form');
             const submitNode = formNode ? formNode.querySelector('.form__submit') : null;
             const isValidMaxCount = files.length <= maxCount;
-            const maxSize = inputNode.getAttribute('data-max-size') || file.size;
-            const isValidSize = !files.some(file => file.size > Number(maxSize * 1024));
+            const maxSize = inputNode.getAttribute('data-max-size') || 30000;
+            const isValidSize = files.reduce((a, e) => a + e.size, 0) <= maxSize * 1024;
             const isValid = isValidMaxCount && isValidSize ? true : false;
 
-            console.log(isValid, isValidSize, isValidMaxCount);
-
             setErrorText(`Максимум ${maxCount} файлов`, errorNode);
-            if (!isValidSize) checkSizeFiles(files, maxSize, errorNode);
+            if (!isValidSize) setErrorText(`Размер файлов не должен превышать ${maxSize / 1000} МБ`, errorNode);
 
             toggleError(!isValid, wrapperNode);
             toggleSubmit(!isValid, submitNode);
 
             inputNode.disabled = files.length >= maxCount;
-        }
-
-        function checkSizeFiles(files, maxSize, errorNode) {
-            files.forEach(file => {
-                if (file.size > Number(maxSize * 1024)) {
-                    setErrorText(`Размер файла ${file.name} не должен превышать ${maxSize} КБ`, errorNode);
-                }
-            });
         }
 
         function toggleSubmit(value, submitNode) {
