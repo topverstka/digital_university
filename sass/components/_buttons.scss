@@ -146,6 +146,19 @@ $btn-second-disabled: var(--btn-second-disabled);
     &:active {
         background: $btn-primary-active;
     }
+
+    &.btn-icon_disabled,
+    &:disabled {
+        background: $btn-primary-disabled;
+
+        &:hover {
+            background: $btn-primary-disabled;
+        }
+
+        &:active {
+            background: $btn-primary-disabled;
+        }
+    }
 }
 
 .btn-icon_size_sm {
