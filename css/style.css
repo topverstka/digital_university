@@ -3324,7 +3324,7 @@ body._lock {
 
 .top-publications__list {
   display: grid;
-  gap: 20px;
+  gap: 32px 30px;
 }
 @media (max-width: 1023px) {
   .top-publications__list {
@@ -3388,7 +3388,7 @@ body._lock {
 .news__list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: minmax(712px, auto);
+  grid-template-rows: minmax(772px, auto);
   grid-auto-rows: minmax(335px, auto);
   gap: 24px;
   overflow: hidden;
