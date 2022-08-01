@@ -570,6 +570,15 @@ body._lock {
 .btn-icon:active {
   background: var(--accent-active);
 }
+.btn-icon.btn-icon_disabled, .btn-icon:disabled {
+  background: var(--accent-disabled);
+}
+.btn-icon.btn-icon_disabled:hover, .btn-icon:disabled:hover {
+  background: var(--accent-disabled);
+}
+.btn-icon.btn-icon_disabled:active, .btn-icon:disabled:active {
+  background: var(--accent-disabled);
+}
 
 .btn-icon_size_sm {
   width: 33px;
