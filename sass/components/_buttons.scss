@@ -23,6 +23,8 @@ $btn-second-disabled: var(--btn-second-disabled);
     font-size: 14px;
     font-weight: 700;
     border-radius: $radius;
+    cursor: pointer;
+    transition: $tr;
 }
 
 // Акцентная кнопка
@@ -96,6 +98,8 @@ $btn-second-disabled: var(--btn-second-disabled);
     text-transform: uppercase;
     border: 1px solid $btn-primary-default;
     border-radius: 20px;
+    cursor: pointer;
+    transition: $tr;
 
     @media (min-width: $minHover) {
         &:hover {

@@ -274,14 +274,32 @@
                 <div class="container">
                     <h1 class="title-section">Новости</h1>
 
-                    <div class="btns-group">
-                        <button class="btns-group__item btn-outline" type="button">Главное</button>
-                        <button class="btns-group__item btn-outline" type="button">университет</button>
-                        <button class="btns-group__item btn-outline" type="button">вузы</button>
-                        <button class="btns-group__item btn-outline" type="button">Cтуденты</button>
-                        <button class="btns-group__item btn-outline" type="button">защита</button>
-                        <button class="btns-group__item btn-outline" type="button">Сайты</button>
-                    </div>
+                    <form class="btns-group" action="/">
+                        <label>
+                            <input class="btns-group__input" type="radio" name="news-filter" value="Главное">
+                            <span class="btns-group__item btn-outline">Главное</span>
+                        </label>
+                        <label>
+                            <input class="btns-group__input" type="radio" name="news-filter" value="университет">
+                            <span class="btns-group__item btn-outline">университет</span>
+                        </label>
+                        <label>
+                            <input class="btns-group__input" type="radio" name="news-filter" value="вузы">
+                            <span class="btns-group__item btn-outline">вузы</span>
+                        </label>
+                        <label>
+                            <input class="btns-group__input" type="radio" name="news-filter" value="Cтуденты">
+                            <span class="btns-group__item btn-outline">Cтуденты</span>
+                        </label>
+                        <label>
+                            <input class="btns-group__input" type="radio" name="news-filter" value="защита">
+                            <span class="btns-group__item btn-outline">защита</span>
+                        </label>
+                        <label>
+                            <input class="btns-group__input" type="radio" name="news-filter" value="Сайты">
+                            <span class="btns-group__item btn-outline">Сайты</span>
+                        </label>
+                    </form>
 
                     <div class="article-cards">
                         <article class="article-card">

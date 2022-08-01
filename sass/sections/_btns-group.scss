@@ -15,6 +15,15 @@
     }
 }
 
+.btns-group__input {
+    @include visually-hidden;
+
+    &:checked + .btns-group__item {
+        color: $white;
+        background: $accent;
+    }
+}
+
 .btns-group__item {
     margin-right: 16px;
     margin-top: 12px;
