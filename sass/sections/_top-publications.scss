@@ -24,7 +24,7 @@
 
 .top-publications__list {
     display: grid;
-    gap: 20px;
+    gap: 32px 30px;
 
     @media (max-width: $laptop-m) {
         grid-template-columns: repeat(auto-fit, minmax(333px, 1fr));
