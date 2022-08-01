@@ -28,9 +28,9 @@
 
 .news__list {
     display: grid;
-    grid-auto-flow: column;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 712px 268px;
+    grid-template-rows: minmax(712px, auto);
+    grid-auto-rows: minmax(268px, auto);
     gap: 24px;
     overflow: hidden;
     overflow-x: auto;
@@ -53,9 +53,11 @@
     }
 
     @media (max-width: $laptop-m) {
+        grid-auto-flow: column;
         grid-template-columns: unset;
         grid-auto-columns: calc(50% - 12px);
-        grid-template-rows: 545px 268px;
+        grid-template-rows: minmax(545px, auto);
+        grid-auto-rows: minmax(268px, auto);
         padding-bottom: 24px;
     }
 
@@ -66,6 +68,7 @@
 
     @media (max-width: $tablet) {
         grid-auto-columns: 100%;
-        grid-template-rows: 329px 268px;
+        grid-template-rows: minmax(329px, auto);
+        grid-auto-rows: minmax(268px, auto);
     }
 }
