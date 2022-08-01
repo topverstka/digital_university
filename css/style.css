@@ -650,7 +650,7 @@ body._lock {
   cursor: auto;
 }
 .btn-navigation svg {
-  stroke: var(--white);
+  fill: var(--white);
 }
 
 .link {
@@ -678,7 +678,7 @@ body._lock {
   line-height: 17px;
 }
 .link-icon svg {
-  stroke: var(--accent);
+  fill: var(--accent);
   margin-left: 10px;
   transform: rotate(-45deg);
   transition: var(--tr);
@@ -1022,7 +1022,7 @@ body._lock {
 }
 .pagination__prev svg,
 .pagination__next svg {
-  stroke: var(--white);
+  fill: var(--white);
 }
 
 .pagination__list {
@@ -3741,7 +3741,7 @@ body._lock {
   margin-bottom: 40px;
 }
 .case-detail__back svg {
-  stroke: var(--white);
+  fill: var(--white);
 }
 @media (max-width: 991px) {
   .case-detail__back {
@@ -4166,7 +4166,7 @@ body._lock {
 }
 .swiper-button-prev svg,
 .swiper-button-next svg {
-  stroke: var(--white);
+  fill: var(--white);
 }
 
 .swiper-button-disabled {
