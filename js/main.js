@@ -341,24 +341,33 @@ function initAccordionVertical() {
 }
 
 new Swiper('.articles-slider', {
-  slidesPerView: 1,
-  spaceBetween: 20,
+    slidesPerView: 1,
+    spaceBetween: 20,
 
-  breakpoints: {
-    768: {
-        slidesPerView: 1.33,
-        spaceBetween: 20,
+    breakpoints: {
+        768: {
+            slidesPerView: 1.33,
+            spaceBetween: 20,
+        },
+        992: {
+            slidesPerView: 2.3,
+            spaceBetween: 24,
+        },
     },
-    992: {
-        slidesPerView: 2.3,
-        spaceBetween: 24,
-    },
-  },
 
-  scrollbar: {
-    el: '.swiper-scrollbar',
-    draggable: true,
-  },
+    scrollbar: {
+        el: '.swiper-scrollbar',
+        draggable: true,
+    },
+
+    on: {
+        beforeInit: function (swiper) {
+            if (!swiper.el.classList.contains('articles-slider_width_lg')) return;
+
+            swiper.params.breakpoints['768'].slidesPerView = 1.11;
+            swiper.params.breakpoints['992'].slidesPerView = 1.67;
+        },
+    },
 });
 
 const tabletMq = window.matchMedia('(max-width: 991px)');
