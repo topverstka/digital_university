@@ -65,13 +65,14 @@
     line-height: 24px;
 
     @media (max-width: $tablet) {
-        margin-bottom: 6px;
         font-size: 14px;
     }
 }
 
 .footer__paragraph {
     color: $accent;
+    font-size: 16px;
+    line-height: 24px;
 
     @media (max-width: $tablet) {
         font-size: 14px;
@@ -80,6 +81,8 @@
 
 .footer__link {
     color: $accent-hover;
+    font-size: 16px;
+    line-height: 24px;
 
     @media (max-width: $tablet) {
         font-size: 14px;
