@@ -9,11 +9,25 @@
     }
 }
 
+.requisites__item {
+    &:first-child {
+        .requisites__title {
+            margin-bottom: 15px;
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+}
+
 .requisites__title {
     margin-bottom: 12px;
     font-weight: 700;
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 14px;
+    line-height: 17px;
+
+    @media (max-width: $laptop-s) {
+        margin-bottom: 8px;
+    }
 }
 
 .requisites__text {
