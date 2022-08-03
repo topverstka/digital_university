@@ -357,6 +357,7 @@ new Swiper('.articles-slider', {
 
   scrollbar: {
     el: '.swiper-scrollbar',
+    draggable: true,
   },
 });
 
@@ -384,6 +385,7 @@ function initOtherCasesSlider() {
 
             scrollbar: {
                 el: '.swiper-scrollbar',
+                draggable: true,
             },
         });
     } else {
