@@ -53,6 +53,7 @@
         svg {
             stroke: $accent;
             transition: $tr;
+            transition-property: transform;
         }
     }
 }
@@ -89,6 +90,7 @@
         opacity: 0;
         transform: translateY(-20px);
         transition: $tr;
+        transition-property: transform, opacity, visibility;
     }
 }
 
