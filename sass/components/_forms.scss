@@ -53,10 +53,6 @@
     border-radius: 5px;
     transition: $tr;
 
-    &:focus {
-        border-color: $accent-hover;
-    }
-
     @media (min-width: $minHover) {
         &:hover {
             border-color: $accent-hover;
