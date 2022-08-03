@@ -1130,6 +1130,7 @@ body._lock {
   .accordion-vertical__toggle svg {
     stroke: var(--accent);
     transition: var(--tr);
+    transition-property: transform;
   }
 }
 
@@ -1164,6 +1165,7 @@ body._lock {
     opacity: 0;
     transform: translateY(-20px);
     transition: var(--tr);
+    transition-property: transform, opacity, visibility;
   }
 }
 
