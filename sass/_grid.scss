@@ -41,6 +41,10 @@
     gap: 24px 54px;
     margin-bottom: 38px;
 
+    @media (max-width: $laptop-m) {
+        column-gap: 40px;
+    }
+
     @media (max-width: $laptop-s) {
         margin-bottom: 22px;
     }
