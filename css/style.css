@@ -4013,9 +4013,6 @@ body._lock {
   min-height: 151px;
   background: var(--white);
 }
-.partner-list__card:active {
-  transform: scale(1.1);
-}
 @media (min-width: 1024px) {
   .partner-list__card:hover {
     transform: scale(1.1);
