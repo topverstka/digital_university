@@ -189,6 +189,7 @@
         transform: translateX(100%);
         overflow-y: auto;
         transition: $tr;
+        transition-property: visibility, opacity, transform;
     }
 
     @media (max-width: $tablet) {
