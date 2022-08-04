@@ -113,7 +113,7 @@ $btn-second-disabled: var(--btn-second-disabled);
         }
     }
 
-    &:active {
+    &:active:not(span) {
         color: $white;
         background: $btn-primary-default;
     }
