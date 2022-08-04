@@ -100,6 +100,7 @@ $btn-second-disabled: var(--btn-second-disabled);
     border-radius: 20px;
     cursor: pointer;
     transition: $tr;
+    transition-duration: opacity, color, background-color;
 
     @media (min-width: $minHover) {
         &:hover {
