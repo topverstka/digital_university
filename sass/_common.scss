@@ -58,3 +58,7 @@ body {
 .visually-hidden {
     @include visually-hidden;
 }
+
+.overflow-hidden {
+    overflow: hidden;
+}
