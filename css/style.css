@@ -184,6 +184,10 @@ body._lock {
   transform: scale(0);
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .container {
   margin: 0 auto;
   padding: 0 24px;
