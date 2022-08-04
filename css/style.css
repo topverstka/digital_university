@@ -543,7 +543,7 @@ body._lock {
     opacity: 0.7;
   }
 }
-.btn-outline:active {
+.btn-outline:active:not(span) {
   color: var(--white);
   background: var(--accent);
 }
