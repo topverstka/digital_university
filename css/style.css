@@ -532,6 +532,7 @@ body._lock {
   border-radius: 20px;
   cursor: pointer;
   transition: var(--tr);
+  transition-duration: opacity, color, background-color;
 }
 @media (min-width: 1024px) {
   .btn-outline:hover {
