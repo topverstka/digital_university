@@ -1040,6 +1040,14 @@ body._lock {
   fill: var(--white);
 }
 
+.pagination__prev svg {
+  transform: translateX(-1px);
+}
+
+.pagination__next svg {
+  transform: translateX(1px);
+}
+
 .pagination__list {
   display: flex;
   align-items: center;
@@ -4189,6 +4197,14 @@ body._lock {
 .swiper-button-prev svg,
 .swiper-button-next svg {
   fill: var(--white);
+}
+
+.swiper-button-prev svg {
+  transform: translateX(-1px);
+}
+
+.swiper-button-next svg {
+  transform: translateX(1px);
 }
 
 .swiper-button-disabled {
