@@ -59,6 +59,18 @@
     }
 }
 
+.swiper-button-prev {
+    svg {
+        transform: translateX(-1px);
+    }
+}
+
+.swiper-button-next {
+    svg {
+        transform: translateX(1px);
+    }
+}
+
 .swiper-button-disabled{
     background: $accent-disabled;
     cursor: auto;
