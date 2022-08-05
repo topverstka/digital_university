@@ -674,6 +674,7 @@ body._lock {
 .link {
   color: var(--accent-hover);
   text-decoration: underline transparent;
+  -webkit-text-decoration: underline transparent;
   text-decoration-skip-ink: none;
   text-underline-offset: 1px;
 }
