@@ -4215,4 +4215,5 @@ body._lock {
   top: -2px;
   background: var(--accent);
   height: 7px;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */
