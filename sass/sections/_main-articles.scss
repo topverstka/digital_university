@@ -1,5 +1,5 @@
 .main-articles {
-    margin-top: 78px;
+    margin-top: 72px;
     margin-bottom: 112px;
 
     @media (max-width: $laptop-m) {
@@ -22,10 +22,13 @@
 
 .main-articles__list {
     display: grid;
-    grid-template-columns: repeat(3, 4fr);
+    grid-auto-flow: column;
+    grid-auto-columns: calc(33% - 12px);
     grid-template-rows: minmax(545px, auto) minmax(268px, auto);;
     grid-auto-rows: minmax(268px, auto);
     gap: 24px;
+    padding-bottom: 20px;
+    margin-bottom: -20px;
     overflow: hidden;
     overflow-x: auto;
     scrollbar-width: thin;
@@ -47,10 +50,9 @@
     }
 
     @media (max-width: $laptop-m) {
-        grid-auto-flow: column;
+        margin-bottom: 0;
         grid-template-columns: unset;
         grid-auto-columns: calc(50% - 12px);
-        padding-bottom: 24px;
     }
 
     @media (max-width: $laptop-s) {

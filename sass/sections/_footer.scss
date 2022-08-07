@@ -122,7 +122,7 @@
 .footer__bottom-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 24px 40px;
+    gap: 24px 32px;
 
     @media (max-width: $tablet) {
         gap: 24px;

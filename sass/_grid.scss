@@ -38,11 +38,10 @@
     grid-template-columns: repeat(2, auto);
     justify-content: start;
     align-items: baseline;
-    gap: 24px 54px;
+    gap: 24px 40px;
     margin-bottom: 38px;
 
     @media (max-width: $laptop-s) {
-        column-gap: 40px;
         margin-bottom: 22px;
     }
 

@@ -140,6 +140,7 @@
 
 .article-card__title {
     margin-bottom: 20px;
+    padding-right: 32px;
     color: $accent;
     font-weight: 600;
     font-size: 24px;
@@ -147,6 +148,7 @@
     transition: $tr;
 
     @media (max-width: $tablet) {
+        padding-right: 0;
         font-size: 20px;
         line-height: 28px;
     }
@@ -154,6 +156,7 @@
 
 .article-card__title_size_sm {
     margin-bottom: 52px;
+    padding-right: 0;
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
@@ -166,10 +169,14 @@
 }
 
 .article-card__title_size_lg {
-    margin-bottom: 32px;
+    margin-bottom: 26px;
     font-weight: 700;
     font-size: 32px;
     line-height: 40px;
+
+    @media (max-width: $laptop-s) {
+        margin-bottom: 34px;
+    }
 
     @media (max-width: $tablet) {
         margin-bottom: 18px;
@@ -186,6 +193,16 @@
     @media (max-width: $tablet) {
         margin-bottom: 24px;
         font-size: 14px;
+    }
+}
+
+.article-card__desc_margin_lg {
+    @media (max-width: $laptop-s) {
+        margin-bottom: 42px;
+    }
+
+    @media (max-width: $tablet) {
+        margin-bottom: 32px;
     }
 }
 
