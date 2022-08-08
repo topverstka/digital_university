@@ -33,6 +33,12 @@
     }
 }
 
+.article-card_hidden {
+    @media (max-width: $laptop-s) {
+        display: none;
+    }
+}
+
 .article-card__link {
     flex-grow: 1;
     display: flex;
