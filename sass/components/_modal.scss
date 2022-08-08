@@ -119,9 +119,29 @@
 .modal {
     .callback__desc {
         margin-bottom: 27px;
+
+        @media (max-width: $laptop-s) {
+            margin-bottom: 24px;
+        }
+
+        @media (max-width: $tablet) {
+            margin-bottom: 32px;
+        }
     }
 
     .callback__form {
         row-gap: 32px;
+
+        .form-elem {
+            &:nth-child(n) {
+                margin: 0;
+            }
+        }
+    }
+
+    .callback__attention {
+        @media (max-width: $tablet) {
+            padding-top: 0;
+        }
     }
 }
