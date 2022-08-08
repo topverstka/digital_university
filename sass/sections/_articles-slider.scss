@@ -1,0 +1,15 @@
+.articles-slider {
+
+}
+
+.articles-slider_width_lg{
+    .swiper-slide {
+        min-height: 556px;
+    }
+
+    @media (max-width: $tablet) {
+        .swiper-slide {
+            min-height: unset;
+        }
+    }
+}

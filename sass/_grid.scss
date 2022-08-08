@@ -29,6 +29,14 @@
     }
 }
 
+.section_last {
+    margin-bottom: 102px;
+
+    @media (max-width: $laptop-s) {
+        margin-bottom: 102px;
+    }
+}
+
 .section_overflow {
     overflow: unset;
 }
