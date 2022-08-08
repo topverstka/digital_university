@@ -30,12 +30,17 @@
 .text-slider__controls {
     position: absolute;
     top: 100%;
-    right: 0;
-    transform: translateY(20px);
+    right: 4px;
+    transform: translateY(30px);
     display: grid;
     grid-template-columns: 39px 39px;
     grid-template-rows: 39px;
     gap: 16px;
+
+    @media (max-width: $laptop-s) {
+        right: 0;
+        transform: translateY(22px);
+    }
 
     @media (max-width: $tablet) {
         position: static;
@@ -61,16 +66,18 @@
 }
 
 .text-slider__thumbs-wrapper {
-    margin-top: 14px;
+    margin-top: 24px;
     margin-right: 20%;
     min-height: 50px;
 
-    @media (max-width: $tablet) {
-        margin-right: 0;
+    @media (max-width: $laptop-s) {
+        margin-top: 14px;
+        margin-right: 53%;
     }
 
     @media (max-width: $tablet) {
         margin-top: 8px;
+        margin-right: 0;
     }
 }
 

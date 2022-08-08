@@ -411,7 +411,7 @@ function initTextSlider() {
         breakpoints: {
             768: {
                 spaceBetween: 16,
-                slidesPerView: 5,
+                slidesPerView: 3,
             },
             992: {
                 spaceBetween: 16,
