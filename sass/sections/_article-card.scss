@@ -9,7 +9,7 @@
 .article-card_view_line {
     .article-card__link {
         display: grid;
-        grid-template-columns: 5fr 7fr;
+        grid-template-columns: 5.1fr 7fr;
 
         @media (max-width: $laptop-s) {
             display: flex;
@@ -18,6 +18,8 @@
 
     .article-card__title {
         margin-bottom: 32px;
+        padding-right: 0;
+        font-weight: 700;
         font-size: 32px;
         line-height: 40px;
 
