@@ -3,7 +3,6 @@
 }
 
 .search-result__all-results {
-    margin-bottom: 4px;
     color: $accent;
     line-height: 24px;
 
@@ -23,8 +22,8 @@
 }
 
 .search-result__item {
-    padding-top: 32px;
-    padding-bottom: 26px;
+    padding-top: 36px;
+    padding-bottom: 25px;
     border-bottom: 1px solid $gray-medium;
 
     @media (max-width: $laptop-s) {
@@ -39,8 +38,13 @@
 
 .search-result__snippet {
     margin-bottom: 16px;
+    padding-right: 102px;
     font-size: 18px;
     line-height: 22px;
+
+    @media (max-width: $laptop-m) {
+        padding-right: 0;
+    }
 
     @media (max-width: $tablet) {
         margin-bottom: 14px;
