@@ -1011,6 +1011,31 @@ body._lock {
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 
+.modal .callback__desc {
+  margin-bottom: 27px;
+}
+@media (max-width: 991px) {
+  .modal .callback__desc {
+    margin-bottom: 24px;
+  }
+}
+@media (max-width: 767px) {
+  .modal .callback__desc {
+    margin-bottom: 32px;
+  }
+}
+.modal .callback__form {
+  row-gap: 32px;
+}
+.modal .callback__form .form-elem:nth-child(n) {
+  margin: 0;
+}
+@media (max-width: 767px) {
+  .modal .callback__attention {
+    padding-top: 0;
+  }
+}
+
 .pagination {
   display: flex;
   align-items: center;
@@ -1597,12 +1622,18 @@ body._lock {
 .text-slider__controls {
   position: absolute;
   top: 100%;
-  right: 0;
-  transform: translateY(20px);
+  right: 4px;
+  transform: translateY(30px);
   display: grid;
   grid-template-columns: 39px 39px;
   grid-template-rows: 39px;
   gap: 16px;
+}
+@media (max-width: 991px) {
+  .text-slider__controls {
+    right: 0;
+    transform: translateY(22px);
+  }
 }
 @media (max-width: 767px) {
   .text-slider__controls {
@@ -1627,18 +1658,20 @@ body._lock {
 }
 
 .text-slider__thumbs-wrapper {
-  margin-top: 14px;
+  margin-top: 24px;
   margin-right: 20%;
   min-height: 50px;
 }
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .text-slider__thumbs-wrapper {
-    margin-right: 0;
+    margin-top: 14px;
+    margin-right: 53%;
   }
 }
 @media (max-width: 767px) {
   .text-slider__thumbs-wrapper {
     margin-top: 8px;
+    margin-right: 0;
   }
 }
 
@@ -2282,6 +2315,7 @@ body._lock {
 
 .callback__desc {
   margin-bottom: 34px;
+  max-width: 631px;
   font-size: 16px;
   line-height: 24px;
 }
@@ -2305,6 +2339,7 @@ body._lock {
 @media (max-width: 991px) {
   .callback__form {
     grid-template-columns: 1fr;
+    row-gap: 32px;
   }
   .callback__form .form-elem:nth-child(2), .callback__form .form-elem:nth-child(3) {
     margin-top: 14px;
@@ -2339,6 +2374,7 @@ body._lock {
   grid-template-columns: 158px 1fr;
   align-items: center;
   gap: 16px 24px;
+  padding-top: 10px;
 }
 @media (max-width: 1439px) {
   .callback__attention {
@@ -2346,11 +2382,16 @@ body._lock {
     column-gap: 32px;
   }
 }
+@media (max-width: 991px) {
+  .callback__attention {
+    padding-top: 8px;
+  }
+}
 @media (max-width: 767px) {
   .callback__attention {
     justify-items: start;
     grid-template-columns: 1fr;
-    margin-top: 10px;
+    padding-top: 10px;
   }
 }
 
@@ -3138,7 +3179,7 @@ body._lock {
 .info-section {
   padding-top: 52px;
   margin-top: 124px;
-  margin-bottom: 100px;
+  margin-bottom: 124px;
 }
 @media (max-width: 1023px) {
   .info-section {
