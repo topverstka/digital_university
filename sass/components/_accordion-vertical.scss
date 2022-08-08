@@ -143,6 +143,8 @@
 
 .accordion-vertical__contents {
     padding: 32px;
+    padding-top: 35px;
+    padding-bottom: 24px;
     padding-left: 14px;
 
     @media (max-width: $tablet) {
