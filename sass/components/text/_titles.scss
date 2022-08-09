@@ -49,4 +49,8 @@
     @media (max-width: $laptop-s) {
         margin-bottom: 20px;
     }
+
+    @media (max-width: $tablet) {
+        margin-bottom: 29px;
+    }
 }
