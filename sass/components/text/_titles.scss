@@ -44,3 +44,9 @@
         line-height: 34px;
     }
 }
+
+.title-section_bug_disign {
+    @media (max-width: $laptop-s) {
+        margin-bottom: 20px;
+    }
+}
