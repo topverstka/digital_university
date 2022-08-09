@@ -1721,7 +1721,7 @@ body._lock {
   overflow: hidden;
 }
 .text-slider__thumbs .swiper-slide {
-  display: block;
+  display: flex;
   border: 2px solid transparent;
   cursor: pointer;
 }
@@ -4133,6 +4133,133 @@ body._lock {
   .partner-list__card {
     padding: 16px;
   }
+}
+
+.info-partners {
+  padding-top: 52px;
+  margin-top: 124px;
+  margin-bottom: 124px;
+}
+@media (max-width: 1023px) {
+  .info-partners {
+    padding-top: 0;
+  }
+}
+@media (max-width: 991px) {
+  .info-partners {
+    margin: 72px 0;
+  }
+}
+@media (max-width: 767px) {
+  .info-partners {
+    margin: 64px 0;
+  }
+}
+
+.info-partners__inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 412px;
+  align-items: end;
+}
+@media (max-width: 1023px) {
+  .info-partners__inner {
+    display: block;
+  }
+}
+
+.info-partners__left {
+  padding: 80px 32px;
+  color: var(--white);
+  background: var(--accent);
+}
+@media (max-width: 1439px) {
+  .info-partners__left {
+    padding: 32px;
+  }
+}
+@media (max-width: 767px) {
+  .info-partners__left {
+    padding: 24px;
+  }
+}
+
+.info-partners__title {
+  margin-bottom: 48px;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 52px;
+}
+@media (max-width: 1023px) {
+  .info-partners__title {
+    margin-bottom: 32px;
+    max-width: 600px;
+  }
+}
+@media (max-width: 767px) {
+  .info-partners__title {
+    margin-bottom: 29px;
+    max-width: unset;
+    font-size: 30px;
+    line-height: 38px;
+  }
+}
+
+.info-partners__desc {
+  max-width: 740px;
+  margin-bottom: 48px;
+  font-size: 18px;
+  line-height: 30px;
+}
+@media (max-width: 1023px) {
+  .info-partners__desc {
+    margin-bottom: 32px;
+    max-width: 410px;
+  }
+}
+@media (max-width: 767px) {
+  .info-partners__desc {
+    max-width: unset;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.info-partners__right {
+  position: relative;
+  height: 100%;
+  background: var(--white);
+}
+@media (max-width: 1023px) {
+  .info-partners__right {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 33%;
+    height: 0;
+    background: none;
+  }
+}
+@media (max-width: 767px) {
+  .info-partners__right {
+    display: none;
+  }
+}
+
+.info-partners__picture {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+}
+
+.info-partners-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .partners {
