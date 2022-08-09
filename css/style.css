@@ -23,6 +23,22 @@
   font-display: swap;
   src: url(../fonts/Raleway/Raleway-Bold.woff2) format("woff2"), url(../fonts/Raleway/Raleway-Bold.woff) format("woff"), url(../fonts/Raleway/Raleway-Bold.ttf) format("truetype");
 }
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(../fonts/Montserrat/Montserrat-regular.woff2) format("woff2"), url(../fonts/Montserrat/Montserrat-regular.woff) format("woff"), url(../fonts/Montserrat/Montserrat-regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "ProximaNova";
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(../fonts/ProximaNova/ProximaNova-Regular.woff2) format("woff2"), url(../fonts/ProximaNova/ProximaNova-Regular.woff) format("woff"), url(../fonts/ProximaNova/ProximaNova-Regular.ttf) format("truetype");
+}
 :root {
   --ffMain: "Raleway", sans-serif;
   --ffHeader: sans-serif;
@@ -946,7 +962,7 @@ body._lock {
   min-height: 100%;
   transform: translate(0, 100vh);
   transition: var(--tr);
-  transition-duration: 1s;
+  transition-duration: calc(var(--tr) * 2);
 }
 
 .modal__body_top {
@@ -2169,7 +2185,12 @@ body._lock {
 .footer__bottom-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px 32px;
+  gap: 24px 40px;
+}
+@media (max-width: 991px) {
+  .footer__bottom-links {
+    column-gap: 32px;
+  }
 }
 @media (max-width: 767px) {
   .footer__bottom-links {
@@ -2178,6 +2199,7 @@ body._lock {
 }
 
 .footer__bottom-link {
+  font-family: "ProximaNova", sans-serif;
   color: #fff;
   line-height: 19px;
   text-decoration: underline transparent;
@@ -2196,6 +2218,7 @@ body._lock {
 }
 @media (max-width: 767px) {
   .footer__bottom-link {
+    font-family: "Raleway", sans-serif;
     font-size: 14px;
   }
 }
@@ -3922,6 +3945,7 @@ body._lock {
 }
 
 .search-result__info {
+  font-family: "Montserrat", sans-serif;
   color: var(--accent);
   line-height: 24px;
 }
