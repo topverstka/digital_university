@@ -921,14 +921,17 @@ body._lock {
   visibility: hidden;
   opacity: 0;
   transition: var(--tr);
+  transition-duration: calc(var(--tr) * 2);
 }
 
 .modal_show {
   visibility: visible;
   opacity: 1;
+  transition-duration: var(--tr);
 }
 .modal_show .modal__body {
   transform: translate(0, 0);
+  transition-duration: var(--tr);
 }
 
 .modal_shown {
@@ -943,6 +946,7 @@ body._lock {
   min-height: 100%;
   transform: translate(0, 100vh);
   transition: var(--tr);
+  transition-duration: 1s;
 }
 
 .modal__body_top {
