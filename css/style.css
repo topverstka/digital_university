@@ -1597,6 +1597,17 @@ body._lock {
   }
 }
 
+@media (max-width: 991px) {
+  .title-section_bug_disign {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .title-section_bug_disign {
+    margin-bottom: 29px;
+  }
+}
+
 .text-slider {
   position: relative;
   margin: 56px 0;
@@ -4194,6 +4205,12 @@ body._lock {
   padding-top: 13px;
   padding-bottom: 13px;
   min-width: 163px;
+}
+
+@media (max-width: 767px) {
+  .space-special-mb {
+    margin: 64px 0;
+  }
 }
 
 .swiper {
