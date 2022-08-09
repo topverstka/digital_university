@@ -2835,6 +2835,17 @@ body._lock {
   }
 }
 
+@media (max-width: 991px) {
+  .article-card__content_space_lg {
+    padding-bottom: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .article-card__content_space_lg {
+    padding-bottom: 24px;
+  }
+}
+
 .article-card__picture {
   display: block;
   width: 100%;
