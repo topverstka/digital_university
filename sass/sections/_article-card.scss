@@ -84,6 +84,16 @@
     }
 }
 
+.article-card__content_space_lg {
+    @media (max-width: $laptop-s) {
+        padding-bottom: 40px;
+    }
+
+    @media (max-width: $tablet) {
+        padding-bottom: 24px;
+    }
+}
+
 .article-card__picture {
     display: block;
     width: 100%;
