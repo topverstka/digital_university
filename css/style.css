@@ -1722,10 +1722,9 @@ body._lock {
 }
 .text-slider__thumbs .swiper-slide {
   display: flex;
-  border: 2px solid transparent;
   cursor: pointer;
 }
-.text-slider__thumbs .swiper-slide-thumb-active {
+.text-slider__thumbs .swiper-slide-thumb-active .text-slider__thumb-img {
   border-color: var(--accent-hover);
 }
 
@@ -1733,6 +1732,7 @@ body._lock {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border: 2px solid transparent;
 }
 
 .header {
