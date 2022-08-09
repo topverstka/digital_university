@@ -11,14 +11,17 @@
     visibility: hidden;
     opacity: 0;
     transition: $tr;
+    transition-duration: $tr * 2;
 }
 
 .modal_show {
     visibility: visible;
     opacity: 1;
+    transition-duration: $tr;
 
     & .modal__body {
         transform: translate(0, 0);
+        transition-duration: $tr;
     }
 }
 
@@ -34,6 +37,7 @@
     min-height: 100%;
     transform: translate(0, 100vh);
     transition: $tr;
+    transition-duration: calc($tr * 2);
 }
 
 .modal__body_top {
