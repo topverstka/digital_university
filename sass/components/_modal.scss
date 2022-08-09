@@ -11,7 +11,7 @@
     visibility: hidden;
     opacity: 0;
     transition: $tr;
-    transition-duration: $tr * 2;
+    transition-duration: calc($tr * 2);
 }
 
 .modal_show {
