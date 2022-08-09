@@ -86,11 +86,10 @@
 
     .swiper-slide {
         display: flex;
-        border: 2px solid transparent;
         cursor: pointer;
     }
 
-    .swiper-slide-thumb-active {
+    .swiper-slide-thumb-active .text-slider__thumb-img {
         border-color: $accent-hover;
     }
 }
@@ -99,4 +98,5 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border: 2px solid transparent;
 }
