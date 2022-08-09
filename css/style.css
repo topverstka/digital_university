@@ -3205,7 +3205,6 @@ body._lock {
 }
 
 .info-section {
-  padding-top: 52px;
   margin-top: 124px;
   margin-bottom: 124px;
 }
@@ -3226,35 +3225,32 @@ body._lock {
 }
 
 .info-section__inner {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 412px;
-  align-items: end;
-}
-@media (max-width: 1023px) {
-  .info-section__inner {
-    display: block;
-  }
-}
-
-.info-section__left {
-  padding: 80px 32px;
+  padding: 64px 32px;
   color: var(--white);
-  background: var(--accent);
+  background-color: var(--accent);
+  background-image: url(../img/info-section/info-section.png);
+  background-repeat: no-repeat;
+  background-position: right bottom;
 }
 @media (max-width: 1439px) {
-  .info-section__left {
-    padding: 32px;
+  .info-section__inner {
+    padding: 40px 32px;
+    background-image: url(../img/info-section/info-section-mb.png);
   }
 }
 @media (max-width: 767px) {
-  .info-section__left {
+  .info-section__inner {
     padding: 24px;
+    background-image: unset;
   }
 }
 
+.info-section__content {
+  max-width: 680px;
+}
+
 .info-section__title {
-  margin-bottom: 48px;
+  margin-bottom: 32px;
   font-weight: 700;
   font-size: 48px;
   line-height: 52px;
@@ -3282,53 +3278,16 @@ body._lock {
 }
 @media (max-width: 1023px) {
   .info-section__desc {
-    margin-bottom: 32px;
-    max-width: 410px;
+    max-width: 450px;
   }
 }
 @media (max-width: 767px) {
   .info-section__desc {
+    margin-bottom: 32px;
     max-width: unset;
     font-size: 16px;
     line-height: 24px;
   }
-}
-
-.info-section__right {
-  position: relative;
-  height: 100%;
-  background: var(--white);
-}
-@media (max-width: 1023px) {
-  .info-section__right {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
-    width: 33%;
-    height: 0;
-    background: none;
-  }
-}
-@media (max-width: 767px) {
-  .info-section__right {
-    display: none;
-  }
-}
-
-.info-section__picture {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  display: block;
-  width: 100%;
-}
-
-.info-section-img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .top-publication {
