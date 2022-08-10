@@ -60,6 +60,7 @@
 .top-publication__date {
     font-size: 12px;
     line-height: 14px;
+    opacity: .6;
 }
 
 .top-publication__views {
@@ -67,6 +68,7 @@
     align-items: center;
     font-size: 12px;
     line-height: 14px;
+    opacity: .6;
 
     &::before {
         content: '';

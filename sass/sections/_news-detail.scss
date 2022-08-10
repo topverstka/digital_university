@@ -116,6 +116,7 @@
     margin-right: 16px;
     font-size: 12px;
     line-height: 14px;
+    opacity: .6;
 
     @media (max-width: $tablet) {
         margin-top: 14px;
@@ -127,6 +128,7 @@
     align-items: center;
     font-size: 12px;
     line-height: 14px;
+    opacity: .6;
 
     &::before {
         content: '';

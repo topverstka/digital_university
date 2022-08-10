@@ -239,6 +239,7 @@
 .article-card__date {
     font-size: 12px;
     line-height: 14px;
+    opacity: .6;
 }
 
 .article-card__views {
@@ -246,6 +247,7 @@
     align-items: center;
     font-size: 12px;
     line-height: 14px;
+    opacity: .6;
 
     &::before {
         content: '';
