@@ -158,3 +158,9 @@
         font-size: 14px;
     }
 }
+
+.footer__logo {
+    @media (max-width: $laptop-s) {
+        margin-right: 26px;
+    }
+}
