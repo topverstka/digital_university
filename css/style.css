@@ -1722,7 +1722,7 @@ body._lock {
 }
 .text-slider__thumbs .swiper-slide {
   display: flex;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   overflow: hidden;
   cursor: pointer;
 }
@@ -4097,7 +4097,7 @@ body._lock {
 
 .partner-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 24px;
 }
 @media (max-width: 991px) {
