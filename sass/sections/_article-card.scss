@@ -16,6 +16,14 @@
         }
     }
 
+    .article-card__content {
+        padding-bottom: 37px;
+
+        @media (max-width: $laptop-s) {
+            padding: 24px;
+        }
+    }
+
     .article-card__title {
         margin-bottom: 32px;
         padding-right: 0;
