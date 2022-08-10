@@ -1,6 +1,7 @@
 .news {
     margin-top: 74px;
     margin-bottom: 124px;
+    overflow: hidden;
 
     @media (max-width: $laptop-s) {
         margin-top: 45px;
@@ -20,10 +21,6 @@
     @media (max-width: $laptop-m) {
         grid-template-columns: 1fr;
     }
-}
-
-.news__list-slider {
-    overflow: hidden;
 }
 
 .news__list {
