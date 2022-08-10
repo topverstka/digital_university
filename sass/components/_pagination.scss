@@ -29,18 +29,6 @@
     }
 }
 
-.pagination__prev {
-    svg {
-        transform: translateX(-1px);
-    }
-}
-
-.pagination__next {
-    svg {
-        transform: translateX(1px);
-    }
-}
-
 .pagination__list {
     display: flex;
     align-items: center;
