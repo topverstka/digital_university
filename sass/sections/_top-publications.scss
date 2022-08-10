@@ -44,6 +44,11 @@
     padding-bottom: 28px;
     border-bottom: 1px solid rgb(192, 191, 191, 0.3);
 
+    &:last-child {
+        padding-bottom: 0;
+        border: none;
+    }
+
     @media (max-width: $laptop-m) {
         padding-bottom: 0;
         border: none;
