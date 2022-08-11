@@ -142,20 +142,25 @@
 }
 
 .accordion-vertical__contents {
+    background: $white;
+    transition-duration: $tr;
+    transition-property: height;
+
+    @media (max-width: $tablet) {
+        margin: 0 -20px;
+    }
+}
+
+.accordion-vertical__content {
+    display: none;
     padding: 32px;
     padding-top: 35px;
     padding-bottom: 24px;
     padding-left: 14px;
 
     @media (max-width: $tablet) {
-        margin: 0 -20px;
         padding: 32px 20px;
-        background: $white;
     }
-}
-
-.accordion-vertical__content {
-    display: none;
 }
 
 .accordion-vertical__content_visible {
