@@ -1094,8 +1094,8 @@ body._lock {
 .pagination__prev svg,
 .pagination__next svg {
   fill: var(--white);
-  width: 11px;
-  height: 12px;
+  width: 10px;
+  height: 11px;
 }
 
 .pagination__list {
