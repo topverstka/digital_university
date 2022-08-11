@@ -1275,21 +1275,27 @@ body._lock {
 }
 
 .accordion-vertical__contents {
+  background: var(--white);
+  transition-duration: var(--tr);
+  transition-property: height;
+}
+@media (max-width: 767px) {
+  .accordion-vertical__contents {
+    margin: 0 -20px;
+  }
+}
+
+.accordion-vertical__content {
+  display: none;
   padding: 32px;
   padding-top: 35px;
   padding-bottom: 24px;
   padding-left: 14px;
 }
 @media (max-width: 767px) {
-  .accordion-vertical__contents {
-    margin: 0 -20px;
+  .accordion-vertical__content {
     padding: 32px 20px;
-    background: var(--white);
   }
-}
-
-.accordion-vertical__content {
-  display: none;
 }
 
 .accordion-vertical__content_visible {
