@@ -188,6 +188,10 @@ body._lock {
   padding: 0 calc(16px - (100vw - 100%)) 0 0;
 }
 
+.transition-disabled * {
+  transition: none !important;
+}
+
 .wrapper {
   position: relative;
   width: 100%;
@@ -1031,7 +1035,6 @@ body._lock {
   width: 12px;
   height: 2px;
   background: #fff;
-  border-radius: 100px;
 }
 .modal__close span:nth-child(1) {
   transform: translate(-50%, -50%) rotate(45deg);

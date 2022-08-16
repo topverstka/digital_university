@@ -1,7 +1,8 @@
-
 // Служебные переменные
 const d = document;
 const body = document.querySelector('body');
+
+document.documentElement.classList.remove('transition-disabled');
 
 // Служебные функции
 

@@ -43,6 +43,10 @@ body {
     }
 }
 
+.transition-disabled * {
+    transition: none !important;
+}
+
 .wrapper {
     position: relative;
     width: 100%;
