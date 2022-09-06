@@ -121,10 +121,13 @@ function initCustomFile() {
             const isValidMaxCount = files.length <= maxCount;
             const maxSize = inputNode.getAttribute('data-max-size') || 30000;
             const isValidSize = files.reduce((a, e) => a + e.size, 0) <= maxSize * 1024;
-            const isValid = isValidMaxCount && isValidSize ? true : false;
+            const isValidTypes = !files.some(isInvalidFileType);
+            const invalidFileType = files.findLast(isInvalidFileType)?.name;
+            const isValid = isValidMaxCount && isValidSize && isValidTypes;
 
-            setErrorText(`Максимум ${maxCount} ${plural(maxCount, 'файл', 'файла', 'файлов')}`, errorNode);
+            if (!isValidMaxCount) setErrorText(`Максимум ${maxCount} ${plural(maxCount, 'файл', 'файла', 'файлов')}`, errorNode);
             if (!isValidSize) setErrorText(`Размер файлов не должен превышать ${maxSize / 1000} МБ`, errorNode);
+            if (!isValidTypes) setErrorText(`${invalidFileType}. Недопустимый тип файла`, errorNode);
 
             toggleError(!isValid, wrapperNode);
             toggleSubmit(!isValid, submitNode);
@@ -143,6 +146,10 @@ function initCustomFile() {
 
         function setErrorText(text, errorNode) {
             if (errorNode) errorNode.textContent = text;
+        }
+
+        function isInvalidFileType(file) {
+            return !inputNode.getAttribute('accept').includes(file.name.match(/\.(.+)$/)?.[0]);
         }
     });
 }
