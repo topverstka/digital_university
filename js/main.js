@@ -123,7 +123,7 @@ function initCustomFile() {
             const isValidSize = files.reduce((a, e) => a + e.size, 0) <= maxSize * 1024;
             const isValid = isValidMaxCount && isValidSize ? true : false;
 
-            setErrorText(`Максимум ${maxCount} файлов`, errorNode);
+            setErrorText(`Максимум ${maxCount} ${plural(maxCount, 'файл', 'файла', 'файлов')}`, errorNode);
             if (!isValidSize) setErrorText(`Размер файлов не должен превышать ${maxSize / 1000} МБ`, errorNode);
 
             toggleError(!isValid, wrapperNode);
