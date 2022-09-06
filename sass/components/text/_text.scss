@@ -1,21 +1,17 @@
 .text {
     margin-top: 56px;
     margin-bottom: 124px;
-    font-size: 18px;
-    line-height: 30px;
+    font-size: 16px;
+    line-height: 24px;
 
-    div:not([class]) {
+    p:not([class]):first-child {
         margin: 56px 0;
-
-        p {
-            margin: 24px 0;
-            font-size: 16px;
-            line-height: 24px;
-        }
+        font-size: 18px;
+        line-height: 30px;
     }
 
     p:not([class]) {
-        margin: 56px 0;
+        margin: 24px 0;
     }
 
     ol:not([class]) {
@@ -165,16 +161,12 @@
         margin-top: 48px;
         margin-bottom: 72px;
 
-        div:not([class]) {
+        p:not([class]):first-child {
             margin: 48px 0;
-
-            p {
-                margin: 26px 0;
-            }
         }
 
         p:not([class]) {
-            margin: 48px 0;
+            margin: 26px 0;
         }
 
         ol:not([class]),
@@ -201,21 +193,17 @@
 
     @media (max-width: $tablet) {
         margin-top: 40px;
-        font-size: 16px;
+        font-size: 14px;
         line-height: 24px;
 
-        div:not([class]) {
+        p:not([class]):first-child {
             margin: 40px 0;
-
-            p {
-                margin: 24px 0;
-                font-size: 14px;
-                line-height: 24px;
-            }
+            font-size: 16px;
+            line-height: 24px;
         }
 
         p:not([class]) {
-            margin: 40px 0;
+            margin: 24px 0;
         }
 
         ol:not([class]),
