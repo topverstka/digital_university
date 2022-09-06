@@ -1346,19 +1346,16 @@ body._lock {
 .text {
   margin-top: 56px;
   margin-bottom: 124px;
-  font-size: 18px;
-  line-height: 30px;
-}
-.text div:not([class]) {
-  margin: 56px 0;
-}
-.text div:not([class]) p {
-  margin: 24px 0;
   font-size: 16px;
   line-height: 24px;
 }
-.text p:not([class]) {
+.text p:not([class]):first-child {
   margin: 56px 0;
+  font-size: 18px;
+  line-height: 30px;
+}
+.text p:not([class]) {
+  margin: 24px 0;
 }
 .text ol:not([class]) {
   counter-reset: ol;
@@ -1490,14 +1487,11 @@ body._lock {
     margin-top: 48px;
     margin-bottom: 72px;
   }
-  .text div:not([class]) {
+  .text p:not([class]):first-child {
     margin: 48px 0;
-  }
-  .text div:not([class]) p {
-    margin: 26px 0;
   }
   .text p:not([class]) {
-    margin: 48px 0;
+    margin: 26px 0;
   }
   .text ol:not([class]),
 .text ul:not([class]) {
@@ -1519,19 +1513,16 @@ body._lock {
 @media (max-width: 767px) {
   .text {
     margin-top: 40px;
-    font-size: 16px;
-    line-height: 24px;
-  }
-  .text div:not([class]) {
-    margin: 40px 0;
-  }
-  .text div:not([class]) p {
-    margin: 24px 0;
     font-size: 14px;
     line-height: 24px;
   }
-  .text p:not([class]) {
+  .text p:not([class]):first-child {
     margin: 40px 0;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .text p:not([class]) {
+    margin: 24px 0;
   }
   .text ol:not([class]),
 .text ul:not([class]) {
@@ -2121,6 +2112,7 @@ body._lock {
 }
 
 .footer__title {
+  display: block;
   margin-bottom: 8px;
   color: var(--second);
   font-weight: 700;
