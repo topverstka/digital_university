@@ -255,6 +255,7 @@ function submitForm(selector) {
             const parentNode = fileNode.parentElement;
             const filesNode = parentNode.querySelector('.form-file__files');
 
+            fileNode.disabled = false;
             parentNode.classList.remove('form__elem_invalid');
             if (filesNode) filesNode.classList.remove('form-file__files_visible')
         }
