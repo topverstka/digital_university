@@ -778,7 +778,7 @@
                             <label class="form-elem__label" for="callback-company">Название организации</label>
                         </div>
                         <div class="form-elem form__elem">
-                            <input class="form-elem__area form__input" type="email" id="callback-email" name="email" placeholder=" " required>
+                            <input class="form-elem__area form__input" type="email" id="callback-email" name="email" pattern="^\S+@\S+\.\S+$" placeholder=" " required>
                             <label class="form-elem__label" for="callback-email">E-mail</label>
                             <span class="form__error"></span>
                         </div>
@@ -916,7 +916,7 @@
                                 <label class="form-elem__label" for="company">Название организации</label>
                             </div>
                             <div class="form-elem form__elem">
-                                <input class="form-elem__area form__input" type="email" id="email" name="email" placeholder=" " required>
+                                <input class="form-elem__area form__input" type="email" id="email" name="email" pattern="^\S+@\S+\.\S+$" placeholder=" " required>
                                 <label class="form-elem__label" for="email">E-mail</label>
                                 <span class="form__error"></span>
                             </div>
