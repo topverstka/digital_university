@@ -162,9 +162,10 @@ function validationForm(selector) {
     formNodes.forEach((formNode) => {
         const submitNode = formNode.querySelector('.form__submit');
         const inputNodes = formNode.querySelectorAll('.form__input');
+        const fileNode = document.querySelector('.form-file__area');
 
         formNode.setAttribute('novalidate', '');
-        setEvents(inputNodes, submitNode, formNode);
+        setEvents(inputNodes, submitNode, formNode, fileNode);
 
         formNode.addEventListener('submit', (evt) => {
             if (hasInvalidInput(inputNodes)) {
@@ -172,27 +173,27 @@ function validationForm(selector) {
 
                 inputNodes.forEach((inputNode) => {
                     checkInput(inputNode);
-                    toggleSubmitState(inputNodes, submitNode, formNode);
+                    toggleSubmitState(inputNodes, submitNode, formNode, fileNode);
                 });
             }
         });
     });
 
-    function setEvents(inputNodes, submitNode, formNode) {
+    function setEvents(inputNodes, submitNode, formNode, fileNode) {
         inputNodes.forEach((inputNode) => {
             inputNode.addEventListener('input', () => {
                 checkInput(inputNode);
-                toggleSubmitState(inputNodes, submitNode, formNode);
+                toggleSubmitState(inputNodes, submitNode, formNode, fileNode);
             });
         });
 
         // toggleSubmitState(inputNodes, submitNode);
     }
 
-    function toggleSubmitState(inputNodes, submitNode, formNode) {
+    function toggleSubmitState(inputNodes, submitNode, formNode, fileNode) {
         if (!submitNode) return;
 
-        if (hasInvalidInput(inputNodes)) {
+        if (hasInvalidInput(inputNodes) || isInvalidFile(fileNode)) {
             submitNode.disabled = true;
             formNode.classList.remove('form_valid');
         } else {
@@ -214,6 +215,10 @@ function validationForm(selector) {
             errorNode.textContent = inputNode.validationMessage;
             parentNode.classList.add('form__elem_invalid');
         }
+    }
+
+    function isInvalidFile(fileNode) {
+        if (fileNode) return fileNode.parentElement.classList.contains('form__elem_invalid');
     }
 }
 
