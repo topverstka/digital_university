@@ -149,7 +149,7 @@ function initCustomFile() {
         }
 
         function isInvalidFileType(file) {
-            return !inputNode.getAttribute('accept').includes(file.name.match(/\.(.+)$/)?.[0]);
+            return !inputNode.getAttribute('accept').includes(file.name.match(/\.([0-9a-z]+)(?:[\?#]|$)/i)?.[0]);
         }
     });
 }
