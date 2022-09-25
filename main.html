@@ -905,7 +905,7 @@
                             </p>
                         </header>
 
-                        <form class="callback__form form" action="#" method="POST" name="callback">
+                        <form class="callback__form form" action="index.html" method="POST" name="callback">
                             <div class="form-elem form__elem">
                                 <input class="form-elem__area form__input" type="text" id="name" placeholder=" " name="name" required minlength="2">
                                 <label class="form-elem__label" for="name">Как вас зовут?</label>
@@ -944,6 +944,54 @@
                                 </span>
                             </div>
                         </form>
+
+                        <button class="callback__close modal__close">
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="modal modal-message" id="form-success">
+        <div class="modal__body">
+            <div class="modal__content">
+                <div class="container">
+                    <div class="modal-message__inner">
+                        <header class="callback__header">
+                            <h2 class="callback__title">Готово!</h2>
+
+                            <p class="callback__desc">
+                                Ваше сообщение успешно отправлено.
+                            </p>
+                        </header>
+
+                        <button class="btn btn_primary modal__button" type="button" data-modal-close="form-success">Назад</button>
+
+                        <button class="callback__close modal__close">
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="modal modal-message" id="form-error">
+        <div class="modal__body">
+            <div class="modal__content">
+                <div class="container">
+                    <div class="modal-message__inner">
+                        <header class="callback__header">
+                            <h2 class="callback__title">Что-то пошло не так...</h2>
+
+                            <p class="callback__desc">
+                                Ваше сообщение не отправлено, попробуйте снова.
+                            </p>
+                        </header>
+
+                        <button class="btn btn_primary modal__button" type="button" data-modal-close="form-error">Назад</button>
 
                         <button class="callback__close modal__close">
                             <span></span>

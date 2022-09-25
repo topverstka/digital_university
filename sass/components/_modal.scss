@@ -148,3 +148,63 @@
         }
     }
 }
+
+.modal-message .modal__content {
+    max-width: 698px;
+    position: static;
+}
+.modal-message .container {
+    padding-left: 48px;
+    padding-right: 48px;
+    @media (max-width: 576px) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.modal-message__inner {
+    padding-top: 48px;
+    padding-bottom: 35px;
+}
+
+.modal-message .callback__title {
+    margin-bottom: 24px;
+    padding-right: 0;
+}
+.modal-message .callback__desc {
+    margin-bottom: 35px;
+}
+.modal-message .modal__button {
+    min-width: 158px;
+}
+
+.modal-message .modal__close {
+    top: 48px;
+    right: 48px;
+    background-color: transparent;
+    width: 53px;
+    height: 53px;
+    opacity: 0;
+    transition: all 0.4s ease-out;
+    @media (max-width: 576px) {
+        top: 8px;
+        right: 8px;
+
+    }
+}
+.modal_shown.modal-message .modal__close {
+    opacity: 1;
+}
+
+.modal-message .modal__close span {
+    background-color: var(--accent);
+    width: 31px;
+    height: 4px;
+    border-radius: 4px;
+}
+
+.modal-message .modal__body {
+    @media (max-width: 576px) {
+        align-items: flex-end;
+    }
+}

@@ -226,6 +226,8 @@ function validationForm(selector) {
 submitForm('.form');
 function submitForm(selector) {
     const formNodes = document.querySelectorAll(selector);
+    const formSuccess = document.querySelector('#form-success');
+    const formError = document.querySelector('#form-error');
 
     formNodes.forEach((formNode) => {
         const fileNode = formNode.querySelector('.form-file [type=file]');
@@ -235,7 +237,7 @@ function submitForm(selector) {
             fileNode.addEventListener('change-file', (evt) => files = evt.detail);
         }
 
-        formNode.addEventListener('submit', (evt) => {
+        formNode.addEventListener('submit', async (evt) => {
             evt.preventDefault();
 
             const formData = new FormData(formNode);
@@ -244,13 +246,24 @@ function submitForm(selector) {
             if (formNode.classList.contains('form_valid')) {
                 const action = formNode.action || '';
 
-                fetch(action, {
-                    method: 'post',
-                    body: formData
+                const response = await fetch(action, {
+                    method: 'get',
+                    // body: formData
                 });
 
                 formNode.reset();
                 resetFile(fileNode);
+
+                try {
+                    let result = await response.json();
+                    if (eventsSuccess) {
+                        openModal(eventsSuccess);
+                    }
+                } catch {
+                    if (formError) {
+                        openModal(formError);
+                    }
+                }
             }
         });
 
@@ -480,6 +493,23 @@ function modal() {
             });
         }
     }
+    // Закрытие модальных окон при клике по кнопке
+    closeModalWhenClickingOnBtn()
+    function closeModalWhenClickingOnBtn() {
+        const btnsCloseModal = document.querySelectorAll('[data-modal-close]');
+
+        for (let i = 0; i < btnsCloseModal.length; i++) {
+            const btn = btnsCloseModal[i];
+
+            btn.addEventListener('click', (e) => {
+                const dataBtn = btn.dataset.modalClose;
+                const modal = document.querySelector(`#${dataBtn}`)
+
+                closeModal(modal)
+                resetHash();
+            });
+        }
+    }
 
     // Открытие модального окна, если в url указан его id
     openModalHash()
@@ -563,4 +593,18 @@ function modal() {
         resetHash()
         modal.classList.remove('modal_shown')
     }
+}
+// Открытие модального окна
+function openModal(modal) {
+    modal.classList.add('modal_show')
+    bodyLock(true)
+    setTimeout(() => { modal.classList.add('modal_shown') }, 300)
+}
+
+// Закрытие модального окна
+function closeModal(modal) {
+    modal.classList.remove('modal_show')
+    bodyLock(false)
+    resetHash()
+    modal.classList.remove('modal_shown')
 }
