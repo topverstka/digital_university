@@ -705,6 +705,54 @@
             </div>
         </div>
     </section>
+        <section class="modal modal-message" id="form-success">
+        <div class="modal__body">
+            <div class="modal__content">
+                <div class="container">
+                    <div class="modal-message__inner">
+                        <header class="callback__header">
+                            <h2 class="callback__title">Готово!</h2>
+
+                            <p class="callback__desc">
+                                Ваше сообщение успешно отправлено.
+                            </p>
+                        </header>
+
+                        <button class="btn btn_primary modal__button" type="button" data-modal-close="form-success">Назад</button>
+
+                        <button class="callback__close modal__close">
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="modal modal-message" id="form-error">
+        <div class="modal__body">
+            <div class="modal__content">
+                <div class="container">
+                    <div class="modal-message__inner">
+                        <header class="callback__header">
+                            <h2 class="callback__title">Что-то пошло не так...</h2>
+
+                            <p class="callback__desc">
+                                Ваше сообщение не отправлено, попробуйте снова.
+                            </p>
+                        </header>
+
+                        <button class="btn btn_primary modal__button" type="button" data-modal-close="form-error">Назад</button>
+
+                        <button class="callback__close modal__close">
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Подключение скриптов -->
     <script src="./js/libs/swiper-bundle.min.js"></script>
